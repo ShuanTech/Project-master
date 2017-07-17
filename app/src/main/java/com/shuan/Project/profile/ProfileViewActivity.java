@@ -155,6 +155,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         list = new ArrayList<Sample>();
         inivite = (Button) findViewById(R.id.invite);
         call = (RelativeLayout) findViewById(R.id.call);
+        followLay = (RelativeLayout) findViewById(R.id.follow);
 
         extrabut = (LinearLayout) findViewById(R.id.extra_but);
         resume = (Button) findViewById(R.id.resume);
@@ -234,13 +235,15 @@ public class ProfileViewActivity extends AppCompatActivity {
                 startActivity(callIntent);
             }
         });
+        if (!mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
+            fms.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new Following(ProfileViewActivity.this, u_id, mApp.getPreference().getString(Common.u_id, ""), flow, unflow, level).execute();
+                }
+            });
+        }
 
-        fms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new Following(ProfileViewActivity.this, u_id, mApp.getPreference().getString(Common.u_id, ""), flow, unflow, level).execute();
-            }
-        });
         /*bu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -338,6 +341,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                                 contact.setVisibility(View.VISIBLE);
                                 name.setText(data.optString("full_name"));
                                 if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
+//                                    followLay.setClickable(false);
                                     if (!data.optString("status").equalsIgnoreCase("")) {
                                         org.setTextColor(getResources().getColor(R.color.stus));
                                         org.setTypeface(null, Typeface.BOLD);
@@ -490,6 +494,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                                     extrabut.setVisibility(View.GONE);
                                 }
                                 if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
+//                                    followLay.setClickable(false);
                                     if (!data.optString("status").equalsIgnoreCase("")) {
                                         org.setTextColor(getResources().getColor(R.color.stus));
                                         org.setTypeface(null, Typeface.BOLD);
@@ -701,7 +706,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                         JSONArray cntArray = cnt.getJSONArray("cnt");
                         final JSONObject data1 = cntArray.getJSONObject(0);
                         final int verify = data1.optInt("verify");
-                        Log.d("Verify : ",String.valueOf(verify));
+                        Log.d("Verify : ", String.valueOf(verify));
 
                         runOnUiThread(new Runnable() {
                             @Override
