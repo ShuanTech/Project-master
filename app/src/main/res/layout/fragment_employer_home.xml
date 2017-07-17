@@ -1,0 +1,98 @@
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.shuan.Project.fragment.ConnectionFragment">
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/no_vacancies_available"
+            android:textSize="30sp" />
+
+
+        <ListView
+            android:id="@+id/post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/udyopro_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post"
+            android:visibility="gone">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/udyopost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_marginTop="28dp"
+                app:cardBackgroundColor="#f0f0f0"
+                app:cardCornerRadius="@dimen/small_margin"
+                app:cardElevation="@dimen/small_margin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/cmpny_logo"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:background="@drawable/job_post"
+                        android:elevation="@dimen/standard_margin"
+                        android:padding="2dp"
+                        android:src="@drawable/logo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/cmpny_logo"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="16dp"
+                        android:text="Welcome to Udyomitra..!"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/prof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cmpny_logo"
+                        android:padding="@dimen/standard_margin"
+                        android:text="             Greetings of the day!! Welcome to a whole new world of opportunities. With the New Year ahead of us, Udyomitra will help you write a new story by setting higher goals in your life. We exposed you to all the vacancies in and around your native location by default. You will be following all your college mates and their working firms by default. We generate a decent quality resume for you for free. We will help you find the work you enjoy since you are best suited for it.We wish you all success!"
+                        android:textAppearance="?android:textAppearanceMedium" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

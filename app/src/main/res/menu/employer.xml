@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:checked="true"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/follower"
+            android:icon="@drawable/ic_following"
+            android:title="Followers"
+            app:actionViewClass="android.widget.TextView" />
+
+        <!--<item android:id="@+id/ourteam"
+            android:icon="@drawable/ic_ourteam"
+            android:title="Our Team"
+            app:actionViewClass="android.widget.TextView"/>-->
+
+        <item android:title="Activities">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/action"
+                        android:icon="@drawable/ic_action"
+                        android:title="Actions" />
+
+                    <item
+                        android:id="@+id/fav"
+                        android:icon="@drawable/ic_favorite"
+                        android:title="Favourites"/>
+
+                    <item
+                        android:id="@+id/reopen"
+                        android:icon="@drawable/re_open"
+                        android:title="Reopen Jobs"/>
+                    <!--<item
+                        android:id="@+id/evt"
+                        android:icon="@drawable/ic_event"
+                        android:title="Events"
+                        app:actionViewClass="android.widget.TextView" />-->
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="Operations">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/abt"
+                        android:icon="@drawable/ic_about"
+                        android:title="About" />
+                    <item
+                        android:id="@+id/service"
+                        android:icon="@drawable/ic_services"
+                        android:title="Services" />
+                    <item
+                        android:id="@+id/port"
+                        android:icon="@drawable/ic_portfolio"
+                        android:title="Portfolio" />
+                   <!-- <item
+                        android:id="@+id/test"
+                        android:icon="@drawable/ic_testimonial"
+                        android:title="Testimonial" />-->
+
+                    <item
+                        android:id="@+id/contact"
+                        android:icon="@drawable/ic_contact"
+                        android:title="Contact" />
+
+
+
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="Others">
+            <menu>
+                <group android:checkableBehavior="single">
+                   <!-- <item
+                        android:id="@+id/promote"
+                        android:icon="@drawable/ic_promotion"
+                        android:title="Promotion" />-->
+                   <!-- <item
+                        android:id="@+id/act"
+                        android:icon="@drawable/ic_payment"
+                        android:title="Account" />-->
+
+                    <item
+                        android:id="@+id/setting"
+                        android:icon="@drawable/ic_setting"
+                        android:title="Settings"/>
+
+                    <item
+                        android:id="@+id/logout"
+                        android:icon="@drawable/ic_logout"
+                        android:title="Log Out" />
+
+                </group>
+            </menu>
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/feed"
+            android:icon="@drawable/ic_feed_back"
+            android:title="Feedback" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about_us"
+            android:title="About Us" />
+        <item
+            android:id="@+id/term"
+            android:icon="@drawable/ic_terms"
+            android:title="Terms and Conditions" />
+    </group>
+
+</menu>

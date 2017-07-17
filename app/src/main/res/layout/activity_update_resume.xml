@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shuan.Project.resume.UpdateResumeActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/ps_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/ps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:gravity="center_horizontal"
+                    android:text="@string/profile_summary"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/ps_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:hint="Eg: Professional with 10 years of experience in customer relationships and services"
+                        android:imeOptions="actionDone" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/ps_edit_but"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wrk_det_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/add_wrk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Add Work Details"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/orgname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/org_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/location"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/desig"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/frm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/frm"
+                            android:textColor="#000" />
+
+                        <EditText
+                            android:id="@+id/f_yr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:editable="false"
+                            android:hint="From"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/to"
+                            android:textColor="#000" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/present"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                android:imeOptions="actionDone"
+                                android:text="Present" />
+
+
+                            <EditText
+                                android:id="@+id/t_yr"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="To"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:visibility="gone" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <CheckBox
+                    android:id="@+id/wrking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:checked="true"
+                    android:text="@string/wrking" />
+
+
+                <Button
+                    android:id="@+id/wk_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/c3"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/wrk_exp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/ws"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/work_exp"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/we_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:hint="Work Experience (Eg. Well Knowledge in Java) "
+                        android:imeOptions="actionDone" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/we_edit_but"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/clg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/qfy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Qualification"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+
+                <Spinner
+                    android:id="@+id/level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/clg_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/clg_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/univ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/univ"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/locate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/location"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/concent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/concent"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/yr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/concent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Joined"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/frm_yr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/small_margin"
+                            android:hint="Year"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Passed"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/to_yr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/small_margin"
+                            android:hint="Year"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/agrt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/yr"
+                        android:hint="@string/agrt"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="2" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/q_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/add_school"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/hsc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Schooling"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+
+                <Spinner
+                    android:id="@+id/mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/h_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/school"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/board"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/board"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/cty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/location"
+                        android:imeOptions="actionNext"
+                        android:inputType="textAutoComplete"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/syr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/concent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Joined"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/s_frm_yr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/small_margin"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Passed"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/s_to_yr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/small_margin"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/h_agrt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/agrt"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="2" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/h_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/skill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/sk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Add Skill"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <MultiAutoCompleteTextView
+                        android:id="@+id/skills"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:ems="10"
+                        android:hint="Enter Skill"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/sk_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/project"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Academic Project"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:hint="Project Title"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/platform"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Platform / Area"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/role"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Your Role of this Project"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/team_sze"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Team Size"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/dur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Project Duration (months)"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/prjct_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Project Description"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:lines="2" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/p_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cert"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tex1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:text="Add Certification"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/cer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/cert"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/cer_centre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/cer_centre"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/cer_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/cer_dur"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/cert_upt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ach"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/ah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:text="@string/achivement"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/achieve"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Eg: Won first prize in paper presentation"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/ach_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="Update"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/extra"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/ex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:text="Extra-Curricular Activity"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/extra_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Eg: Paper presentation"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/ex_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="Update"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cntInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ps_edit"
+                android:layout_toRightOf="@+id/ps_edit"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:gravity="center_horizontal"
+                    android:text="Contact Info"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#333" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/addr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Address"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="City"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/district"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="District"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="State"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Country"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/pin_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Pincode"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/cnt_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="Update"
+                    android:textColor="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/objec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/Objective"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:gravity="center_horizontal"
+                    android:text="Objective"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp">
+
+                    <EditText
+                        android:id="@+id/obj"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:hint="Objective"
+                        android:imeOptions="actionDone" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/obj_edt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="UPDATE"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bsc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:gravity="center_horizontal"
+                    android:text="Basic Info"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#333"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/fullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/standard_margin"
+                            android:hint="@string/dob"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/age"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/standard_margin"
+                            android:editable="false"
+                            android:hint="Age"
+                            android:imeOptions="actionNext" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <RadioGroup
+                    android:id="@+id/sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/male" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_weight="1"
+                        android:text="@string/fml" />
+
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/f_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/f_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/m_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="@string/m_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <RadioGroup
+                    android:id="@+id/maritial_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/single"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/single" />
+                    <RadioButton
+                        android:id="@+id/married"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_weight="1"
+                        android:text="@string/married" />
+
+                </RadioGroup>
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/rel"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="@dimen/standard_margin"-->
+                        <!--android:hint="Martial Status"-->
+                        <!--android:imeOptions="actionNext"-->
+                        <!--android:inputType="text"-->
+                        <!--android:singleLine="true" />-->
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/bld_grp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Blood Group"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/lang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Languages (ex: Tamil, English)"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/hobby"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Hobbies (ex: music,cricket)"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/bc_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:background="@null"
+                    android:text="Update"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

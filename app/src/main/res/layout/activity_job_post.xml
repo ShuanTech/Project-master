@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shuan.Project.employer.JobPostActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/job_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Job Title"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName">
+
+                        <requestFocus />
+                    </EditText>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <MultiAutoCompleteTextView
+                        android:id="@+id/skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Job Skill (ex: skill1,skill)"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Job Type"
+                    android:paddingTop="@dimen/standard_margin"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+
+                <RadioGroup
+                    android:id="@+id/job_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <RadioButton
+                        android:id="@+id/full"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+
+                        android:text="Full time" />
+
+                    <RadioButton
+                        android:id="@+id/part"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Part time" />
+
+                    <RadioButton
+                        android:id="@+id/contr"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Contract" />
+                </RadioGroup>
+
+                <Spinner
+                    android:id="@+id/job_cat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/standard_margin">
+
+
+                </Spinner>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/qualify"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Qualification(BA.English/B.com/etc.)"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"/>
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/no_ofvc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Number of Vacancy"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        android:layout_marginTop="@dimen/standard_margin"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Salary Annual (Optional)"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <MultiAutoCompleteTextView
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:hint="Job Location"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/job_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/standard_margin">
+
+
+                </Spinner>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/cancel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/standard_margin"
+                            android:layout_marginRight="@dimen/standard_margin"
+                            android:background="@color/junAccent"
+                            android:text="CANCEL"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#fff" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/save"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/standard_margin"
+                            android:layout_marginRight="@dimen/standard_margin"
+                            android:background="@color/colorAccent"
+                            android:text="SAVE"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/desc_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/descr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Job Description" />
+
+                <Button
+                    android:id="@+id/post"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:background="@color/colorPrimary"
+                    android:text="POST"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

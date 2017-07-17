@@ -1,0 +1,282 @@
+CURRENT STATS:
+Per-Package Stats:
+  * com.shuan.Project / u0a192 / v69:
+      * com.shuan.Project / u0a192 / v69:
+               TOTAL: 100%
+                 Top: 100%
+
+Summary:
+  * com.shuan.Project / u0a192 / v69:
+           TOTAL: 100%
+             Top: 100%
+
+Run time Stats:
+  SOn /Norm: +16s964ms (running)
+      TOTAL: +16s964ms
+
+Memory usage:
+  TOTAL  : 0.00
+
+          Start time: 2017-07-12 16:24:32
+  Total elapsed time: +16s991ms (partial) (swapped-out-pss) libart.so
+
+Available pages by page size:
+Zone   0       Unmovable   7206  2333    16     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable   1375    18     1     0     0     0     0     0     0     0     0
+Zone   0         Movable    151    28     2     0     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Reserve      0     1     3     2     0     0     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+Zone   0       Unmovable   3303   538    19     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Movable     30    30     1     1     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Reserve      0     0     0     0     1     8     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+
+AGGREGATED OVER LAST 24 HOURS:
+System memory usage:
+  SOff/Norm: 17 samples:
+    Cached: 211MB min, 286MB avg, 401MB max
+    Free: 63MB min, 150MB avg, 443MB max
+    ZRam: 100MB min, 106MB avg, 113MB max
+    Kernel: 169MB min, 175MB avg, 191MB max
+    Native: 145MB min, 150MB avg, 155MB max
+       Mod : 2 samples:
+    Cached: 227MB min, 274MB avg, 321MB max
+    Free: 107MB min, 122MB avg, 137MB max
+    ZRam: 100MB min, 105MB avg, 110MB max
+    Kernel: 166MB min, 169MB avg, 172MB max
+    Native: 146MB min, 150MB avg, 155MB max
+       Crit: 1 samples:
+    Cached: 330MB min, 330MB avg, 330MB max
+    Free: 122MB min, 122MB avg, 122MB max
+    ZRam: 97MB min, 97MB avg, 97MB max
+    Kernel: 182MB min, 182MB avg, 182MB max
+    Native: 151MB min, 151MB avg, 151MB max
+  SOn /Norm: 18 samples:
+    Cached: 83MB min, 251MB avg, 352MB max
+    Free: 68MB min, 114MB avg, 199MB max
+    ZRam: 96MB min, 104MB avg, 116MB max
+    Kernel: 168MB min, 175MB avg, 188MB max
+    Native: 145MB min, 149MB avg, 154MB max
+       Mod : 4 samples:
+    Cached: 84MB min, 226MB avg, 297MB max
+    Free: 99MB min, 147MB avg, 240MB max
+    ZRam: 100MB min, 103MB avg, 106MB max
+    Kernel: 164MB min, 168MB avg, 172MB max
+    Native: 146MB min, 148MB avg, 151MB max
+       Low : 4 samples:
+    Cached: 263MB min, 268MB avg, 272MB max
+    Free: 62MB min, 106MB avg, 176MB max
+    ZRam: 97MB min, 101MB avg, 103MB max
+    Kernel: 166MB min, 170MB avg, 173MB max
+    Native: 147MB min, 148MB avg, 151MB max
+
+Per-Package Stats:
+  * com.shuan.Project / u0a190 / v69:
+      * com.shuan.Project / u0a190 / v69:
+               TOTAL: 23% (28MB-44MB-81MB/25MB-41MB-76MB over 51)
+                 Top: 23% (28MB-44MB-81MB/25MB-41MB-76MB over 51)
+              Imp Fg: 0.02%
+          (Last Act): 0.97% (44MB-46MB-62MB/40MB-40MB-58MB over 3)
+            (Cached): 1.9% (29MB-53MB-64MB/25MB-53MB-58MB over 7)
+  * com.shuan.Project / u0a191 / v69:
+      * com.shuan.Project / u0a191 / v69:
+               TOTAL: 6.4% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+                 Top: 6.4% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+              Imp Fg: 0.01%
+          (Last Act): 0.02%
+            (Cached): 3.3% (24MB-49MB-66MB/23MB-47MB-63MB over 8)
+      * com.shuan.Project.push.FcmIntanceIdService:
+        Process: com.shuan.Project
+            Running count 2 / time 0.02%
+            Started count 1 / time 0.02%
+            Executing count 2 / time 0.00%
+  * com.shuan.Project / u0a192 / v69:
+      * com.shuan.Project / u0a192 / v69:
+               TOTAL: 4.7% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+                 Top: 4.7% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+            (Cached): 0.01%
+      * com.shuan.Project.push.FcmIntanceIdService:
+        Process: com.shuan.Project
+            Running count 2 / time 0.01%
+            Started count 1 / time 0.01%
+            Executing count 2 / time 0.00%
+
+Summary:
+  * com.shuan.Project / u0a190 / v69:
+           TOTAL: 23% (28MB-44MB-81MB/25MB-41MB-76MB over 51)
+             Top: 23% (28MB-44MB-81MB/25MB-41MB-76MB over 51)
+          Imp Fg: 0.02%
+      (Last Act): 0.97% (44MB-46MB-62MB/40MB-40MB-58MB over 3)
+        (Cached): 1.9% (29MB-53MB-64MB/25MB-53MB-58MB over 7)
+  * com.shuan.Project / u0a191 / v69:
+           TOTAL: 6.4% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+             Top: 6.4% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+          Imp Fg: 0.01%
+      (Last Act): 0.02%
+        (Cached): 3.3% (24MB-49MB-66MB/23MB-47MB-63MB over 8)
+  * com.shuan.Project / u0a192 / v69:
+           TOTAL: 4.7% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+             Top: 4.7% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+        (Cached): 0.01%
+
+Run time Stats:
+  SOff/Norm: +2h36m58s588ms
+       Mod : +1m12s588ms
+       Low : +56s785ms
+       Crit: +37s543ms
+  SOn /Norm: +5h45m30s186ms
+       Mod : +18m34s20ms
+       Low : +11m32s845ms
+       Crit: +4m57s688ms
+      TOTAL: +9h0m20s243ms
+
+Memory usage:
+  Kernel : 175MB (227 samples)
+  Native : 149MB (227 samples)
+  Persist: 204MB (2940 samples)
+  Top    : 85MB (1426 samples)
+  ImpFg  : 114MB (4074 samples)
+  ImpBg  : 26MB (2570 samples)
+  Service: 242MB (6135 samples)
+  Receivr: 372KB (4120 samples)
+  LastAct: 5.6MB (1251 samples)
+  CchAct : 1.7MB (33 samples)
+  CchCAct: 3.9MB (129 samples)
+  CchEmty: 116MB (3586 samples)
+  Cached : 261MB (227 samples)
+  Free   : 126MB (227 samples)
+  Z-Ram  : 105MB (227 samples)
+  TOTAL  : 1.6GB
+  ServRst: 315KB (2619 samples)
+
+          Start time: 2017-07-11 16:01:30
+  Total elapsed time: +1d0h24m26s265ms (partial) (swapped-out-pss) libart.so
+
+Available pages by page size:
+Zone   0       Unmovable   7206  2333    16     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable   1375    18     1     0     0     0     0     0     0     0     0
+Zone   0         Movable    151    28     2     0     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Reserve      0     1     3     2     0     0     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+Zone   0       Unmovable   3303   538    19     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Movable     30    30     1     1     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Reserve      0     0     0     0     1     8     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+
+AGGREGATED OVER LAST 3 HOURS:
+System memory usage:
+  SOff/Norm: 5 samples:
+    Cached: 211MB min, 262MB avg, 315MB max
+    Free: 74MB min, 134MB avg, 176MB max
+    ZRam: 101MB min, 108MB avg, 113MB max
+    Kernel: 173MB min, 178MB avg, 186MB max
+    Native: 149MB min, 150MB avg, 151MB max
+  SOn /Norm: 3 samples:
+    Cached: 189MB min, 218MB avg, 269MB max
+    Free: 114MB min, 167MB avg, 199MB max
+    ZRam: 102MB min, 108MB avg, 116MB max
+    Kernel: 171MB min, 174MB avg, 176MB max
+    Native: 150MB min, 150MB avg, 151MB max
+       Mod : 1 samples:
+    Cached: 235MB min, 235MB avg, 235MB max
+    Free: 99MB min, 99MB avg, 99MB max
+    ZRam: 106MB min, 106MB avg, 106MB max
+    Kernel: 172MB min, 172MB avg, 172MB max
+    Native: 151MB min, 151MB avg, 151MB max
+
+Per-Package Stats:
+  * com.shuan.Project / u0a190 / v69:
+      * com.shuan.Project / u0a190 / v69:
+               TOTAL: 6.5% (46MB-42MB-81MB/41MB-42MB-76MB over 4)
+                 Top: 6.5% (46MB-42MB-81MB/41MB-42MB-76MB over 4)
+          (Last Act): 0.01%
+            (Cached): 1.9% (64MB-64MB-64MB/58MB-58MB-58MB over 1)
+  * com.shuan.Project / u0a191 / v69:
+      * com.shuan.Project / u0a191 / v69:
+               TOTAL: 29% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+                 Top: 29% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+              Imp Fg: 0.04%
+          (Last Act): 0.11%
+            (Cached): 15% (24MB-49MB-66MB/23MB-47MB-63MB over 8)
+      * com.shuan.Project.push.FcmIntanceIdService:
+        Process: com.shuan.Project
+            Running count 2 / time 0.10%
+            Started count 1 / time 0.10%
+            Executing count 2 / time 0.01%
+  * com.shuan.Project / u0a192 / v69:
+      * com.shuan.Project / u0a192 / v69:
+               TOTAL: 21% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+                 Top: 21% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+              Imp Fg: 0.01%
+            (Cached): 0.04%
+      * com.shuan.Project.push.FcmIntanceIdService:
+        Process: com.shuan.Project
+            Running count 2 / time 0.03%
+            Started count 1 / time 0.03%
+            Executing count 2 / time 0.01%
+
+Summary:
+  * com.shuan.Project / u0a191 / v69:
+           TOTAL: 29% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+             Top: 29% (39MB-45MB-59MB/36MB-45MB-56MB over 24)
+          Imp Fg: 0.04%
+      (Last Act): 0.11%
+        (Cached): 15% (24MB-49MB-66MB/23MB-47MB-63MB over 8)
+  * com.shuan.Project / u0a192 / v69:
+           TOTAL: 21% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+             Top: 21% (43MB-43MB-57MB/39MB-43MB-53MB over 9)
+          Imp Fg: 0.01%
+        (Cached): 0.04%
+  * com.shuan.Project / u0a190 / v69:
+           TOTAL: 6.5% (46MB-42MB-81MB/41MB-42MB-76MB over 4)
+             Top: 6.5% (46MB-42MB-81MB/41MB-42MB-76MB over 4)
+      (Last Act): 0.01%
+        (Cached): 1.9% (64MB-64MB-64MB/58MB-58MB-58MB over 1)
+
+Run time Stats:
+  SOff/Norm: +27m21s162ms
+  SOn /Norm: +1h32m50s507ms
+       Mod : +6s729ms
+      TOTAL: +2h0m18s398ms
+
+Memory usage:
+  Kernel : 175MB (62 samples)
+  Native : 150MB (62 samples)
+  Persist: 204MB (380 samples)
+  Top    : 51MB (295 samples)
+  ImpFg  : 103MB (638 samples)
+  ImpBg  : 26MB (337 samples)
+  Service: 265MB (895 samples)
+  Receivr: 102KB (530 samples)
+  LastAct: 6.3MB (123 samples)
+  CchAct : 7.3MB (8 samples)
+  CchCAct: 7.7MB (22 samples)
+  CchEmty: 150MB (583 samples)
+  Cached : 228MB (62 samples)
+  Free   : 160MB (62 samples)
+  Z-Ram  : 108MB (62 samples)
+  TOTAL  : 1.6GB
+  ServRst: 316KB (347 samples)
+
+          Start time: 2017-07-12 13:01:44
+  Total elapsed time: +3h23m11s716ms (partial) (swapped-out-pss) libart.so
+
+Available pages by page size:
+Zone   0       Unmovable   7206  2333    16     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable   1375    18     1     0     0     0     0     0     0     0     0
+Zone   0         Movable    151    28     2     0     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Reserve      0     1     3     2     0     0     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+Zone   0       Unmovable   3303   538    19     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Movable     30    30     1     1     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Reserve      0     0     0     0     1     8     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0

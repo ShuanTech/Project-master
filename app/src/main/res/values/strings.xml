@@ -1,0 +1,211 @@
+<resources>
+    <string name="app_name">Udyomitra</string>
+    <string name="are_you">Are You ?</string>
+    <string name="employee">Professional</string>
+    <string name="employer">Organization</string>
+    <string name="full_name">User Name</string>
+    <string name="email_id">Email-id</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="conf_password">Confirm Password</string>
+    <string name="fresher">Fresher</string>
+    <string name="experience">Experienced</string>
+    <string name="let_start">Let us Start</string>
+    <string name="qual">Highest Qualification</string>
+    <string name="clg_name">Name Of The College / University</string>
+    <string name="school">Name Of School</string>
+    <string name="board">Name of Board</string>
+    <string name="univ">University Name</string>
+    <string name="location">City / Town </string>
+    <string name="frm">From :</string>
+    <string name="to">To :</string>
+    <string name="concent">Course</string>
+    <string name="j_y">Year Of Joining</string>
+    <string name="y_c">Year Of Completion</string>
+    <string name="agrt">Aggregate</string>
+    <string name="brd_name">Name Of The Board</string>
+    <string name="y_psd">Year Of Passed</string>
+    <string name="prsnl">Personal Informations</string>
+    <string name="dob">Date Of Birth</string>
+    <string name="fml">Female</string>
+    <string name="male">Male</string>
+    <string name="extra">Technical Skills</string>
+    <string name="skill">Enter Your Skill</string>
+    <string name="plus">+</string>
+    <string name="cer_detail">Certification details (if any)</string>
+    <string name="cert">Course Name</string>
+    <string name="cer_centre">Center Name</string>
+    <string name="cer_dur">Duration (in Months)</string>
+    <string name="work_area">Interested Area For Working</string>
+    <string name="f_name">Father Name</string>
+    <string name="m_name">Mother Name</string>
+    <string name="d_no">Address</string>
+    <string name="district">District</string>
+    <string name="cntry">Country</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="pin">Pincode</string>
+    <string name="bg">Blood Group</string>
+    <string name="ms">Marital Status</string>
+    <string name="lk">Languages Known (To Read, Write, Speak)</string>
+    <string name="pc">Physical Challenges (mention if any )</string>
+    <string name="wokdtl">Add Work</string>
+    <string name="org_name">Company Name</string>
+    <string name="pltfrm">Platform</string>
+    <string name="exp">Working Since(in Months)</string>
+    <string name="desig">Position</string>
+    <string name="compny_dtl">Organization Details</string>
+    <string name="add_brnch">+ branch</string>
+    <string name="avl_time">Contacting Time</string>
+    <string name="compny_nm">Name Of The Company</string>
+    <string name="cmpn_name">Full Name Of The Company</string>
+    <string name="crn">Company Registration Number</string>
+    <string name="doornum">Address</string>
+    <string name="loc">Landmark</string>
+    <string name="cnt_prsn">Contact Person</string>
+    <string name="cnt_mail">Contact Mail</string>
+    <string name="cnt_phn">Contact Phone Number</string>
+    <string name="wrk_snc">Working Since(in Months) </string>
+    <string name="yr_st">Year Of Establishment</string>
+    <string name="no_wrkr">No Of Workers</string>
+    <string name="c_des">Few Words About Organization</string>
+    <string name="type">Organization Type</string>
+    <string name="cncdtl">Contact Details</string>
+    <string name="compny_dtl1">About The Organization</string>
+    <string name="co_log">Organization Logo</string>
+    <string name="co_name">Name of the Company</string>
+    <string name="co_mail">Company mail id</string>
+    <string name="co_phone">Company phone no</string>
+    <string name="pass">Password</string>
+    <string name="dev_env">Development Environment</string>
+    <string name="others">Others</string>
+    <string name="achivement">Achievement</string>
+    <string name="lang_known">Language Known (tamil,english)</string>
+    <string name="hobby">Hobbies (dance,music)</string>
+    <string name="project">Project Details</string>
+    <string name="extra_c">Extra Curricular Activities</string>
+    <string name="profile_summary">Profile Summary</string>
+    <string name="work_exp">Work Experience</string>
+    <string name="wrking">I currently work here</string>
+    <string name="copyright">&#169; shuantech pvt. ltd.</string>
+    <string name="reserved">All rights reserved.</string>
+    <string name="rs">\u20B9</string>
+
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string-array name="cmpny_type">
+        <item>Select Company Type</item>
+        <item>Private Limited Company</item>
+        <item>Public Limited Company</item>
+        <item>Unlimited Company</item>
+        <item>Limited Liability Partnership (LLP)</item>
+        <item>Partnership</item>
+        <item>Sole Proprietorship</item>
+        <item>Liaison Office / Representative Office</item>
+        <item>Project Office</item>
+        <item>Branch Office</item>
+        <item>Joint Venture Company</item>
+        <item>Subsidiary Company</item>
+        <item>Consultancy</item>
+    </string-array>
+
+    <string-array name="industry_type">
+        <item>Select an Industry</item>
+        <item> Banking/ Financial / Broking</item>
+        <item>IT- Software Services</item>
+        <item>IT- Hardware/ Networking</item>
+        <item>Medical/ Healthcare/ Hospitality</item>
+        <item>Education/Teaching/Training</item>
+        <item>Engineering/ Construction</item>
+        <item>Real Estate/ Property</item>
+        <item>Travel/ Hotels/ Restaurants/ Tourism</item>
+        <item>Airline</item>
+        <item>ITES- BPO/ Call center</item>
+        <item>Advertising/PR/MR/Event Management</item>
+        <item>Textiles/ Garments/ Accessories</item>
+        <item>Media/ Entertainment</item>
+        <item>Insurance</item>
+        <item>Accounting/ Taxation</item>
+        <item>Law/ Legal Firms</item>
+        <item>Gems/ Jewellery</item>
+
+
+        <!--<item>Accessories/Apparel/Fashion Design</item>
+        <item>Accounting/Consulting/Taxation</item>
+        <item>Advertising/Event Management/PR</item>
+        <item>Agriculture/Dairy Technology</item>
+        <item>Airlines/Hotel/Hospitality/Travel/Tourism/Restaurants</item>
+        <item>Animation / Gaming</item>
+        <item>Architectural Services/ Interior Designing</item>
+        <item>Auto Ancillary/Automobiles/Components</item>
+        <item>Banking/Financial Services/Stockbroking/Securities</item>
+        <item>Banking/FinancialServices/Broking</item>
+        <item>Biotechnology/Pharmaceutical/Clinical Research</item>
+        <item>Brewery/Distillery</item>
+        <item>Cement/Construction/Engineering/Metals/Steel/Iron</item>
+        <item>Ceramics/Sanitaryware</item>
+        <item>Chemicals/Petro Chemicals/Plastics</item>
+        <item>Computer Hardware/Networking</item>
+        <item>Consumer FMCG/Foods/Beverages</item>
+        <item>Consumer Goods - Durables</item>
+        <item>Courier/Freight/Transportation/Warehousing</item>
+        <item>CRM/ IT Enabled Services/BPO</item>
+        <item>Education/Training/Teaching</item>
+        <item>Electricals/Switchgears</item>
+        <item>Employment Firms/Recruitment Services Firms</item>
+        <item>Entertainment/Media/Publishing/Dotcom</item>
+        <item>Export Houses/Textiles/Merchandise</item>
+        <item>FacilityManagement</item>
+        <item>Fertilizers/Pesticides</item>
+        <item>FoodProcessing</item>
+        <item>Gems and Jewellery</item>
+        <item>Glass</item>
+        <item>Government/Defence</item>
+        <item>Healthcare/Medicine</item>
+        <item>HeatVentilation/AirConditioning</item>
+        <item>Insurance</item>
+        <item>KPO/Research/Analytics</item>
+        <item>Law/Legal Firms</item>
+        <item>Machinery/Equipment Manufacturing/Industrial Products</item>
+        <item>Mining</item>
+        <item>NGO/Social Services</item>
+        <item>Office Automation</item>
+        <item>Others/Engg. Services/Service Providers</item>
+        <item>Petroleum/Oil and Gas/Projects/Infrastructure/Power/Non-conventional Energy</item>
+        <item>Printing/Packaging</item>
+        <item>Publishing</item>
+        <item>Real Estate</item>
+        <item>Retailing</item>
+        <item>Security/Law Enforcement</item>
+        <item>Shipping/Marine</item>
+        <item>Software Services</item>
+        <item>Steel</item>
+        <item>Strategy/ManagementConsultingFirms</item>
+        <item>Telecom Equipment/Electronics/Electronic Devices/RF/Mobile Network/Semi-conductor</item>
+        <item>Telecom/ISP</item>
+        <item>Tyres</item>
+        <item>WaterTreatment/WasteManagement</item>
+        <item>Wellness/Fitness/Sports</item>-->
+    </string-array>
+
+    <string-array name="stus">
+        <item>Looking for job</item>
+        <item>In Work</item>
+        <item>In Notice period</item>
+        <item>In Internship</item>
+        <item>Doing Course</item>
+        <item>In Training</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--  For PushNotification -->
+    <string name="FCM_PREF">com.shuan.Project.fcm_pref</string>
+    <string name="FCM_TOKEN">com.shuan.Project.fcm_token</string>
+    <string name="no_vacancies_available">No vacancies available</string>
+    <string name="married">Married</string>
+    <string name="single">Single</string>
+</resources>

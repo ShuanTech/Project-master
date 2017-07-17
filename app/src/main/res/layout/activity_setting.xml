@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.shuan.Project.setting.SettingActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/junPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/SecondaryTheme" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/chnge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/chng_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:background="?android:selectableItemBackground"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center_vertical"
+                            android:scaleType="fitXY"
+                            android:padding="4dp"
+                            android:src="@drawable/change_psswrd" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:text="Change Password"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#333"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <!-- <View
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"
+                         android:layout_marginLeft="36dp"
+                         android:layout_marginRight="@dimen/activity_horizontal_margin"
+                         android:layout_marginTop="@dimen/small_margin"
+                         android:background="#333" />-->
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/chnge">
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:padding="4dp"
+                        android:src="@drawable/privacy"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="Profile Privacy"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="#333"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/invite_frnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/privacy"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:background="?android:selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_invite_others" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="Invite Friends"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="#333"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
