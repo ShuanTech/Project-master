@@ -101,7 +101,7 @@ public class Search extends AsyncTask<String, String, String> {
 
             @Override
             public void afterTextChanged(Editable s) {
-                String str = search.getText().toString().toLowerCase(Locale.getDefault());
+                String str = search.getText().toString().trim().toLowerCase(Locale.getDefault());
                 adapter.filter(str);
             }
         });
