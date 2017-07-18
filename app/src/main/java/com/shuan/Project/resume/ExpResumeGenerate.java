@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -108,12 +109,14 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
             genrateResume("1", FILE);
         } else {
             FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString(Common.FULLNAME, "") + ".pdf";
-            chkInComplte();
+           chkInComplte();
         }
 
     }
 
     private void chkInComplte() {
+//        Log.d("okk","ok");
+
 //        Log.d("asdf",String.valueOf(mApp.getPreference().getString(Common.SKILL, "")));
         if (mApp.getPreference().getBoolean(Common.PROFILESUMMARY, false) == false) {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
@@ -164,6 +167,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
     public void genrateResume(String format, String path) {
 
         if (format.equalsIgnoreCase("1")) {
+
+            Log.d("Path : ",path);
             sFormatOne(path);
         }
     }
@@ -642,7 +647,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     JSONObject child = jsonArray.getJSONObject(0);
 //                    Log.d("Skills",jsonArray.toString());
                     lang_known = child.optString("lang_known");
-
+//                    Log.d("lang_known",lang_known);
                 }
                 runOnUiThread(new Runnable() {
                     @Override

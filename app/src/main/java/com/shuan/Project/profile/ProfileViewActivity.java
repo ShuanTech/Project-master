@@ -78,7 +78,7 @@ public class ProfileViewActivity extends AppCompatActivity {
     private Button inivite, resume;
     private RelativeLayout followLay;
     private LinearLayout extrabut;
-    private String fullname;
+    private String fullname,ph;
     private LinearLayout about, cmpntDet, ser, service, port, portfolio, job, jobs, evnt, events;
     private RelativeLayout flow, unflow, flows;
     private LinearLayout fms;
@@ -224,17 +224,38 @@ public class ProfileViewActivity extends AppCompatActivity {
             }
         });
 
-        call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")|| level.equalsIgnoreCase("3")) {
+            call.setVisibility(View.VISIBLE);
+            if(level.equalsIgnoreCase("3")){
+                call.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 //                Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
 //                Toast.makeText(getApplicationContext(),"cnt_ph_no :"+cnt_ph_no.getText().toString(),Toast.LENGTH_SHORT).show();
 //                Toast.makeText(getApplicationContext(),"phon:"+phNo.getText().toString(),Toast.LENGTH_SHORT).show();
-                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:" + cnt_ph_no.getText().toString()));
-                startActivity(callIntent);
+                        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                        callIntent.setData(Uri.parse("tel:" + cnt_ph_no.getText().toString()));
+                        startActivity(callIntent);
+                    }
+                });
+            }else{
+                call.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"cnt_ph_no :"+cnt_ph_no.getText().toString(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"phon:"+phNo.getText().toString(),Toast.LENGTH_SHORT).show();
+                        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                        callIntent.setData(Uri.parse("tel:" + ph));
+                        startActivity(callIntent);
+                    }
+                });
             }
-        });
+
+        }else{
+            call.setVisibility(View.GONE);
+        }
+
         if (!mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
             fms.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -356,6 +377,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                                         mail.setText(data8.optString("email_id"));
                                     }
                                     if (!data8.optString("ph_no").equalsIgnoreCase("")) {
+                                        ph = data8.optString("ph_no");
                                         phNo.setText(data8.optString("ph_no"));
                                     }
                                 } else {
@@ -507,6 +529,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                                         mail.setText(data8.optString("email_id"));
                                     }
                                     if (!data8.optString("ph_no").equalsIgnoreCase("")) {
+                                        ph = data8.optString("ph_no");
                                         phNo.setText(data8.optString("ph_no"));
                                     }
                                 } else {

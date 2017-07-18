@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -77,7 +78,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
     private ProgressBar progressBar;
     private ScrollView scroll;
     private AlphabetValidator alphabetValidator;
-    private PhoneNumberValidator phoneNumberValidator;
+    private PhoneNumberValidator phoneNumberValidator;;
     private boolean ins = false;
     private boolean sIns = false;
     private String frmDate;
@@ -180,6 +181,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
 //        org = getIntent().getStringExtra("org");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_resume);
+        Log.d("UpResAct:","ok");
 
         psEdt = (LinearLayout) findViewById(R.id.ps_edit);
         wrkDet = (LinearLayout) findViewById(R.id.wrk_det_edit);
