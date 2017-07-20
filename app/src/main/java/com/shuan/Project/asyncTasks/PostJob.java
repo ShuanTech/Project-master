@@ -88,7 +88,7 @@ public class PostJob extends AsyncTask<String, String, String> {
         super.onPostExecute(s);
         pDialog.cancel();
         if (s.equalsIgnoreCase("true")) {
-            Toast.makeText(mContext, "Your Job Successfully Posted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Job Posted Successfully", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(mContext, EmployerActivity.class);
             in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(in);

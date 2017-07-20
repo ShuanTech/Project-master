@@ -64,7 +64,7 @@ public class eventAttend extends AsyncTask<String,String,String>{
         try{
             JSONObject json= Connection.UrlConnection(php.eventAttend,eData);
             int succ = json.getInt("success");
-            if (succ==0){
+            if (succ==1){
                 s="true";
             }else {
                 s="false";
@@ -80,10 +80,11 @@ public class eventAttend extends AsyncTask<String,String,String>{
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         pDialog.cancel();
-        if(s.equalsIgnoreCase("false")){
+        if(!s.equalsIgnoreCase("false")){
             Toast.makeText(mContext, "Thank you for attending", Toast.LENGTH_SHORT).show();
             AppCompatActivity activity = (AppCompatActivity) mContext;
             if (mApp.getPreference().getString(Common.LEVEL,"").equalsIgnoreCase("2")) {
+//                mApp.getPreference().edit().putBoolean(Common.ATTEND, true).commit();
                 Intent in = new Intent(mContext, SeniorActivity.class);
                 in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(in);

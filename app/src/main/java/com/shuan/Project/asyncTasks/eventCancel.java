@@ -64,7 +64,7 @@ public class eventCancel extends AsyncTask<String,String,String> {
         try{
             JSONObject json= Connection.UrlConnection(php.eventCancel,eData);
             int succ = json.getInt("success");
-            if (succ==0){
+            if (succ==1){
                 s="true";
             }else {
                 s="false";

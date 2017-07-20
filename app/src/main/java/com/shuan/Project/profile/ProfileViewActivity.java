@@ -489,9 +489,11 @@ public class ProfileViewActivity extends AppCompatActivity {
                         JSONObject info = child.getJSONObject("info");
                         JSONArray infoArray = info.getJSONArray("info");
                         final JSONObject data = infoArray.getJSONObject(0);
+                        final JSONObject teamStatus = infoArray.getJSONObject(1);
 
                         final String pro_pic = data.optString("pro_pic");
                         final String cover_pic = data.optString("cover_pic");
+                        final String team = teamStatus.optString("team");
                         status = data.optString("status");
 //                        final String verify = data.optString("verify");
 
@@ -512,7 +514,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                                 contact.setVisibility(View.VISIBLE);
                                 name.setText(data.optString("full_name"));
                                 position.setText(data1.optString("sec"));
-                                if (status.equalsIgnoreCase("staff")) {
+                                if (status.equalsIgnoreCase("staff")||team.equalsIgnoreCase("1")) {
                                     extrabut.setVisibility(View.GONE);
                                 }
                                 if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {

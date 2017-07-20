@@ -160,7 +160,8 @@ public class EventView extends AsyncTask<String, String, String> {
                 mContext.startActivity(in);
             }
         });
-        if (attend.equals("1")){
+//        Toast.makeText(mContext,attend,Toast.LENGTH_SHORT).show();
+        if (attend.equalsIgnoreCase("attending")){
             but.setText("Attending");
         }else {
             but.setText("Attend");
