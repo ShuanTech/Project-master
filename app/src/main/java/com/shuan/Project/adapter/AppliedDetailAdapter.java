@@ -179,7 +179,7 @@ public class AppliedDetailAdapter extends BaseAdapter  {
                 } else {
                     txt.setError("");
                     dialog.cancel();
-                    new RejectCandidate(mContext, usr_id,txt.getText().toString()).execute();
+                    new RejectCandidate(mContext, usr_id,txt.getText().toString(),mApp.getPreference().getString("jId", "")).execute();
                 }
             }
         }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {

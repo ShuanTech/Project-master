@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class RejectCandidate extends AsyncTask<String, String, String> {
 
     private Context mContext;
-    private String aId, txt, s;
+    private String aId, txt, s,jId;
     private HashMap<String, String> rData;
     private Common mApp;
     private ProgressDialog pDialog;
@@ -35,10 +35,11 @@ public class RejectCandidate extends AsyncTask<String, String, String> {
         pDialog.show();
     }
 
-    public RejectCandidate(Context mContext, String aId, String txt) {
+    public RejectCandidate(Context mContext, String aId, String txt,String jId) {
         this.mContext = mContext;
         this.aId = aId;
         this.txt = txt;
+        this.jId = jId;
         mApp = (Common) mContext.getApplicationContext();
     }
 
@@ -47,6 +48,7 @@ public class RejectCandidate extends AsyncTask<String, String, String> {
         rData = new HashMap<String, String>();
         rData.put("a_id", aId);
         rData.put("txt", txt);
+        rData.put("job_id", jId);
         try {
 
             JSONObject json = Connection.UrlConnection(php.rjct_candidate, rData);

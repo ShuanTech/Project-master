@@ -59,11 +59,11 @@ public class InviteFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(mContext,"InviteFragment",Toast.LENGTH_SHORT).show();
                 TextView txt= (TextView) view.findViewById(R.id.u_id);
                 Intent in = new Intent(getActivity(), InviteActivity.class);
                 in.putExtra("frm", txt.getText().toString());
                 startActivity(in);
-
             }
         });
 

@@ -50,6 +50,7 @@ public class SelectedListAdapter extends BaseAdapter {
     private String a = "1";
 
 
+
     public SelectedListAdapter(Context mContext, ArrayList<Sample> list) {
         this.mContext = mContext;
         this.list = list;
@@ -212,7 +213,7 @@ public class SelectedListAdapter extends BaseAdapter {
                 } else {
                     txt.setError("");
                     dialog.cancel();
-                    new RejectCandidate(mContext, usr_id,txt.getText().toString()).execute();
+                    new RejectCandidate(mContext, usr_id,txt.getText().toString(),mApp.getPreference().getString("jId", "")).execute();
                 }
             }
         }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {

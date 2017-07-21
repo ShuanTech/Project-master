@@ -18,23 +18,23 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingProgressListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.shuan.Project.R;
+import com.shuan.Project.employee.InviteActivity;
 import com.shuan.Project.list.Sample;
-import com.shuan.Project.profile.ProfileViewActivity;
 
 import java.util.ArrayList;
 
 /**
- * Created by Android on 10/27/2016.
+ * Created by Android on 21-Jul-17.
  */
 
-public class FollowAdapter extends BaseAdapter {
+public class InviteAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<Sample> list;
     private LayoutInflater inflater;
     private DisplayImageOptions options;
 
 
-    public FollowAdapter(Context mContext, ArrayList<Sample> list) {
+    public InviteAdapter(Context mContext, ArrayList<Sample> list) {
         this.mContext = mContext;
         this.list = list;
         inflater = LayoutInflater.from(mContext);
@@ -118,9 +118,9 @@ public class FollowAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(mContext,mContext.toString(),Toast.LENGTH_SHORT).show();
-                Intent in = new Intent(mContext, ProfileViewActivity.class);
-                in.putExtra("u_id", curr.getDis());
-                in.putExtra("level", curr.getState());
+                Intent in = new Intent(mContext, InviteActivity.class);
+                in.putExtra("frm", curr.getDis());
+//                in.putExtra("level", curr.getState());
                 in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(in);
                 Log.d("mContext",mContext.toString());

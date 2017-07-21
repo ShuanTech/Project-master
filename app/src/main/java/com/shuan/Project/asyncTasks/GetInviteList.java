@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.shuan.Project.Utils.Common;
-import com.shuan.Project.adapter.FollowAdapter;
+import com.shuan.Project.adapter.InviteAdapter;
 import com.shuan.Project.list.Sample;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;
@@ -30,7 +30,9 @@ public class GetInviteList extends AsyncTask<String, String, String> {
     private HashMap<String, String> cData;
     private Common mApp;
     private ArrayList<Sample> list;
-    private FollowAdapter adapter;
+//    private FollowAdapter adapter;
+    private InviteAdapter adapter;
+
     private String u_id, s;
 
     public GetInviteList(Context mContext, ListView listView, ProgressBar progressBar, String id) {
@@ -61,9 +63,9 @@ public class GetInviteList extends AsyncTask<String, String, String> {
                     String pro_pic = child.optString("pro_pic");
                     String name = child.optString("full_name");
                     String level = child.optString("level");
-                    String sec=child.optString("sec");
+                    String sec = child.optString("sec");
 
-                    list.add(new Sample(u_id, pro_pic, name, level,sec));
+                    list.add(new Sample(u_id, pro_pic, name, level, sec));
                 }
                 s = "true";
 
@@ -79,8 +81,12 @@ public class GetInviteList extends AsyncTask<String, String, String> {
         super.onPostExecute(s);
         progressBar.setVisibility(View.GONE);
         if (s.equalsIgnoreCase("true")) {
+
             listView.setVisibility(View.VISIBLE);
-            adapter = new FollowAdapter(mContext, list);
+
+//            adapter = new FollowAdapter(mContext, list);
+            adapter = new InviteAdapter(mContext, list);
+            //TODO changed here invite
             listView.setAdapter(adapter);
         } else {
             Toast.makeText(mContext, "No Data", Toast.LENGTH_SHORT).show();
