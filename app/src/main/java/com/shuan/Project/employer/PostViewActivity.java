@@ -1,6 +1,7 @@
 package com.shuan.Project.employer;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +31,9 @@ public class  PostViewActivity extends AppCompatActivity {
     private RelativeLayout scroll;
     private ProgressBar progressBar;
     private LinearLayout jType, jSal, jCate, j_Id,jLoc,jExp,jQua,lay4,jVac;
+
+    String job_id;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,25 +75,36 @@ public class  PostViewActivity extends AppCompatActivity {
         apply = (Button) findViewById(R.id.apply);
         sal = (TextView) findViewById(R.id.sal);
 
-        jLoc= (LinearLayout) findViewById(R.id.j_loc);
-        jExp= (LinearLayout) findViewById(R.id.j_exp);
-        jQua= (LinearLayout) findViewById(R.id.j_qua);
-        jVac= (LinearLayout) findViewById(R.id.j_vac);
-        loc= (TextView) findViewById(R.id.loc);
-
-        exp= (TextView) findViewById(R.id.exp);
-        qua= (TextView) findViewById(R.id.qua);
+        jLoc = (LinearLayout) findViewById(R.id.j_loc);
+        jExp = (LinearLayout) findViewById(R.id.j_exp);
+        jQua = (LinearLayout) findViewById(R.id.j_qua);
+        jVac = (LinearLayout) findViewById(R.id.j_vac);
         loc = (TextView) findViewById(R.id.loc);
-        lay4= (LinearLayout) findViewById(R.id.lay4);
+
+        exp = (TextView) findViewById(R.id.exp);
+        qua = (TextView) findViewById(R.id.qua);
+        loc = (TextView) findViewById(R.id.loc);
+        lay4 = (LinearLayout) findViewById(R.id.lay4);
 
         if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
             apply.setVisibility(View.GONE);
         }
 
+        // ATTENTION: This was auto-generated to handle app links.
+        Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
+        if(appLinkData!=null){
+            job_id = appLinkData.getQueryParameter("jb_id");
+//            Toast.makeText(getApplicationContext(),job_id, Toast.LENGTH_SHORT).show();
+        }
+        else {
+            job_id = getIntent().getStringExtra("jId");
+        }
 
 
-        new PostView(PostViewActivity.this, mApp.getPreference().getString(Common.u_id, ""), getIntent().getStringExtra("jId"), scroll, progressBar, coverImg, cmpny_logo, jTitle, cmpny,
-                created, viewd, applied, shared, skill, desc, type, cate, jId, jType, jSal, jCate, j_Id, sal,apply,jLoc,jExp,jQua,jVac,loc,exp,qua,vac,lay4).execute();
+        new PostView(PostViewActivity.this, mApp.getPreference().getString(Common.u_id, ""), job_id, scroll, progressBar, coverImg, cmpny_logo, jTitle, cmpny,
+                created, viewd, applied, shared, skill, desc, type, cate, jId, jType, jSal, jCate, j_Id, sal, apply, jLoc, jExp, jQua, jVac, loc, exp, qua, vac, lay4).execute();
 
 
         apply.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +139,9 @@ public class  PostViewActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+
+
     }
 
 

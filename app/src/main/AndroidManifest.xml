@@ -13,10 +13,10 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
     <!--<uses-feature android:name="android.hardware.camera"-->
-        <!--android:required="true"/>-->
+    <!--android:required="true"/>-->
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -40,6 +40,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!--http://www.udyomitra.com/jobsview?jb_id=J091107792721-->
+
         </activity>
         <activity
             android:name=".signup.SelectionActivity"
@@ -154,15 +156,31 @@
         <activity
             android:name=".employer.PostViewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppBaseTheme.Profile" />
+            android:theme="@style/AppBaseTheme.Profile">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.udyomitra.com"
+                    android:pathPrefix="/jobsview" />
+            </intent-filter>
+        </activity>
+
+
         <activity
             android:name=".search.SearchActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".resume.ResumeEditActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".employer.ShortListActivity"
             android:launchMode="singleTop"
@@ -286,6 +304,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Profile" />
         <activity android:name=".setting.Privacy"></activity>
+
         <receiver android:name=".signup.IncomingSms">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
@@ -294,17 +313,16 @@
 
         <service android:name=".push.FcmIntanceIdService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT">
-                </action>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
             </intent-filter>
         </service>
 
         <service android:name=".push.FcmMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT">
-                </action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
             </intent-filter>
         </service>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -312,7 +330,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
     </application>
 
