@@ -6,7 +6,7 @@ public class Sample {
     String u_id, proPic, name, pos, companyName, level;
     String cty, distrct, state, contry;
     String orgName, type, addr, land, pin;
-    String jId, jTitle, jSkill, jLevel, jLoc, jCreate, jView, jApply, jShare, jFrmId, jImp,fp,fs,fl;
+    String jId, jTitle, jSkill, jLevel, jLoc, jCreate, jView, jApply, jShare, jFrmId, jImp,fp,fs,fl,sharedDate;
     String id,frmId,toId,postId,content,vwed;
 
     public Sample(String pro_pic, String name, String venue, String intervew_date, String intervew_time, String type, String uid) {
@@ -78,7 +78,7 @@ public class Sample {
         this.level=level;
     }
 
-    public Sample(String companyName, String proPic, String jId, String jTitle, String jSkill, String jLevel, String jLoc, String jCreate, String jView, String jApply, String jShare, String jFrmId, String jImp,String fp,String fs,String fl) {
+    public Sample(String companyName, String proPic, String jId, String jTitle, String jSkill, String jLevel, String jLoc, String jCreate, String jView, String jApply, String jShare, String jFrmId, String jImp,String fp,String fs,String fl,String sharedDate) {
         this.companyName = companyName;
         this.proPic = proPic;
         this.jId = jId;
@@ -95,6 +95,7 @@ public class Sample {
         this.fp=fp;
         this.fs=fs;
         this.fl=fl;
+        this.sharedDate = sharedDate;
     }
 
 
@@ -428,5 +429,12 @@ public class Sample {
 
     public void setFl(String fl) {
         this.fl = fl;
+    }
+
+    public String getShredDate(){
+        return sharedDate;
+    }
+    public void setSharedDate(String sharedDate){
+        this.sharedDate=sharedDate;
     }
 }

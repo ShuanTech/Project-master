@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -120,9 +121,11 @@ public class PostAdapter extends BaseAdapter {
         cShared.setText(curr.getjShare());
         cFrmId.setText(curr.getjFrmId());
 
+        String shareDate = help.getTimeAgo(mContext,curr.getShredDate());
+
         if(curr.getFs()!=null && !curr.getFs().trim().isEmpty()){
             shred.setVisibility(View.VISIBLE);
-            fs.setText(curr.getFs() +" \t" + "Shared a post");
+            fs.setText(curr.getFs() +" \t" + "shared "+curr.getCompanyName()+"'s post "+shareDate);
             fl.setText(curr.getFl());
             ImageLoader.getInstance().displayImage(curr.getFp(), fp, options1, new SimpleImageLoadingListener() {
                 @Override
@@ -154,7 +157,7 @@ public class PostAdapter extends BaseAdapter {
             shred.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Toast.makeText(mContext,"PostAdapter : From ID :"+curr.getjFrmId().toString()+"  level :"+curr.getFl().toString(), Toast.LENGTH_SHORT).show();
                     Intent in=new Intent(mContext, ProfileViewActivity.class);
                     in.putExtra("u_id",curr.getjFrmId());
                     in.putExtra("level",curr.getFl());

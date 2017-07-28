@@ -117,7 +117,6 @@ public class  PostViewActivity extends AppCompatActivity {
                     mApp.getPreference().edit().putBoolean(Common.APPLY, true).commit();
                 }
 
-
             }
         });
         /*lay4.setOnClickListener(new View.OnClickListener() {

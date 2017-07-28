@@ -71,6 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/standard_margin"
                 android:layout_marginRight="@dimen/small_margin"
+                android:singleLine="true"
+                android:maxLines="1"
                 android:layout_toLeftOf="@+id/cmt_snd"
                 android:hint="Enter a Comment" />
 

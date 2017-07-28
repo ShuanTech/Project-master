@@ -41,6 +41,7 @@ import com.shuan.Project.asyncTasks.Following;
 import com.shuan.Project.asyncTasks.GetInvitation;
 import com.shuan.Project.employee.EventViewActivity;
 import com.shuan.Project.employer.PostViewActivity;
+import com.shuan.Project.launcher.LoginActivity;
 import com.shuan.Project.list.Sample;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;
@@ -94,9 +95,29 @@ public class ProfileViewActivity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
+
+
+
         mApp = (Common) getApplicationContext();
-        u_id = getIntent().getStringExtra("u_id");
-        level = getIntent().getStringExtra("level");
+
+        if(mApp.getPreference().getString(Common.u_id,"")==""){
+            Toast.makeText(getApplicationContext(),"Please Login..!!",Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(i);
+        }
+        // ATTENTION: This was auto-generated to handle app links.
+        Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
+        if(appLinkData!=null){
+            u_id = appLinkData.getQueryParameter("us_id");
+            level = mApp.getPreference().getString(Common.LEVEL,"");
+            Log.d("Uid :",u_id);
+        }
+        else {
+            u_id = getIntent().getStringExtra("u_id");
+            level = getIntent().getStringExtra("level");
+        }
 
 
        /* if (mApp.getPreference().getString(Common.u_id,"").equalsIgnoreCase(u_id)){
@@ -224,9 +245,9 @@ public class ProfileViewActivity extends AppCompatActivity {
             }
         });
 
-        if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")|| level.equalsIgnoreCase("3")) {
+        if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3") || level.equalsIgnoreCase("3")) {
             call.setVisibility(View.VISIBLE);
-            if(level.equalsIgnoreCase("3")){
+            if (level.equalsIgnoreCase("3")) {
                 call.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -238,7 +259,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                         startActivity(callIntent);
                     }
                 });
-            }else{
+            } else {
                 call.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -252,7 +273,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                 });
             }
 
-        }else{
+        } else {
             call.setVisibility(View.GONE);
         }
 

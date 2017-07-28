@@ -5,9 +5,18 @@
     android:orientation="vertical">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/cmt_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/usr_img"
@@ -26,20 +35,37 @@
                 android:id="@+id/usr_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
                 android:text="nazim"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="#000"
-                android:layout_marginTop="-5dp"/>
+                android:textColor="#000" />
 
-            <TextView
-                android:id="@+id/usr_cmts"
+            <LinearLayout
+                android:weightSum="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="@dimen/standard_margin"
-                android:alpha="0.9"
-                android:text="checkinh mail"
-                android:textColor="#000" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1.8"
+                    android:id="@+id/usr_cmts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:alpha="0.9"
+                    android:text="checkinh mail"
+                    android:textColor="#000" />
+
+                <ImageView
+                    android:id="@+id/del"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/close"
+                    android:layout_weight=".2"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/cmt_created"
@@ -48,7 +74,9 @@
                 android:layout_marginLeft="@dimen/standard_margin"
                 android:textColor="#333" />
 
+
         </LinearLayout>
+
 
     </LinearLayout>
 

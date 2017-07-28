@@ -79,8 +79,9 @@ public class GetPost extends AsyncTask<String, String, String> {
                     String fPropic=child.optString("fp");
                     String flvl=child.optString("lvl");
                     String fshrd=child.optString("shred");
+                    String sharedDate=child.optString("sharedDate");
 
-                    list.add(new Sample(cName, pPic, jId, jTitle, jSkill, jLevel, jLoc, jDated, jView, jApplied, jShare, jFrmId,jImp,fPropic,fshrd,flvl));
+                    list.add(new Sample(cName, pPic, jId, jTitle, jSkill, jLevel, jLoc, jDated, jView, jApplied, jShare, jFrmId,jImp,fPropic,fshrd,flvl,sharedDate));
                 }
                 s = "true";
             }

@@ -62,7 +62,7 @@ public class ChangePasswrd extends AppCompatActivity {
         toolbar.setTitle("Change Password");
 
         scroll = (LinearLayout) findViewById(R.id.scroll);
-        //oldPass = (EditText) findViewById(R.id.old_pass);
+        oldPass = (EditText) findViewById(R.id.old_pass);
         newPass = (EditText) findViewById(R.id.new_pass);
         cnfrmPass = (EditText) findViewById(R.id.cnfrm_pass);
         pasval = new PasswordValidator();
@@ -94,10 +94,10 @@ public class ChangePasswrd extends AppCompatActivity {
         change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if (oldPass.getText().toString().length() == 0) {
+                if (oldPass.getText().toString().length() == 0) {
                     oldPass.setError("Enter Old Password");
                     oldPass.requestFocus();
-                } else*/ if (newPass.getText().toString().length() == 0) {
+                } else if (newPass.getText().toString().length() == 0) {
                     newPass.setError("Enter New Password");
                     newPass.requestFocus();
                 } else if (!pasval.validate(newPass.getText().toString())) {
@@ -122,6 +122,7 @@ public class ChangePasswrd extends AppCompatActivity {
 
     public class UpdatePassword extends AsyncTask<String, String, String> {
 
+        String cOld = oldPass.getText().toString();
         String cNew = newPass.getText().toString();
         String cCnfrm = cnfrmPass.getText().toString();
 
@@ -139,6 +140,7 @@ public class ChangePasswrd extends AppCompatActivity {
         protected String doInBackground(String... params) {
             cData = new HashMap<String, String>();
             cData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
+            cData.put("currentpwd", cOld);
             cData.put("pass", cNew);
             cData.put("cfrm", cCnfrm);
 
@@ -152,7 +154,24 @@ public class ChangePasswrd extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Password Not Update...Try Again!", Toast.LENGTH_SHORT).show();
                         }
                     });
-                } else {
+                } else if(succ == 2){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Old password doesnot match with records..!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }else if(succ==3){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "You are using the same old password", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
+
+                else {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

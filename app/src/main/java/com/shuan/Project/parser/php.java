@@ -124,4 +124,5 @@ public class php {
     public static final String Getuid = "http://asd.udyomitra.com/android/Getuid";
     public static final String Getuid1 = "http://asd.udyomitra.com/android/Getuid1";
     public static final String pushnot = "http://asd.udyomitra.com/android/push";
+    public static final String removeComment = "http://asd.udyomitra.com/android/remove_comment";
 }

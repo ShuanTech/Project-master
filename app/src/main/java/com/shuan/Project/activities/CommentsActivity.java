@@ -1,9 +1,11 @@
 package com.shuan.Project.activities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.Common;
 import com.shuan.Project.Utils.Helper;
+import com.shuan.Project.asyncTasks.DeleteComment;
 import com.shuan.Project.fragment.PostCommnts;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;
@@ -111,7 +114,7 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
 
         if (v.getId() == R.id.cmt_snd) {
-            if (cmtEdt.getText().toString().length() == 0) {
+            if (cmtEdt.getText().toString().trim().length() == 0) {
                 cmtEdt.setError("Please enter a Comment");
                 cmtEdt.requestFocus();
             } else {
@@ -122,17 +125,17 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                 TextView usrCmts = (TextView) vi.findViewById(R.id.usr_cmts);
                 TextView cmtdata = (TextView) vi.findViewById(R.id.cmt_created);
 
+
                 setImage(mApp.getPreference().getString(Common.PROPIC, ""), usrImg);
                 usrName.setText(mApp.getPreference().getString(Common.FULLNAME, ""));
-                usrCmts.setText(cmtEdt.getText().toString());
+                usrCmts.setText(cmtEdt.getText().toString().trim());
                 cmtdata.setText("now");
                 cmnts.addView(vi);
 
 
-
                 cmdSnd.setEnabled(false);
                 new PostCommnts(CommentsActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                        getIntent().getStringExtra("jId"), cmtEdt.getText().toString(),cmdSnd).execute();
+                        getIntent().getStringExtra("jId"), cmtEdt.getText().toString().trim(), cmdSnd).execute();
                 scroll.post(new Runnable() {
                     @Override
                     public void run() {
@@ -141,9 +144,6 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                     }
                 });
                 cmtEdt.setText("");
-
-
-
             }
         }
 
@@ -164,10 +164,13 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                     JSONArray jsonArray = json.getJSONArray("comments");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject child = jsonArray.getJSONObject(i);
+                        final String cmt_id = child.optString("id");
                         final String full_name = child.optString("full_name");
                         final String pro_pic = child.optString("pro_pic");
                         final String commnts = child.optString("commnts");
                         final String cmt_date = child.optString("cmt_date");
+                        final String cmnt_user = child.optString("u_id");
+
 
                         runOnUiThread(new Runnable() {
                             @Override
@@ -179,10 +182,60 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                                 ImageView usrImg = (ImageView) v.findViewById(R.id.usr_img);
                                 TextView usrCmts = (TextView) v.findViewById(R.id.usr_cmts);
                                 TextView cmtdata = (TextView) v.findViewById(R.id.cmt_created);
+                                final TextView cmtid = (TextView) v.findViewById(R.id.cmt_id);
+                                final ImageView cmtdel = (ImageView) v.findViewById(R.id.del);
 
                                 setImage(pro_pic, usrImg);
                                 usrName.setText(full_name);
                                 usrCmts.setText(commnts);
+                                cmtid.setText(cmt_id);
+                                if (mApp.getPreference().getString(Common.u_id, "").equalsIgnoreCase(cmnt_user)) {
+                                    cmtdel.setVisibility(View.VISIBLE);
+                                }
+
+                                cmtdel.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(CommentsActivity.this);
+
+                                        // Setting Dialog Title
+                                        alertDialog.setTitle("Confirm Delete...");
+
+                                        // Setting Dialog Message
+                                        alertDialog.setMessage("Are you sure you want delete this?");
+
+                                        // Setting Icon to Dialog
+                                        alertDialog.setIcon(R.drawable.close);
+
+                                        // Setting Positive "Yes" Button
+                                        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog,int which) {
+
+                                                // Write your code here to invoke YES event
+                                                new DeleteComment(CommentsActivity.this, cmtid.getText().toString()).execute();
+                                            }
+                                        });
+
+                                        // Setting Negative "NO" Button
+                                        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                // Write your code here to invoke NO event
+
+                                                dialog.cancel();
+                                            }
+                                        });
+
+                                        // Showing Alert Message
+                                        alertDialog.show();
+
+
+//                                        Toast.makeText(getApplicationContext(), "Delete " + cmtid.getText().toString(), Toast.LENGTH_SHORT).show();
+
+
+                                    }
+                                });
+
                                 cmtdata.setText(help.getTimeAgo(CommentsActivity.this, cmt_date));
 
                                 cmnts.addView(v);

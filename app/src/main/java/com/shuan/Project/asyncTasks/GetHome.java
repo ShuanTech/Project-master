@@ -81,8 +81,11 @@ public class GetHome extends AsyncTask<String, String, String> {
                     String fPropic=child.optString("fp");
                     String flvl=child.optString("lvl");
                     String fshrd=child.optString("shred");
+                    String fshrddate = child.optString("sharedDate");
+//                    This was orginally here
+//                    list.add(new Sample(cName, pPic, jId, jTitle, jSkill, jLevel, jLoc, jDated, jView, jApplied, jShare, jFrmId,jImp,fPropic,fshrd,flvl));
 
-                    list.add(new Sample(cName, pPic, jId, jTitle, jSkill, jLevel, jLoc, jDated, jView, jApplied, jShare, jFrmId,jImp,fPropic,fshrd,flvl));
+                    list.add(new Sample(cName, pPic, jId, jTitle, jSkill, jLevel, jLoc, jDated, jView, jApplied, jShare, jFrmId,jImp,fPropic,fshrd,flvl,fshrddate));
                 }
             }
 

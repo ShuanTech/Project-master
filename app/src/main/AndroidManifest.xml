@@ -143,7 +143,19 @@
         <activity
             android:name=".profile.ProfileViewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Junior.Profile" />
+            android:theme="@style/Junior.Profile">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.udyomitra.com"
+                    android:pathPrefix="/employeeView" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".signup.employer.CompanyContactInfoActivity"
             android:theme="@style/AppBaseTheme" />
