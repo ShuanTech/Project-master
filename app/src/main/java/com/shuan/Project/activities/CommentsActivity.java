@@ -2,12 +2,14 @@ package com.shuan.Project.activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -30,6 +32,8 @@ import com.shuan.Project.asyncTasks.DeleteComment;
 import com.shuan.Project.fragment.PostCommnts;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;
+import com.shuan.Project.profile.ProfileActivity;
+import com.shuan.Project.profile.ProfileViewActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -132,7 +136,6 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                 cmtdata.setText("now");
                 cmnts.addView(vi);
 
-
                 cmdSnd.setEnabled(false);
                 new PostCommnts(CommentsActivity.this, mApp.getPreference().getString(Common.u_id, ""),
                         getIntent().getStringExtra("jId"), cmtEdt.getText().toString().trim(), cmdSnd).execute();
@@ -162,6 +165,7 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                 if (succ == 0) {
                 } else {
                     JSONArray jsonArray = json.getJSONArray("comments");
+                    Log.d("Json array : ",json.getJSONArray("comments").toString());
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject child = jsonArray.getJSONObject(i);
                         final String cmt_id = child.optString("id");
@@ -170,6 +174,7 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                         final String commnts = child.optString("commnts");
                         final String cmt_date = child.optString("cmt_date");
                         final String cmnt_user = child.optString("u_id");
+                        final String cmnt_user_level = child.optString("level");
 
 
                         runOnUiThread(new Runnable() {
@@ -192,6 +197,22 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                                 if (mApp.getPreference().getString(Common.u_id, "").equalsIgnoreCase(cmnt_user)) {
                                     cmtdel.setVisibility(View.VISIBLE);
                                 }
+                                usrName.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Bundle b = new Bundle();
+                                        Intent i;
+                                        if (!mApp.getPreference().getString(Common.u_id, "").equalsIgnoreCase(cmnt_user))
+                                            i = new Intent(CommentsActivity.this, ProfileViewActivity.class);
+                                        else
+                                            i = new Intent(CommentsActivity.this, ProfileActivity.class);
+                                        b.putString("u_id", cmnt_user);
+                                        b.putString("level", cmnt_user_level);
+                                        i.putExtras(b);
+                                        startActivity(i);
+                                        finish();
+                                    }
+                                });
 
                                 cmtdel.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -210,7 +231,7 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
 
                                         // Setting Positive "Yes" Button
                                         alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog,int which) {
+                                            public void onClick(DialogInterface dialog, int which) {
 
                                                 // Write your code here to invoke YES event
                                                 new DeleteComment(CommentsActivity.this, cmtid.getText().toString()).execute();

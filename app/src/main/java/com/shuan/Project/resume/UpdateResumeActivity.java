@@ -829,7 +829,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         psEdtTxt.setError("Field cannot be empty");
                         psEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(psEdtTxt.getText().toString())) {
-                        psEdtTxt.setError("Enter something");
+                        psEdtTxt.setError("Invalid Entry");
                         psEdtTxt.setText("");
                         psEdtTxt.requestFocus();
                     } else {
@@ -841,7 +841,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         psEdtTxt.setError("Field cannot be empty");
                         psEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(psEdtTxt.getText().toString())) {
-                        psEdtTxt.setError("Enter something");
+                        psEdtTxt.setError("Invalid Entry");
                         psEdtTxt.setText("");
                         psEdtTxt.requestFocus();
                     } else {
@@ -868,25 +868,25 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     orgname.setError("Organization name is Mandatory");
                     orgname.requestFocus();
                 } else if (!alphabetValidator.validate(orgname.getText().toString())) {
-                    orgname.setError("Enter something");
+                    orgname.setError("Invalid Organization name");
                     orgname.setText("");
                     orgname.requestFocus();
                 } else if (postition.getText().toString().length() == 0) {
                     postition.setError("Position Mandatory");
                     postition.requestFocus();
                 } else if (!alphabetValidator.validate(postition.getText().toString())) {
-                    postition.setError("Enter something");
+                    postition.setError("Enter a Valid position");
                     postition.setText("");
                     postition.requestFocus();
                 } else if (location.getText().toString().length() == 0) {
                     location.setError("Location Mandatory");
                     location.requestFocus();
                 } else if (!alphabetValidator.validate(location.getText().toString())) {
-                    location.setError("Enter something");
+                    location.setError("Invalid Location");
                     location.setText("");
                     location.requestFocus();
                 } else if (fYr.getText().toString().length() == 0) {
-                    fYr.setError("Field Mandatory");
+                    fYr.setError("From Date Mandatory");
                     fYr.requestFocus();
                 } else if (what.equalsIgnoreCase("add") && work.get("org").equalsIgnoreCase(orgname.getText().toString())) {
                     orgname.setError("You are already added work in " + work.get("org") + " as " + work.get("pos"));
@@ -894,7 +894,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 } else if (visible) {
 
                     if (tYr.getText().toString().length() == 0) {
-                        tYr.setError("Field Mandatory");
+                        tYr.setError("To Date Mandatory");
                         tYr.requestFocus();
                     } else if (fYr.getText().toString().equalsIgnoreCase(tYr.getText().toString())) {
                         tYr.setError("From and To dates are same");
@@ -935,7 +935,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         weEdtTxt.setError("Field cannot be empty");
                         weEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
-                        weEdtTxt.setError("Enter something");
+                        weEdtTxt.setError("Invalid Entry");
                         weEdtTxt.setText("");
                         weEdtTxt.requestFocus();
                     } else {
@@ -947,7 +947,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         weEdtTxt.setError("Field cannot be empty");
                         weEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
-                        weEdtTxt.setError("Enter something");
+                        weEdtTxt.setError("Invalid Entry");
                         weEdtTxt.setText("");
                         weEdtTxt.requestFocus();
                     } else {
@@ -1102,7 +1102,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 if (acheieve.getText().toString().length() == 0) {
                     acheieve.setError("Field Mandatory");
                 } else if (!alphabetValidator.validate(acheieve.getText().toString())) {
-                    acheieve.setError("Enter something");
+                    acheieve.setError("Invalid Achivement");
                     acheieve.setText("");
                     acheieve.requestFocus();
                 } else {

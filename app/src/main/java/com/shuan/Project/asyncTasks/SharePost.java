@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.shuan.Project.parser.Connection;
@@ -48,6 +49,8 @@ public class SharePost extends AsyncTask<String, String, String> {
 
         try {
             JSONObject json = Connection.UrlConnection(php.share_post, sData);
+
+            Log.d("Share Response: ",json.toString());
             int succ = json.getInt("success");
 
             if (succ == 0) {

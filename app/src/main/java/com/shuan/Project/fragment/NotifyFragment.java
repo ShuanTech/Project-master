@@ -59,9 +59,9 @@ public class NotifyFragment extends Fragment implements AbsListView.OnScrollList
         swipe = (SwipeRefreshLayout) v.findViewById(R.id.swipe);
         progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
         listView = (ListView) v.findViewById(R.id.notify_list);
-        textView = (TextView)v.findViewById(R.id.no_notify);
+        textView = (TextView) v.findViewById(R.id.no_notify);
 
-        new GetNotifyDetail(getActivity(), mApp.getPreference().getString(Common.u_id, ""), listView, progressBar,textView, swipe).execute();
+        new GetNotifyDetail(getActivity(), mApp.getPreference().getString(Common.u_id, ""), listView, progressBar, textView, swipe).execute();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -134,6 +134,9 @@ public class NotifyFragment extends Fragment implements AbsListView.OnScrollList
                     Toast.makeText(getActivity(), "Verification Successful", Toast.LENGTH_SHORT).show();
                     new UpdateNotify(getActivity(), mApp.getPreference().getString(Common.u_id, ""),
                             nId.getText().toString()).execute();
+                } else if (type.getText().toString().equalsIgnoreCase("10")) {
+                    new UpdateNotify(getActivity(), mApp.getPreference().getString(Common.u_id, ""),
+                            nId.getText().toString()).execute();
                 } else {
                     if (txt1.getText() == "") {
                         Toast.makeText(getActivity(), "Does not exists what are you Looking for", Toast.LENGTH_SHORT).show();
@@ -155,7 +158,7 @@ public class NotifyFragment extends Fragment implements AbsListView.OnScrollList
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new GetNotifyDetail(getActivity(), mApp.getPreference().getString(Common.u_id, ""), listView, progressBar,textView, swipe).execute();
+                new GetNotifyDetail(getActivity(), mApp.getPreference().getString(Common.u_id, ""), listView, progressBar, textView, swipe).execute();
                 swipe.setRefreshing(false);
             }
         });
