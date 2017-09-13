@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.shuan.Project.adapter.AppliedDetailAdapter;
 import com.shuan.Project.list.Sample;
@@ -24,6 +24,7 @@ public class GetAppliedDetail extends AsyncTask<String, String, String> {
     private Context mContext;
     private String jId;
     private ListView listView;
+    private TextView textView;
     private ProgressBar progressBar;
     private HashMap<String, String> aData;
     private ArrayList<Sample> list;
@@ -31,11 +32,12 @@ public class GetAppliedDetail extends AsyncTask<String, String, String> {
     private String s = "";
 
 
-    public GetAppliedDetail(Context mContext, String jId, ListView listView, ProgressBar progressBar) {
+    public GetAppliedDetail(Context mContext, String jId, ListView listView, ProgressBar progressBar, TextView textView) {
         this.mContext = mContext;
         this.jId = jId;
         this.listView = listView;
         this.progressBar = progressBar;
+        this.textView = textView;
         list = new ArrayList<Sample>();
     }
 
@@ -76,12 +78,17 @@ public class GetAppliedDetail extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         progressBar.setVisibility(View.GONE);
+        if(textView.getVisibility()==View.VISIBLE){
+            textView.setVisibility(View.GONE);
+        }
         if (s.equalsIgnoreCase("true")) {
             listView.setVisibility(View.VISIBLE);
             adapter = new AppliedDetailAdapter(mContext, list);
             listView.setAdapter(adapter);
         } else {
-            Toast.makeText(mContext, "No Data Found", Toast.LENGTH_SHORT).show();
+            textView.setText("No Data");
+            textView.setVisibility(View.VISIBLE);
+           // Toast.makeText(mContext, "No Data Found", Toast.LENGTH_SHORT).show();
         }
 
     }

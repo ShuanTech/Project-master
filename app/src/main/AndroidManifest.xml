@@ -15,11 +15,9 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
-    <!--<uses-feature android:name="android.hardware.camera"-->
-    <!--android:required="true"/>-->
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
 
     <application
         android:name=".Utils.Common"
@@ -40,7 +38,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--http://www.udyomitra.com/jobsview?jb_id=J091107792721-->
+            <!-- http://www.udyomitra.com/jobsview?jb_id=J091107792721 -->
 
         </activity>
         <activity
@@ -78,7 +76,21 @@
             android:name=".launcher.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Profile"
-            android:windowSoftInputMode="stateAlwaysHidden" />
+            android:windowSoftInputMode="stateAlwaysHidden" >
+
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.udyomitra.com"
+                    android:pathPrefix="/newconfirmation"
+                    android:scheme="http" />
+            </intent-filter>-->
+
+        </activity>
 
         <!-- Employer Activities -->
 
@@ -151,9 +163,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
                     android:host="www.udyomitra.com"
-                    android:pathPrefix="/employeeView" />
+                    android:pathPrefix="/employeeView"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
         <activity
@@ -169,22 +181,8 @@
             android:name=".employer.PostViewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppBaseTheme.Profile">
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:scheme="http"
-                    android:host="www.udyomitra.com"
-                    android:pathPrefix="/jobsview" />
-            </intent-filter>
+            F
         </activity>
-
-
         <activity
             android:name=".search.SearchActivity"
             android:screenOrientation="portrait"
@@ -315,7 +313,7 @@
             android:name=".signup.MailVerify"
             android:screenOrientation="portrait"
             android:theme="@style/Profile" />
-        <activity android:name=".setting.Privacy"></activity>
+        <activity android:name=".setting.Privacy" />
 
         <receiver android:name=".signup.IncomingSms">
             <intent-filter>
@@ -325,13 +323,12 @@
 
         <service android:name=".push.FcmIntanceIdService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <service android:name=".push.FcmMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
@@ -344,6 +341,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <activity android:name=".setting.ChangeEmail" />
+        <activity android:name=".setting.ChangePhone" />
+        <activity android:name=".setting.DeactivateAccount"></activity>
     </application>
 
 </manifest>

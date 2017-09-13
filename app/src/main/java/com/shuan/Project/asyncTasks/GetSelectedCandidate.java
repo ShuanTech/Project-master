@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.shuan.Project.adapter.SelectedListAdapter;
 import com.shuan.Project.list.Sample;
@@ -27,12 +28,14 @@ public class GetSelectedCandidate extends AsyncTask<String, String, String> {
     private HashMap<String, String> sData;
     private ArrayList<Sample> list;
     private SelectedListAdapter adapter;
+    private TextView textView;
 
-    public GetSelectedCandidate(Context mContext, String jId, ListView listView, ProgressBar progressBar) {
+    public GetSelectedCandidate(Context mContext, String jId, ListView listView, ProgressBar progressBar, TextView textView) {
         this.mContext = mContext;
         this.jId = jId;
         this.listView = listView;
         this.progressBar = progressBar;
+        this.textView = textView;
         list = new ArrayList<Sample>();
     }
 
@@ -73,8 +76,15 @@ public class GetSelectedCandidate extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         progressBar.setVisibility(View.GONE);
-        listView.setVisibility(View.VISIBLE);
-        adapter = new SelectedListAdapter(mContext, list);
-        listView.setAdapter(adapter);
+        if(textView.getVisibility()==View.VISIBLE){
+            textView.setVisibility(View.GONE);
+        }if(list.size()==0){
+            textView.setText("No Data");
+            textView.setVisibility(View.VISIBLE);
+        }else {
+            listView.setVisibility(View.VISIBLE);
+            adapter = new SelectedListAdapter(mContext, list);
+            listView.setAdapter(adapter);
+        }
     }
 }

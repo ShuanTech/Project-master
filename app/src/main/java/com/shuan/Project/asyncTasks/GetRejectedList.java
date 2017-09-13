@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.shuan.Project.adapter.RejectedAdapter;
 import com.shuan.Project.list.Sample;
@@ -23,15 +24,17 @@ public class GetRejectedList extends AsyncTask<String, String, String> {
     private Context mContext;
     private String jId;
     private ListView listView;
+    private TextView textView;
     private ProgressBar progressBar;
     private ArrayList<Sample> list;
     private RejectedAdapter adapter;
     private HashMap<String, String> rData;
 
-    public GetRejectedList(Context mContext, String jId, ListView listView, ProgressBar progressBar) {
+    public GetRejectedList(Context mContext, String jId, ListView listView, ProgressBar progressBar,TextView textView) {
         this.mContext = mContext;
         this.jId = jId;
         this.listView = listView;
+        this.textView = textView;
         this.progressBar = progressBar;
         list = new ArrayList<Sample>();
     }
@@ -66,8 +69,17 @@ public class GetRejectedList extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         progressBar.setVisibility(View.GONE);
-        listView.setVisibility(View.VISIBLE);
-        adapter = new RejectedAdapter(mContext, list);
-        listView.setAdapter(adapter);
+        if(textView.getVisibility()==View.VISIBLE){
+            textView.setVisibility(View.GONE);
+        }
+
+        if(list.size()==0){
+            textView.setText("No Data");
+            textView.setVisibility(View.VISIBLE);
+        }else {
+            listView.setVisibility(View.VISIBLE);
+            adapter = new RejectedAdapter(mContext, list);
+            listView.setAdapter(adapter);
+        }
     }
 }

@@ -1,9 +1,12 @@
 package com.shuan.Project.resume;
 
+import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.pdf.PdfRenderer;
@@ -13,6 +16,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -68,7 +73,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
     private File file;
     private FileOutputStream fout;
     private HashMap<String, String> resumeData;
-    private String name, dob, gen,addr, city,dis,ste,country, pincode, emailId, phNo, fName, mName, mStatus,bldgrp, lang,hobbies,obj;
+    private String name, dob, gen, addr, city, dis, ste, country, pincode, emailId, phNo, fName, mName, mStatus, bldgrp, lang, hobbies, obj;
     private ArrayList<ResumeList> list;
     private ProgressBar progressBar;
     private Common mApp;
@@ -78,6 +83,30 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
     private LinearLayout scroll;
     private int currPage = 0;
     private ImageView pdfView;
+
+
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+
+
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,27 +126,41 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         prv = (RelativeLayout) findViewById(R.id.prv);
         nxt = (RelativeLayout) findViewById(R.id.nxt);
         list = new ArrayList<ResumeList>();
-        if (mApp.getPreference().getBoolean(Common.APPLY, false) == true) {
 
 
-            FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString(Common.u_id, "") + "-"
-                    + getIntent().getStringExtra("job_id") + "-" +
-                    getIntent().getStringExtra("refer") + ".pdf";
-            chkInComplte();
-        } else if (mApp.getPreference().getBoolean("download", false) == true) {
-            FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString("name", "") + ".pdf";
-            genrateResume("1", FILE);
+        // Assume thisActivity is the current activity
+        int permissionCheck = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        Log.d("Permission : ", String.valueOf(permissionCheck));
+
+        if (permissionCheck == 0) {
+
+
+            if (mApp.getPreference().getBoolean(Common.APPLY, false) == true) {
+
+//            verifyStoragePermissions(this);
+                FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString(Common.u_id, "") + "-"
+                        + getIntent().getStringExtra("job_id") + "-" +
+                        getIntent().getStringExtra("refer") + ".pdf";
+                chkInComplte();
+            } else if (mApp.getPreference().getBoolean("download", false) == true) {
+                FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString("name", "") + ".pdf";
+                genrateResume("1", FILE);
+            } else {
+                FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString(Common.FULLNAME, "") + ".pdf";
+                chkInComplte();
+            }
         } else {
-            FILE = Environment.getExternalStorageDirectory() + "/" + mApp.getPreference().getString(Common.FULLNAME, "") + ".pdf";
-           chkInComplte();
+            verifyStoragePermissions(this);
         }
 
     }
 
     private void chkInComplte() {
 //        Log.d("okk","ok");
+//       Log.d("asdf",String.valueOf(mApp.getPreference().getString(Common.SKILL, "")));
 
-//        Log.d("asdf",String.valueOf(mApp.getPreference().getString(Common.SKILL, "")));
         if (mApp.getPreference().getBoolean(Common.PROFILESUMMARY, false) == false) {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateSeniorResumeActivity.class));
@@ -142,12 +185,11 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateSeniorResumeActivity.class));
             finish();
-        }else if (mApp.getPreference().getBoolean(Common.SKILL,false) == false) {
+        }/*else if (mApp.getPreference().getBoolean(Common.SKILL,false) == false) {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateSeniorResumeActivity.class));
             finish();
-        }
-        else if (mApp.getPreference().getBoolean(Common.HOBBIES, false) == false) {
+        }*/ else if (mApp.getPreference().getBoolean(Common.HOBBIES, false) == false) {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateSeniorResumeActivity.class));
             finish();
@@ -165,10 +207,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
     }
 
     public void genrateResume(String format, String path) {
-
         if (format.equalsIgnoreCase("1")) {
-
-            Log.d("Path : ",path);
+            Log.d("Path : ", path);
             sFormatOne(path);
         }
     }
@@ -176,11 +216,15 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
     public void sFormatOne(String path) {
         try {
+
             file = new File(path);
             fout = new FileOutputStream(file);
             PdfWriter.getInstance(doc, fout);
             doc.open();
             new getInfo().execute();
+
+
+
            /* if (mApp.getPreference().getBoolean("download", false) == true) {
                 new getInfo().execute();
             } else {
@@ -194,6 +238,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
             }*/
 
         } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("Exception sFormatCode", e.toString());
         }
     }
 
@@ -235,9 +281,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         @Override
         protected String doInBackground(final String... params) {
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -258,12 +304,12 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     JSONObject child = jsonArray.getJSONObject(0);
                     name = child.optString("full_name");
                     dob = child.optString("dob");
-                    gen=child.optString("gender");
+                    gen = child.optString("gender");
                     addr = child.optString("address");
                     city = child.optString("city");
-                    dis=child.optString("district");
-                    ste=child.optString("state");
-                    country=child.optString("country");
+                    dis = child.optString("district");
+                    ste = child.optString("state");
+                    country = child.optString("country");
                     pincode = child.optString("pincode");
                     emailId = child.optString("email_id");
                     phNo = child.optString("ph_no");
@@ -273,7 +319,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     bldgrp = child.optString("blood_grp");
                     lang = child.optString("language");
                     hobbies = child.optString("hobbies");
-                    obj=child.optString("objective");
+                    obj = child.optString("objective");
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -294,28 +340,31 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 doc.add(Chunk.NEWLINE);
                                 doc.add(new LineSeparator(4, 100, BaseColor.BLACK, 0, 0));
                                 doc.add(Chunk.NEWLINE);
-                                    if(obj!=null && !obj.trim().isEmpty()){
-                                        Paragraph p3 = new Paragraph("OBJECTIVE", heading);
-                                        p3.setAlignment(Paragraph.ALIGN_LEFT);
-                                        doc.add(p3);
-                                        Paragraph p4 = new Paragraph(obj, content);
-                                        p4.setAlignment(Paragraph.ALIGN_LEFT);
-                                        doc.add(p4);
-                                    }
+                                if (obj != null && !obj.trim().isEmpty()) {
+                                    Paragraph p3 = new Paragraph("OBJECTIVE", heading);
+                                    p3.setAlignment(Paragraph.ALIGN_LEFT);
+                                    doc.add(p3);
+                                    Paragraph p4 = new Paragraph(obj, content);
+                                    p4.setAlignment(Paragraph.ALIGN_LEFT);
+                                    doc.add(p4);
+                                }
 
-                                    doc.add(Chunk.NEWLINE);
+                                doc.add(Chunk.NEWLINE);
 
-                                    new getProfileSummary().execute();
+                                new getProfileSummary().execute();
 
 
                             } catch (DocumentException e) {
                                 e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return resumeData.toString();
         }
@@ -326,9 +375,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         @Override
         protected String doInBackground(String... strings) {
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -376,9 +425,11 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 doc.add(Chunk.NEWLINE);
 
 
-                               new getWrkDetails().execute();
+                                new getWrkDetails().execute();
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
 
                         }
@@ -387,6 +438,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
 
             return null;
@@ -401,9 +454,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... strings) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -413,7 +466,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                 int succ = json.getInt("success");
 
                 if (succ == 0) {
-                   runOnUiThread(new Runnable() {
+                    runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             new getWrkExp().execute();
@@ -468,6 +521,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
                                 new getWrkExp().execute();
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
@@ -475,6 +530,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -488,9 +545,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... params) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -533,12 +590,16 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -552,9 +613,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... params) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -576,11 +637,11 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                         String instname = child.optString("ins_name");
                         String location = child.optString("location");
                         String frm = child.optString("frm_date");
-                        String to=child.optString("to_date");
+                        String to = child.optString("to_date");
                         String aggregate = child.optString("aggregate");
 
 
-                        list.add(new ResumeList(concentration, instname, location, frm, to,aggregate));
+                        list.add(new ResumeList(concentration, instname, location, frm, to, aggregate));
                     }
 
                     runOnUiThread(new Runnable() {
@@ -595,7 +656,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 p6.setListSymbol(new Chunk("•", bulletFont));
                                 for (int j = 0; j < list.size(); j++) {
                                     ResumeList currItem = list.get(j);
-                                    p6.add(new ListItem(currItem.getOrgName() + " at " + currItem.getPos() + ", " + currItem.getLoc() +" during "+currItem.getFrm_dat()+" - "+ currItem.getTo_dat()+" with " + currItem.getStus() + " %"));
+                                    p6.add(new ListItem(currItem.getOrgName() + " at " + currItem.getPos() + ", " + currItem.getLoc() + " during " + currItem.getFrm_dat() + " - " + currItem.getTo_dat() + " with " + currItem.getStus() + " %"));
                                 }
 
                                 doc.add(p6);
@@ -605,6 +666,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 new getProjectDetail().execute();
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
 
                         }
@@ -612,6 +675,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -624,9 +689,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         @Override
         protected String doInBackground(String... params) {
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -663,11 +728,15 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                             doc.add(Chunk.NEWLINE);
                             new getCertification().execute();
                         } catch (Exception e) {
+                            e.printStackTrace();
+                            Log.e("Exception doInB", e.toString());
                         }
                     }
                 });
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -679,12 +748,12 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... params) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-                resumeData.put("level","senior");
-            }else{
+                resumeData.put("level", "senior");
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
-                resumeData.put("level","senior");
+                resumeData.put("level", "senior");
             }
 
 
@@ -706,7 +775,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                         String desc = child.optString("p_description");
 
 
-                        list.add(new ResumeList(title,desc));
+                        list.add(new ResumeList(title, desc));
                     }
                     runOnUiThread(new Runnable() {
                         @Override
@@ -722,9 +791,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 for (int j = 0; j < list.size(); j++) {
                                     ResumeList curr = list.get(j);
 
-                                    Paragraph p15=new Paragraph(curr.getCerName()+" : ",heading);
+                                    Paragraph p15 = new Paragraph(curr.getCerName() + " : ", heading);
                                     doc.add(p15);
-                                    Paragraph p16=new Paragraph(curr.getCerCentre(),content);
+                                    Paragraph p16 = new Paragraph(curr.getCerCentre(), content);
                                     p16.setAlignment(Element.ALIGN_LEFT);
                                     p16.setIndentationLeft(20);
                                     doc.add(p16);
@@ -736,11 +805,15 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 new getSkill().execute();
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
                 }
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -759,9 +832,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... params) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -786,9 +859,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                         JSONObject child = jsonArray.getJSONObject(i);
                         cName = child.optString("cer_name");
                         cCentre = child.optString("cer_centre");
-                        String dur=child.optString("cer_dur");
+                        String dur = child.optString("cer_dur");
 
-                        list.add(new ResumeList(cName, cCentre,dur));
+                        list.add(new ResumeList(cName, cCentre, dur));
                     }
                     runOnUiThread(new Runnable() {
                         @Override
@@ -802,7 +875,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 p9.setListSymbol(new Chunk("•", bulletFont));
                                 for (int j = 0; j < list.size(); j++) {
                                     ResumeList currItem = list.get(j);
-                                    p9.add(new ListItem("\" "+currItem.getCerName() + " \""+" from " + currItem.getCerCentre()+", "+currItem.getDur()+" months."));
+                                    p9.add(new ListItem("\" " + currItem.getCerName() + " \"" + " from " + currItem.getCerCentre() + ", " + currItem.getDur() + " months."));
 
                                 }
 
@@ -813,12 +886,16 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 new getAchivmnt().execute();
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -831,9 +908,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... params) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -878,12 +955,16 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 new getCurricular().execute();
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception", e.toString());
             }
             return null;
         }
@@ -896,9 +977,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         protected String doInBackground(String... params) {
             list.clear();
             resumeData = new HashMap<String, String>();
-            if (mApp.getPreference().getBoolean("download", false) == true){
+            if (mApp.getPreference().getBoolean("download", false) == true) {
                 resumeData.put("u_id", mApp.getPreference().getString("Id", ""));
-            }else{
+            } else {
                 resumeData.put("u_id", mApp.getPreference().getString(Common.u_id, ""));
             }
 
@@ -944,12 +1025,16 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 personalInfo();
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                                Log.e("Exception doInB", e.toString());
                             }
                         }
                     });
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Exception doInB", e.toString());
             }
             return null;
         }
@@ -960,8 +1045,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         try {
 
             if (fName != null && !fName.trim().isEmpty() || mName != null && !mName.trim().isEmpty() || dob != null && !dob.trim().isEmpty()
-                    || lang != null && !lang.trim().isEmpty() || hobbies != null && !hobbies.trim().isEmpty() || gen!=null && !gen.trim().isEmpty()
-                    || mStatus!=null && !mStatus.trim().isEmpty()|| bldgrp!=null && !bldgrp.trim().isEmpty()) {
+                    || lang != null && !lang.trim().isEmpty() || hobbies != null && !hobbies.trim().isEmpty() || gen != null && !gen.trim().isEmpty()
+                    || mStatus != null && !mStatus.trim().isEmpty() || bldgrp != null && !bldgrp.trim().isEmpty()) {
 
                 Paragraph p16 = new Paragraph("PERSONAL INFO", heading);
                 p16.setAlignment(Paragraph.ALIGN_LEFT);
@@ -1001,7 +1086,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     table1.addCell(c16);
                 }
 
-                if(gen!=null && !gen.trim().isEmpty()){
+                if (gen != null && !gen.trim().isEmpty()) {
                     PdfPCell c26 = new PdfPCell(new Paragraph("Gender", heading));
                     PdfPCell c27 = new PdfPCell(new Paragraph(gen, content));
 
@@ -1012,7 +1097,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     table1.addCell(c27);
                 }
 
-                if(mStatus!=null && !mStatus.trim().isEmpty()){
+                if (mStatus != null && !mStatus.trim().isEmpty()) {
                     PdfPCell c28 = new PdfPCell(new Paragraph("Martial Status", heading));
                     PdfPCell c29 = new PdfPCell(new Paragraph(mStatus, content));
 
@@ -1023,15 +1108,15 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     table1.addCell(c29);
                 }
 
-                if(bldgrp!=null && !bldgrp.trim().isEmpty()){
-                    PdfPCell c28 = new PdfPCell(new Paragraph("Blood Group", heading));
-                    PdfPCell c29 = new PdfPCell(new Paragraph(bldgrp, content));
+                if (bldgrp != null && !bldgrp.trim().isEmpty()) {
+                    PdfPCell c29 = new PdfPCell(new Paragraph("Blood Group", heading));
+                    PdfPCell c30 = new PdfPCell(new Paragraph(bldgrp, content));
 
-                    c28.setBorder(Rectangle.NO_BORDER);
-                    c28.setHorizontalAlignment(Element.ALIGN_MIDDLE);
                     c29.setBorder(Rectangle.NO_BORDER);
-                    table1.addCell(c28);
+                    c29.setHorizontalAlignment(Element.ALIGN_MIDDLE);
+                    c30.setBorder(Rectangle.NO_BORDER);
                     table1.addCell(c29);
+                    table1.addCell(c30);
                 }
 
 
@@ -1056,9 +1141,9 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                     table1.addCell(c20);
                 }
 
-                if(addr!=null && !addr.trim().isEmpty()){
+                if (addr != null && !addr.trim().isEmpty()) {
                     PdfPCell c19 = new PdfPCell(new Paragraph("Address", heading));
-                    PdfPCell c20 = new PdfPCell(new Paragraph(addr+"\n"+city+" - "+pincode+"\n"+dis+", "+ste+"\n"+country+".", content));
+                    PdfPCell c20 = new PdfPCell(new Paragraph(addr + "\n" + city + " - " + pincode + "\n" + dis + ", " + ste + "\n" + country + ".", content));
 
                     c19.setBorder(Rectangle.NO_BORDER);
                     c19.setHorizontalAlignment(Element.ALIGN_MIDDLE);
@@ -1108,6 +1193,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
 
         } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("Exception PInfo", e.toString());
         }
     }
 
@@ -1134,6 +1221,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
             pdfView.invalidate();
 
         } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("Exception Render", e.toString());
         }
     }
 

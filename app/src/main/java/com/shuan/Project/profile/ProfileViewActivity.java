@@ -1034,6 +1034,8 @@ public class ProfileViewActivity extends AppCompatActivity {
 
 
             } catch (Exception e) {
+                Log.e("Exception :",e.toString());
+                e.printStackTrace();
             }
 
 

@@ -20,11 +20,11 @@ import android.widget.Toast;
 
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.Common;
+import com.shuan.Project.Utils.DateDialog;
 import com.shuan.Project.Utils.Helper;
 import com.shuan.Project.asyncTasks.AboutCompany;
 import com.shuan.Project.asyncTasks.GetInfo;
 import com.shuan.Project.employer.EmployerActivity;
-import com.shuan.Project.fragment.DateDialog;
 
 public class AboutCompanyActivity extends AppCompatActivity implements View.OnClickListener {
 

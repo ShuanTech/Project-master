@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="D:\Narayan\Udyomitra\Project-master\app\libs\universal-image-loader-1.9.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
-        <dex dex="D:\Narayan\Udyomitra\Project-master\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_0c6040e51a87c106e09c2e50c72181b8f32b4a46\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Narayan\Udyomitra\Project-master\app\libs\nineoldandroids-2.4.0.jar"
         jumboMode="false"
         optimize="true"
@@ -27,6 +18,15 @@
         revision="25.0.0"
         sha1="c5135a2e9412b190de0510afca97b27489d9b00b">
         <dex dex="D:\Narayan\Udyomitra\Project-master\app\build\intermediates\transforms\dex\debug\folders\1000\2\Android-BitmapCache-2.3_0f1f5ec1dd7b644ebbc147373d10a18470df4b99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Narayan\Udyomitra\Project-master\app\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="D:\Narayan\Udyomitra\Project-master\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_0c6040e51a87c106e09c2e50c72181b8f32b4a46\classes.dex" />
     </item>
 
 </items>

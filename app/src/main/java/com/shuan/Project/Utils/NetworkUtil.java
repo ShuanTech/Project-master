@@ -33,6 +33,8 @@ public class NetworkUtil {
         return TYPE_NOT_CONNECTED;
     }
 
+
+
     public static String getConnectivityStatusString(Context context) {
         int conn = NetworkUtil.getConnectivityStatus(context);
         String status = null;

@@ -63,6 +63,10 @@ public class Common extends Application {
     public static final String OTP = "mail";
     public static final String IMPORTANT = "important";
     public static final String BLOODGROUP = "blood_group";
+
+    public static final String PAGE4= "0";
+
+
     public Context mContext;
     private String update = null;
     public static final String Version = "version";

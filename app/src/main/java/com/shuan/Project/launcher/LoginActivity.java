@@ -44,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout layout_usr;
     private TextView fp;
 
+
+//    String passkey;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -59,6 +62,16 @@ public class LoginActivity extends AppCompatActivity {
         reg = (Button) findViewById(R.id.reg);
         login = (Button) findViewById(R.id.login);
         fp = (TextView) findViewById(R.id.fp);
+
+        // ATTENTION: This was auto-generated to handle app links.
+      /*  Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
+        if(appLinkData!=null){
+            passkey = appLinkData.getQueryParameter("passkey");
+//            confirmEmail(passkey);
+//            ConfirmEmail
+        }*/
 
 
         reg.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
 
     public class Login extends AsyncTask<String, String, String> {
 
@@ -190,7 +204,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            pDialog.cancel();
+            pDialog.dismiss();
         }
 
         private class Pushto extends AsyncTask<String, String, String> {

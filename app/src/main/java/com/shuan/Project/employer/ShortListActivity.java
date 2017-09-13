@@ -23,7 +23,6 @@ public class ShortListActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabs;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mApp = (Common) getApplicationContext();
@@ -34,6 +33,11 @@ public class ShortListActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle(mApp.getPreference().getString("title", ""));
+//        Toast.makeText(this,"shor activity",Toast.LENGTH_SHORT).show();
+
+
+        Bundle b = getIntent().getExtras();
+
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -41,6 +45,15 @@ public class ShortListActivity extends AppCompatActivity {
 
         tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+        if(b!=null){
+            int page=0;
+            page = b.getInt("page",0);
+//            Toast.makeText(getApplicationContext(),String.valueOf(page),Toast.LENGTH_SHORT).show();
+            viewPager.setCurrentItem(page);
+        }
+
+
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -88,6 +101,7 @@ public class ShortListActivity extends AppCompatActivity {
 
             return f;
         }
+
 
         @Override
         public int getCount() {

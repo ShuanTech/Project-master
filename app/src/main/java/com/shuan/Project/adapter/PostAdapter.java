@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -29,6 +28,7 @@ import com.shuan.Project.asyncTasks.CheckEligible;
 import com.shuan.Project.asyncTasks.SavePost;
 import com.shuan.Project.asyncTasks.SharePost;
 import com.shuan.Project.list.Sample;
+import com.shuan.Project.profile.ProfileActivity;
 import com.shuan.Project.profile.ProfileViewActivity;
 
 import java.util.ArrayList;
@@ -157,12 +157,26 @@ public class PostAdapter extends BaseAdapter {
             shred.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext,"PostAdapter : From ID :"+curr.getjFrmId().toString()+"  level :"+curr.getFl().toString(), Toast.LENGTH_SHORT).show();
-                    Intent in=new Intent(mContext, ProfileViewActivity.class);
-                    in.putExtra("u_id",curr.getjFrmId());
-                    in.putExtra("level",curr.getFl());
-                    in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    mContext.startActivity(in);
+//                    Toast.makeText(mContext,"PostAdapter : From ID :"+curr.getjFrmId().toString()+"  level :"+curr.getFl().toString(), Toast.LENGTH_SHORT).show();
+
+//                    Toast.makeText(mContext,"Uid : "+mApp.getPreference().getString(Common.u_id,""),Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mContext,"Frm Id : "+curr.getjFrmId(),Toast.LENGTH_SHORT).show();
+
+                    Intent in;
+                    if(mApp.getPreference().getString(Common.u_id,"").equalsIgnoreCase(curr.getjFrmId())){
+                        in=new Intent(mContext, ProfileActivity.class);
+                        in.putExtra("u_id",curr.getjFrmId());
+                        in.putExtra("level",curr.getFl());
+                        in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        mContext.startActivity(in);
+                    }else{
+                        in=new Intent(mContext, ProfileViewActivity.class);
+                        in.putExtra("u_id",curr.getjFrmId());
+                        in.putExtra("level",curr.getFl());
+                        in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        mContext.startActivity(in);
+                    }
+
                 }
             });
         }

@@ -13,7 +13,7 @@ import com.shuan.Project.Utils.Common;
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
-    private LinearLayout chngePass,invitefrnd,privacy;
+    private LinearLayout chngePass,invitefrnd,privacy,changePemail,changePhone,deactivate;
     private Common mApp;
 
 
@@ -47,10 +47,16 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         chngePass = (LinearLayout) findViewById(R.id.chng_pass);
         invitefrnd = (LinearLayout) findViewById(R.id.invite_frnd);
         privacy = (LinearLayout) findViewById(R.id.privacy);
+        changePemail = (LinearLayout) findViewById(R.id.change_email);
+        changePhone = (LinearLayout) findViewById(R.id.change_phone);
+        deactivate = (LinearLayout) findViewById(R.id.deactivate);
 
         chngePass.setOnClickListener(this);
         invitefrnd.setOnClickListener(this);
         privacy.setOnClickListener(this);
+        changePemail.setOnClickListener(this);
+        changePhone.setOnClickListener(this);
+        deactivate.setOnClickListener(this);
 
     }
 
@@ -65,6 +71,16 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 break;*/
             case  R.id.invite_frnd:
                 invite();
+                break;
+
+            case R.id.change_email:
+               startActivity(new Intent(getApplicationContext(),ChangeEmail.class));
+                break;
+            case R.id.change_phone:
+                startActivity(new Intent(getApplicationContext(),ChangePhone.class));
+                break;
+            case R.id.deactivate:
+                startActivity(new Intent(getApplicationContext(),DeactivateAccount.class));
                 break;
         }
     }

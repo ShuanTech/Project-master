@@ -48,7 +48,11 @@ public class AddCollegedetail extends AsyncTask<String, String, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         pDialog = new ProgressDialog(mContext);
-        pDialog.setMessage("Adding Qualification!...");
+        if (type.equalsIgnoreCase("add")) {
+            pDialog.setMessage("Adding Qualification!...");
+        } else {
+            pDialog.setMessage("Updating Qualification!...");
+        }
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
         pDialog.show();

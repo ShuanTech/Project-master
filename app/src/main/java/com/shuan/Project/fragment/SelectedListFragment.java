@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.Common;
@@ -21,6 +22,7 @@ public class SelectedListFragment extends Fragment {
     private ProgressBar progressBar;
     private Common mApp;
     private Context mContext;
+    private TextView textView;
 
 
     public SelectedListFragment() {
@@ -37,8 +39,9 @@ public class SelectedListFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_selected_list, container, false);
         list = (ListView) v.findViewById(R.id.slct_list);
         progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
+        textView = (TextView) v.findViewById(R.id.no_data);
 
-        new GetSelectedCandidate(getActivity(), mApp.getPreference().getString("jId", ""), list, progressBar).execute();
+        new GetSelectedCandidate(getActivity(), mApp.getPreference().getString("jId", ""), list, progressBar,textView).execute();
 
         return v;
     }

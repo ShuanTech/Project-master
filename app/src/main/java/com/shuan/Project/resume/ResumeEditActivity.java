@@ -421,7 +421,7 @@ public class ResumeEditActivity extends AppCompatActivity implements View.OnClic
                                                             AlertDialog.Builder build = new AlertDialog.Builder(ResumeEditActivity.this);
                                                             build.setTitle("Delete..?");
                                                             build.setCancelable(false);
-                                                            build.setMessage("Are you sure..?");
+                                                            build.setMessage("Are you sure? You will not be able to recover!");
                                                             build.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                                                 @Override
                                                                 public void onClick(DialogInterface dialog, int which) {
@@ -502,7 +502,7 @@ public class ResumeEditActivity extends AppCompatActivity implements View.OnClic
                                                             AlertDialog.Builder build = new AlertDialog.Builder(ResumeEditActivity.this);
                                                             build.setTitle("Delete..?");
                                                             build.setCancelable(false);
-                                                            build.setMessage("Are you sure..?");
+                                                            build.setMessage("Are you sure? You will not be able to recover!");
                                                             build.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                                                 @Override
                                                                 public void onClick(DialogInterface dialog, int which) {
@@ -571,7 +571,7 @@ public class ResumeEditActivity extends AppCompatActivity implements View.OnClic
                                                             AlertDialog.Builder build = new AlertDialog.Builder(ResumeEditActivity.this);
                                                             build.setTitle("Delete..?");
                                                             build.setCancelable(false);
-                                                            build.setMessage("Are you sure..?");
+                                                            build.setMessage("Are you sure? You will not be able to recover!");
                                                             build.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                                                 @Override
                                                                 public void onClick(DialogInterface dialog, int which) {
@@ -668,7 +668,7 @@ public class ResumeEditActivity extends AppCompatActivity implements View.OnClic
                                                             AlertDialog.Builder build = new AlertDialog.Builder(ResumeEditActivity.this);
                                                             build.setTitle("Delete..?");
                                                             build.setCancelable(false);
-                                                            build.setMessage("Are you sure..?");
+                                                            build.setMessage("Are you sure? You will not be able to recover!");
                                                             build.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                                                 @Override
                                                                 public void onClick(DialogInterface dialog, int which) {
@@ -782,7 +782,7 @@ public class ResumeEditActivity extends AppCompatActivity implements View.OnClic
                                                             AlertDialog.Builder build = new AlertDialog.Builder(ResumeEditActivity.this);
                                                             build.setTitle("Delete..?");
                                                             build.setCancelable(false);
-                                                            build.setMessage("Are you sure..?");
+                                                            build.setMessage("Are you sure? You will not be able to recover!");
                                                             build.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                                                 @Override
                                                                 public void onClick(DialogInterface dialog, int which) {
@@ -859,7 +859,7 @@ public class ResumeEditActivity extends AppCompatActivity implements View.OnClic
                                                             AlertDialog.Builder build = new AlertDialog.Builder(ResumeEditActivity.this);
                                                             build.setTitle("Delete..?");
                                                             build.setCancelable(false);
-                                                            build.setMessage("Are you sure..?");
+                                                            build.setMessage("Are you sure? You will not be able to recover!");
                                                             build.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                                                 @Override
                                                                 public void onClick(DialogInterface dialog, int which) {

@@ -1,6 +1,7 @@
 package com.shuan.Project.resume;
 
 import android.annotation.TargetApi;
+import android.app.DatePickerDialog;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -21,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
@@ -35,10 +37,13 @@ import android.widget.Toast;
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.AlphabetValidator;
 import com.shuan.Project.Utils.Common;
+import com.shuan.Project.Utils.DateDialog;
 import com.shuan.Project.Utils.Helper;
 import com.shuan.Project.Utils.MonthYearPicker;
 import com.shuan.Project.Utils.MonthYearPicker1;
 import com.shuan.Project.Utils.PhoneNumberValidator;
+import com.shuan.Project.Utils.YearPicker;
+import com.shuan.Project.Utils.YearPicker1;
 import com.shuan.Project.asyncTasks.AddAchieve;
 import com.shuan.Project.asyncTasks.AddBasicInfo;
 import com.shuan.Project.asyncTasks.AddCert;
@@ -58,10 +63,10 @@ import com.shuan.Project.asyncTasks.GetSchool;
 import com.shuan.Project.asyncTasks.GetSkillSet;
 import com.shuan.Project.asyncTasks.UpdateStatus;
 import com.shuan.Project.asyncTasks.profileSummaryUpdate;
-import com.shuan.Project.fragment.DateDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -78,7 +83,8 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
     private ProgressBar progressBar;
     private ScrollView scroll;
     private AlphabetValidator alphabetValidator;
-    private PhoneNumberValidator phoneNumberValidator;;
+    private PhoneNumberValidator phoneNumberValidator;
+    ;
     private boolean ins = false;
     private boolean sIns = false;
     private String frmDate;
@@ -90,6 +96,12 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
     private EditText psEdtTxt;
 
     /* Work Details Field */
+
+    int year;
+    int day;
+    int month;
+
+
     private AutoCompleteTextView orgname;
     private EditText postition, location, fYr, tYr, present;
     private Button wkDetails;
@@ -121,6 +133,9 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
     private TextView tv1, tv2;
     private Button q_update;
     private TextView frm, to, qfy;
+
+    private YearPicker yp;
+    private YearPicker1 yp1;
 
     /* School Fields */
     ArrayList<String> con;
@@ -181,7 +196,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
 //        org = getIntent().getStringExtra("org");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_resume);
-        Log.d("UpResAct:","ok");
+        Log.d("UpResAct:", "ok");
 
         psEdt = (LinearLayout) findViewById(R.id.ps_edit);
         wrkDet = (LinearLayout) findViewById(R.id.wrk_det_edit);
@@ -237,7 +252,30 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             frm = (TextView) findViewById(R.id.frm);
             to = (TextView) findViewById(R.id.to);
 
-            myp = new MonthYearPicker(this);
+            fYr.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        setDate(fYr);
+                    }
+                    return false;
+                }
+            });
+
+
+            tYr.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        setDate(tYr);
+                    }
+                    return false;
+                }
+            });
+//            setDate();
+
+          /*  myp = new MonthYearPicker(this);
             myp.build(new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -275,7 +313,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     }
                     return false;
                 }
-            });
+            });*/
 
             wkDetails = (Button) findViewById(R.id.wk_detail);
 
@@ -350,6 +388,48 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             frm_yr = (EditText) findViewById(R.id.frm_yr);
             to_yr = (EditText) findViewById(R.id.to_yr);
             agrt = (EditText) findViewById(R.id.agrt);
+
+
+
+            yp = new YearPicker(this);
+            yp.build(new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    frm_yr.setText(String.valueOf(yp.getSelectedYear()));
+                    yr1 = yp.getSelectedYear();
+                }
+            }, null);
+
+
+            yp1 = new YearPicker1(this);
+
+            yp1.build(new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    to_yr.setText(String.valueOf(yp1.getSelectedYear()));
+                    yr2 = yp1.getSelectedYear();
+                }
+            }, null);
+
+            frm_yr.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        yp.show();
+                    }
+                    return false;
+                }
+            });
+
+            to_yr.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        yp1.show();
+                    }
+                    return false;
+                }
+            });
 
 
             q_update = (Button) findViewById(R.id.q_update);
@@ -486,6 +566,51 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             sFrmyr = (EditText) findViewById(R.id.s_frm_yr);
             sTYr = (EditText) findViewById(R.id.s_to_yr);
             hAgrt = (EditText) findViewById(R.id.h_agrt);
+
+
+            yp = new YearPicker(this);
+            yp.build(new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    sFrmyr.setText(String.valueOf(yp.getSelectedYear()));
+                    yr1 = yp.getSelectedYear();
+                }
+            }, null);
+
+
+            yp1 = new YearPicker1(this);
+
+            yp1.build(new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    sTYr.setText(String.valueOf(yp1.getSelectedYear()));
+                    yr2 = yp1.getSelectedYear();
+                }
+            }, null);
+
+            sFrmyr.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        yp.show();
+                    }
+                    return false;
+                }
+            });
+
+            sTYr.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        yp1.show();
+                    }
+                    return false;
+                }
+            });
+
+
+
+
 
             h_update = (Button) findViewById(R.id.h_update);
             if (what.equals("add")) {
@@ -633,7 +758,6 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 team_sze.setText(mApp.getPreference().getString("team", ""));
                 duration.setText(mApp.getPreference().getString("dur", ""));
                 description.setText(mApp.getPreference().getString("desc", ""));
-
 
             }
 
@@ -826,7 +950,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             case R.id.ps_edit_but:
                 if (what.equalsIgnoreCase("add")) {
                     if (psEdtTxt.getText().toString().length() == 0) {
-                        psEdtTxt.setError("Field cannot be empty");
+                        psEdtTxt.setError("Enter summary of your profile");
                         psEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(psEdtTxt.getText().toString())) {
                         psEdtTxt.setError("Invalid Entry");
@@ -834,11 +958,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         psEdtTxt.requestFocus();
                     } else {
                         new profileSummaryUpdate(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                                psEdtTxt.getText().toString(), "proSum").execute();
+                                psEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "proSum").execute();
                     }
                 } else {
                     if (psEdtTxt.getText().toString().length() == 0) {
-                        psEdtTxt.setError("Field cannot be empty");
+                        psEdtTxt.setError("Enter summary of your profile");
                         psEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(psEdtTxt.getText().toString())) {
                         psEdtTxt.setError("Invalid Entry");
@@ -846,7 +970,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         psEdtTxt.requestFocus();
                     } else {
                         new EditDetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""),
-                                psEdtTxt.getText().toString(), "proSum").execute();
+                                psEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "proSum").execute();
                     }
                 }
                 break;
@@ -865,28 +989,28 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             case R.id.wk_detail:
 //                Toast.makeText(getApplicationContext(), work.toString(), Toast.LENGTH_LONG).show();
                 if (orgname.getText().toString().length() == 0) {
-                    orgname.setError("Organization name is Mandatory");
+                    orgname.setError("Organization name Cannot Be empty");
                     orgname.requestFocus();
                 } else if (!alphabetValidator.validate(orgname.getText().toString())) {
                     orgname.setError("Invalid Organization name");
                     orgname.setText("");
                     orgname.requestFocus();
                 } else if (postition.getText().toString().length() == 0) {
-                    postition.setError("Position Mandatory");
+                    postition.setError("Position Cannot Be empty");
                     postition.requestFocus();
                 } else if (!alphabetValidator.validate(postition.getText().toString())) {
                     postition.setError("Enter a Valid position");
                     postition.setText("");
                     postition.requestFocus();
                 } else if (location.getText().toString().length() == 0) {
-                    location.setError("Location Mandatory");
+                    location.setError("City / Town Cannot Be empty");
                     location.requestFocus();
                 } else if (!alphabetValidator.validate(location.getText().toString())) {
-                    location.setError("Invalid Location");
+                    location.setError("Invalid City / Town");
                     location.setText("");
                     location.requestFocus();
                 } else if (fYr.getText().toString().length() == 0) {
-                    fYr.setError("From Date Mandatory");
+                    fYr.setError("From Date Cannot Be empty");
                     fYr.requestFocus();
                 } else if (what.equalsIgnoreCase("add") && work.get("org").equalsIgnoreCase(orgname.getText().toString())) {
                     orgname.setError("You are already added work in " + work.get("org") + " as " + work.get("pos"));
@@ -894,7 +1018,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 } else if (visible) {
 
                     if (tYr.getText().toString().length() == 0) {
-                        tYr.setError("To Date Mandatory");
+                        tYr.setError("To Date Cannot Be empty");
                         tYr.requestFocus();
                     } else if (fYr.getText().toString().equalsIgnoreCase(tYr.getText().toString())) {
                         tYr.setError("From and To dates are same");
@@ -907,7 +1031,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
 
                         if (what.equalsIgnoreCase("add")) {
                             new AddWrkDetail(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                                    orgname.getText().toString(), location.getText().toString(), postition.getText().toString(),
+                                    orgname.getText().toString().trim().replaceAll("\\s+", " "), location.getText().toString().trim().replaceAll("\\s+", " "), postition.getText().toString(),
                                     fYr.getText().toString(), toDate, Ins).execute();
                         } else {
                             new EditWrkDetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""),
@@ -919,11 +1043,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     toDate = "present";
                     if (what.equalsIgnoreCase("add")) {
                         new AddWrkDetail(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                                orgname.getText().toString(), location.getText().toString(), postition.getText().toString(),
+                                orgname.getText().toString().trim().replaceAll("\\s+", " "), location.getText().toString().trim().replaceAll("\\s+", " "), postition.getText().toString().trim().replaceAll("\\s+", " "),
                                 fYr.getText().toString(), toDate, Ins).execute();
                     } else {
                         new EditWrkDetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""),
-                                orgname.getText().toString(), location.getText().toString(), postition.getText().toString(),
+                                orgname.getText().toString().trim().replaceAll("\\s+", " "), location.getText().toString().trim().replaceAll("\\s+", " "), postition.getText().toString().trim().replaceAll("\\s+", " "),
                                 fYr.getText().toString(), toDate).execute();
                     }
                 } else {
@@ -932,7 +1056,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             case R.id.we_edit_but:
                 if (what.equalsIgnoreCase("add")) {
                     if (weEdtTxt.getText().toString().length() == 0) {
-                        weEdtTxt.setError("Field cannot be empty");
+                        weEdtTxt.setError("Work Experience cannot be empty");
                         weEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
                         weEdtTxt.setError("Invalid Entry");
@@ -940,11 +1064,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         weEdtTxt.requestFocus();
                     } else {
                         new profileSummaryUpdate(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                                weEdtTxt.getText().toString(), "wrkExp").execute();
+                                weEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "wrkExp").execute();
                     }
                 } else {
                     if (weEdtTxt.getText().toString().length() == 0) {
-                        weEdtTxt.setError("Field cannot be empty");
+                        weEdtTxt.setError("Work Experience cannot be empty");
                         weEdtTxt.requestFocus();
                     } else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
                         weEdtTxt.setError("Invalid Entry");
@@ -952,7 +1076,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                         weEdtTxt.requestFocus();
                     } else {
                         new EditDetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""),
-                                weEdtTxt.getText().toString(), "wrkExp").execute();
+                                weEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "wrkExp").execute();
                     }
                 }
                 break;
@@ -961,27 +1085,27 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     Toast.makeText(getApplicationContext(), "Select Qualification", Toast.LENGTH_SHORT).show();
                     level.requestFocus();
                 } else if (clgName.getText().toString().length() == 0) {
-                    clgName.setError("Field Mandatory");
+                    clgName.setError("College Cannot Be empty");
                     clgName.requestFocus();
                 } else if (univ.getText().toString().length() == 0) {
-                    univ.setError("University Mandatory");
+                    univ.setError("University Cannot Be empty");
                     univ.requestFocus();
                 } else if (loc.getText().toString().length() == 0) {
-                    loc.setError("City / Town / Location Mandatory");
+                    loc.setError("City / Town Cannot Be empty");
                     loc.requestFocus();
+                } else if (conCent.getText().toString().length() == 0) {
+                    conCent.setError("Course Cannot Be Empty");
+                    conCent.requestFocus();
                 } else if (frm_yr.getText().toString().length() == 0) {
-                    frm_yr.setError("Field Mandatory");
+                    frm_yr.setError("Specify Joined Year");
                 } else if (to_yr.getText().toString().length() == 0) {
-                    to_yr.setError("Field Mandatory");
+                    to_yr.setError("Specify Passed Year");
                 } else if (frm_yr.getText().toString().length() < 4) {
                     frm_yr.setError("Enter a valid year");
                     frm_yr.requestFocus();
                 } else if (to_yr.getText().toString().length() < 4) {
                     to_yr.setError("Enter a valid year");
                     to_yr.requestFocus();
-                } else if (conCent.getText().toString().length() == 0) {
-                    conCent.setError("Concentration Mandatory");
-                    conCent.requestFocus();
                 } else if (i >= j) {
                     to_yr.setError("Check pass out year");
                     to_yr.requestFocus();
@@ -990,13 +1114,13 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     agrt.requestFocus();
                 } else {
                     if (what.equalsIgnoreCase("add")) {
-                        new AddCollegedetail(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), q, conCent.getText().toString(),
-                                clgName.getText().toString(), univ.getText().toString(), loc.getText().toString(),
+                        new AddCollegedetail(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), q, conCent.getText().toString().trim().replaceAll("\\s+", " "),
+                                clgName.getText().toString().trim().replaceAll("\\s+", " "), univ.getText().toString().trim().replaceAll("\\s+", " "), loc.getText().toString().trim().replaceAll("\\s+", " "),
                                 frm_yr.getText().toString(), to_yr.getText().toString(), agrt.getText().toString(), ins, cIns, "add").execute();
                     } else {
-                        new AddCollegedetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""), q, conCent.getText().toString(),
-                                clgName.getText().toString(), univ.getText().toString(), loc.getText().toString(),
-                                frm_yr.getText().toString(), to_yr.getText().toString(), agrt.getText().toString(), ins, cIns, "edit").execute();
+                        new AddCollegedetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""), q, conCent.getText().toString().trim().replaceAll("\\s+", " "),
+                                clgName.getText().toString().trim().replaceAll("\\s+", " "), univ.getText().toString().trim().replaceAll("\\s+", " "), loc.getText().toString(),
+                                frm_yr.getText().toString(), to_yr.getText().toString(), agrt.getText().toString().trim().replaceAll("\\s+", " "), ins, cIns, "edit").execute();
                     }
                 }
                 break;
@@ -1005,16 +1129,16 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     Toast.makeText(getApplicationContext(), "Select Mode of School", Toast.LENGTH_SHORT).show();
                     mode.requestFocus();
                 } else if (h_name.getText().toString().length() == 0) {
-                    h_name.setError("Field Mandatory");
+                    h_name.setError("Name of School Cannot Be empty");
                 } else if (board.getText().toString().length() == 0) {
-                    board.setError("Field Mandatory");
+                    board.setError("Board of Examination Cannot Be empty");
                 } else if (cty.getText().toString().length() == 0) {
-                    cty.setError("Field Mandatory");
+                    cty.setError("City / Town Cannot Be empty");
                 } else if (sFrmyr.getText().toString().length() == 0) {
-                    sFrmyr.setError("Field Mandatory");
+                    sFrmyr.setError("Specify From Year");
                     sFrmyr.requestFocus();
                 } else if (sTYr.getText().toString().length() == 0) {
-                    sTYr.setError("Field Mandatory");
+                    sTYr.setError("Specify To Year");
                     sTYr.requestFocus();
                 } else if (k >= l) {
                     sTYr.setError("Check pass out year");
@@ -1026,117 +1150,123 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
 
                     if (what.equalsIgnoreCase("add")) {
                         new AddSchool(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), s,
-                                set, h_name.getText().toString(), board.getText().toString(), cty.getText().toString(),
-                                sFrmyr.getText().toString(), sTYr.getText().toString(), hAgrt.getText().toString(), "add", ins).execute();
+                                set, h_name.getText().toString(), board.getText().toString().trim().replaceAll("\\s+", " "), cty.getText().toString().trim().replaceAll("\\s+", " "),
+                                sFrmyr.getText().toString(), sTYr.getText().toString(), hAgrt.getText().toString().trim().replaceAll("\\s+", " "), "add", ins).execute();
                     } else {
                         new AddSchool(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""), s,
-                                set, h_name.getText().toString(), board.getText().toString(), cty.getText().toString(),
-                                sFrmyr.getText().toString(), sTYr.getText().toString(), hAgrt.getText().toString(), "edit", ins).execute();
+                                set, h_name.getText().toString(), board.getText().toString().trim().replaceAll("\\s+", " "), cty.getText().toString().trim().replaceAll("\\s+", " "),
+                                sFrmyr.getText().toString(), sTYr.getText().toString(), hAgrt.getText().toString().trim().replaceAll("\\s+", " "), "edit", ins).execute();
                     }
 
                 }
                 break;
             case R.id.sk_add:
                 if (skll.getText().toString().length() == 0) {
-                    skll.setError("Field Mandatory");
+                    skll.setError("Skill Field Cannot be empty");
                     skll.requestFocus();
                 } else {
                     //Toast.makeText(getApplicationContext(),skll.getText().toString(),Toast.LENGTH_SHORT).show();
-                    new profileSummaryUpdate(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), skll.getText().toString(), "skill").execute();
+                    new profileSummaryUpdate(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), skll.getText().toString().trim().replaceAll("\\s+", " "), "skill").execute();
                 }
                 break;
 
             case R.id.p_update:
                 if (title.getText().toString().length() == 0) {
-                    title.setError("Field Mandatory");
+                    title.setError("Title Field Cannot be Empty");
                     title.requestFocus();
                 } else if (platform.getText().toString().length() == 0) {
-                    platform.setError("Field Mandatory");
+                    platform.setError("Platform Cannot be Empty");
                     platform.requestFocus();
+                } else if (role.getText().toString().length() == 0) {
+                    role.setError("Specify your role");
+                    role.requestFocus();
+                }else if (team_sze.getText().toString().length() == 0) {
+                    team_sze.setError("Team Size Cannot Be empty");
+                    team_sze.requestFocus();
                 } else if (duration.getText().toString().length() == 0) {
-                    duration.setError("Field Mandatory");
+                    duration.setError("Duration Cannot Be empty");
                     duration.requestFocus();
                 } else if (!phoneNumberValidator.validate(duration.getText().toString())) {
                     duration.setError("Enter a valid number");
                     duration.requestFocus();
                 } else if (description.getText().toString().length() == 0) {
-                    description.setError("Field Mandatory");
+                    description.setError("Discription Cannot Be empty");
                     description.requestFocus();
                 } else {
                     if (what.equalsIgnoreCase("add")) {
-                        new AddProject(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), title.getText().toString(),
-                                platform.getText().toString(), role.getText().toString(), team_sze.getText().toString(), duration.getText().toString(),
-                                description.getText().toString(), "add").execute();
+                        new AddProject(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), title.getText().toString().trim().replaceAll("\\s+", " "),
+                                platform.getText().toString().trim().replaceAll("\\s+", " "), role.getText().toString().trim().replaceAll("\\s+", " "), team_sze.getText().toString().trim().replaceAll("\\s+", " "), duration.getText().toString().trim().replaceAll("\\s+", " "),
+                                description.getText().toString().trim().replaceAll("\\s+", " "), "add").execute();
                     } else {
                         new AddProject(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""), title.getText().toString(),
                                 platform.getText().toString(), role.getText().toString(), team_sze.getText().toString(), duration.getText().toString(),
-                                description.getText().toString(), "edit").execute();
+                                description.getText().toString().trim().replaceAll("\\s+", " "), "edit").execute();
                     }
                 }
 
                 break;
             case R.id.cert_upt:
                 if (certName.getText().toString().length() == 0) {
-                    certName.setError("Field Mandatory");
+                    certName.setError("Course Name Cannot Be empty");
                     certName.requestFocus();
                 } else if (certCentre.getText().toString().length() == 0) {
-                    certCentre.setError("Field Mandatory");
+                    certCentre.setError("Center Name Cannot Be empty");
                     certCentre.requestFocus();
                 } else if (certDur.getText().toString().length() == 0) {
-                    certDur.setError("Field Mandatory");
+                    certDur.setError("Duration Cannot Be empty");
                     certDur.requestFocus();
                 } else if (!phoneNumberValidator.validate(certDur.getText().toString())) {
                     certDur.setError("Enter a valid number");
                     certDur.requestFocus();
                 } else {
                     if (what.equalsIgnoreCase("add")) {
-                        new AddCert(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), certName.getText().toString(),
-                                certCentre.getText().toString(), certDur.getText().toString(), "add").execute();
+                        new AddCert(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), certName.getText().toString().trim().replaceAll("\\s+", " "),
+                                certCentre.getText().toString().trim().replaceAll("\\s+", " "), certDur.getText().toString().trim().replaceAll("\\s+", " "), "add").execute();
                     } else {
-                        new AddCert(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""), certName.getText().toString(),
-                                certCentre.getText().toString(), certDur.getText().toString(), "edit").execute();
+                        new AddCert(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""), certName.getText().toString().trim().replaceAll("\\s+", " "),
+                                certCentre.getText().toString().trim().replaceAll("\\s+", " "), certDur.getText().toString().trim().replaceAll("\\s+", " "), "edit").execute();
                     }
                 }
                 break;
             case R.id.ach_add:
                 if (acheieve.getText().toString().length() == 0) {
-                    acheieve.setError("Field Mandatory");
+                    acheieve.setError("Achievement Cannot be empty");
                 } else if (!alphabetValidator.validate(acheieve.getText().toString())) {
-                    acheieve.setError("Invalid Achivement");
+                    acheieve.setError("Invalid Achievement");
                     acheieve.setText("");
                     acheieve.requestFocus();
                 } else {
                     new AddAchieve(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                            acheieve.getText().toString()).execute();
+                            acheieve.getText().toString().trim().replaceAll("\\s+", " ")).execute();
                 }
                 break;
             case R.id.ex_add:
                 if (extra.getText().toString().length() == 0) {
-                    extra.setError("Field Mandatory");
+                    extra.setError("Extra-Curricular Activity Cannot Be empty");
                     extra.requestFocus();
                 } else {
                     new AddExtra(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                            extra.getText().toString()).execute();
+                            extra.getText().toString().trim().replaceAll("\\s+", " ")).execute();
                 }
                 break;
             case R.id.cnt_add:
                 if (addr.getText().toString().length() == 0) {
-                    addr.setError("Field Mandatory");
+                    addr.setError("Address Cannot Be empty");
                     addr.requestFocus();
                 } else if (city.getText().toString().length() == 0) {
-                    city.setError("Field Mandatory");
+                    city.setError("City / Town Cannot Be empty");
                     city.requestFocus();
                 } else if (district.getText().toString().length() == 0) {
-                    district.setError("Field Mandatory");
+                    district.setError("District Cannot Be empty");
                     district.requestFocus();
                 } else if (state.getText().toString().length() == 0) {
-                    state.setError("Field Mandatory");
+                    state.setError("State Cannot Be empty");
                     state.requestFocus();
                 } else if (country.getText().toString().length() == 0) {
-                    country.setError("Field Mandatory");
+                    country.setError("Country Cannot Be empty");
                     country.requestFocus();
                 } else if (pin.getText().toString().length() == 0) {
-                    pin.setError("Field Mandatory");
+                    pin.setError("Pincode Cannot Be empty");
                     pin.requestFocus();
                 } else if (!phoneNumberValidator.validate(pin.getText().toString())) {
                     pin.setError("Enter a valid number");
@@ -1144,8 +1274,8 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     pin.setText("");
                 } else {
                     new AddContactInfo(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                            addr.getText().toString(), city.getText().toString(), district.getText().toString(), state.getText().toString(),
-                            country.getText().toString(), pin.getText().toString(), ins).execute();
+                            addr.getText().toString().trim().replaceAll("\\s+", " "), city.getText().toString().trim().replaceAll("\\s+", " "), district.getText().toString().trim().replaceAll("\\s+", " "), state.getText().toString().trim().replaceAll("\\s+", " "),
+                            country.getText().toString().trim().replaceAll("\\s+", " "), pin.getText().toString(), ins).execute();
                 }
                 break;
             case R.id.bc_add:
@@ -1155,16 +1285,16 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 radio1 = (RadioButton) findViewById(getMaritialStatus);
 
                 if (name.getText().toString().length() == 0) {
-                    name.setError("Field Mandatory");
+                    name.setError("Full Name Cannot Be empty");
                     name.requestFocus();
                 } else if (dob.getText().toString().length() == 0) {
-                    dob.setError("Field Mandatory");
+                    dob.setError("Date Of Birth Cannot Be empty");
                     dob.requestFocus();
                 } else if (fName.getText().toString().length() == 0) {
-                    fName.setError("Field Mandatory");
+                    fName.setError("Father's Name Cannot Be empty");
                     fName.requestFocus();
                 } else if (mName.getText().toString().length() == 0) {
-                    mName.setError("Field Mandatory");
+                    mName.setError("Mother's Name Cannot Be empty");
                     mName.requestFocus();
                 }
 
@@ -1174,32 +1304,67 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
 //                }
 
                 else if (bldgrp.getText().toString().length() == 0) {
-                    bldgrp.setError("Field Mandatory");
+                    bldgrp.setError("Blood Group Cannot Be empty");
                     bldgrp.requestFocus();
                 } else if (lang.getText().toString().length() == 0) {
-                    lang.setError("Field Mandatory");
+                    lang.setError("Languages Known Cannot Be empty");
                     lang.requestFocus();
                 } else if (hobby.getText().toString().length() == 0) {
-                    hobby.setError("Field Mandatory");
+                    hobby.setError("Hobbies Cannot Be empty");
                     hobby.requestFocus();
                 } else {
-                    new AddBasicInfo(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), name.getText().toString(),
-                            dob.getText().toString(), radio.getText().toString(), fName.getText().toString(),
-                            mName.getText().toString(), radio1.getText().toString(),/*rel.getText().toString(),*/ bldgrp.getText().toString(), lang.getText().toString(), hobby.getText().toString(), age.getText().toString()).execute();
+                    new AddBasicInfo(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), name.getText().toString().trim().replaceAll("\\s+", " "),
+                            dob.getText().toString(), radio.getText().toString(), fName.getText().toString().trim().replaceAll("\\s+", " "),
+                            mName.getText().toString().trim().replaceAll("\\s+", " "), radio1.getText().toString(),/*rel.getText().toString(),*/ bldgrp.getText().toString(), lang.getText().toString().trim().replaceAll("\\s+", " "), hobby.getText().toString().trim().replaceAll("\\s+", " "), age.getText().toString()).execute();
                 }
                 break;
             case R.id.obj_edt:
                 if (obj.getText().toString().length() == 0) {
-                    obj.setError("Field Mandatory");
+                    obj.setError("Objective Field Cannot Be empty");
                     obj.requestFocus();
                 } else if (!alphabetValidator.validate(obj.getText().toString())) {
                     obj.setError("Enter your objective");
                     obj.setText("");
                     obj.requestFocus();
                 } else {
-                    new UpdateStatus(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), obj.getText().toString()).execute();
+                    new UpdateStatus(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), obj.getText().toString().trim().replaceAll("\\s+", " ")).execute();
                 }
                 break;
         }
+    }
+
+    private void setDate(final EditText ed) {
+        Calendar mcurrentDate = Calendar.getInstance();
+        year = mcurrentDate.get(Calendar.YEAR);
+        month = mcurrentDate.get(Calendar.MONTH);
+        day = mcurrentDate.get(Calendar.DAY_OF_MONTH);
+
+
+        final DatePickerDialog mDatePicker = new DatePickerDialog(UpdateResumeActivity.this, new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker datepicker, int year, int month, int day) {
+
+
+//                SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss Z");
+//                format = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
+
+                ed.setText(String.valueOf(month + 1) + "/" + String.valueOf(year));
+//                yr.setText(String.valueOf(year));
+//                mnt.setText(String.valueOf(month + 1));
+//                dat.setText(String.valueOf(day));
+//                        ed_date.setText(new StringBuilder().append(year).append("-").append(month+1).append("-").append(day));
+                int month_k = month + 1;
+
+//                Toast.makeText(getAp;plicationContext(),String.valueOf(year)+"/"+String.valueOf(month)+"/"+String.valueOf(day),Toast.LENGTH_SHORT).show();
+            }
+        }, year, month, day);
+//        mDatePicker.setTitle("Please select date");
+        // TODO Hide Future Date Here
+        mDatePicker.getDatePicker().setMaxDate(System.currentTimeMillis());
+
+        // TODO Hide Past Date Here
+        // mDatePicker.getDatePicker().setMinDate(System.currentTimeMillis());
+        mDatePicker.show();
     }
 }

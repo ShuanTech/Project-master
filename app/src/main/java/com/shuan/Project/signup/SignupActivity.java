@@ -72,7 +72,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        builder = new AlertDialog.Builder(SignupActivity.this)
+        /*builder = new AlertDialog.Builder(SignupActivity.this)
                 .setCancelable(false)
                 .setTitle("NOTE :")
                 .setIcon(R.drawable.logo)
@@ -82,7 +82,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
-        }).show();
+        }).show();*/
 
         name = (EditText) findViewById(R.id.name);
         emailId = (EditText) findViewById(R.id.email);
@@ -201,7 +201,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     }
                 }
                 if (name.getText().toString().length() == 0) {
-                    name.setError("Name Mandatory");
+                    name.setError("Name Cannot Be empty");
                     name.requestFocus();
                 } else if (!usernameValidator.validate(name.getText().toString())) {
                     name.setError("Enter a Valid Name(without spaces and special characters)");
@@ -210,12 +210,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     name.setError("User Name must contain 6 characters");
                     name.requestFocus();
                 } else if (emailId.getText().toString().length() == 0) {
-                    emailId.setError("Email Id Mandatory");
+                    emailId.setError("Email Id Cannot Be empty");
                     emailId.requestFocus();
                 } else if (!emailValidator.validate(emailId.getText().toString())) {
                     emailId.setError("Invalid Email Id");
                 } else if (phNo.getText().toString().length() == 0) {
-                    phNo.setError("Phone Number Mandatory");
+                    phNo.setError("Phone Number Cannot Be empty");
                     phNo.requestFocus();
                 } else if (!phoneNumberValidator.validate(phNo.getText().toString())) {
                     phNo.setError("Enter a valid Phone Number");
@@ -224,7 +224,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     phNo.setError("Invalid Phone Number");
                     phNo.requestFocus();
                 } else if (pass.getText().toString().length() == 0) {
-                    pass.setError("Password Mandatory");
+                    pass.setError("Password Cannot Be empty");
                     pass.requestFocus();
                 } else if (!pasval.validate(pass.getText().toString())) {
                     pass.setError("Password must contain an Alphabet and a Number");
@@ -233,7 +233,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     pass.setError("Password must contain at least 8 Characters");
                     pass.requestFocus();
                 } else if (confrmPass.getText().toString().length() == 0) {
-                    confrmPass.setError("Conform Password Mandatory");
+                    confrmPass.setError("Confirm Password Cannot Be empty");
                 } else if (!pass.getText().toString().equals(confrmPass.getText().toString())) {
                     confrmPass.setError("Password Miss match");
                     confrmPass.requestFocus();

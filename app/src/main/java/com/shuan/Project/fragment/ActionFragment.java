@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.Common;
@@ -21,6 +22,7 @@ public class ActionFragment extends Fragment {
     private Context mContext;
     private ListView list;
     private ProgressBar progressBar;
+    private TextView textView;
 
 
     public ActionFragment() {
@@ -41,8 +43,9 @@ public class ActionFragment extends Fragment {
         View vi = inflater1.inflate(R.layout.list_heder, null);
         list.addHeaderView(vi, null, false);
         progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
+        textView = (TextView)v.findViewById(R.id.no_data);
 
-        new GetAppliedDetail(getActivity(), mApp.getPreference().getString("jId", ""), list, progressBar).execute();
+        new GetAppliedDetail(getActivity(), mApp.getPreference().getString("jId", ""), list, progressBar,textView).execute();
 
         return v;
     }

@@ -83,6 +83,11 @@ public class Search extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         progressBar.setVisibility(View.GONE);
+        if(textView.getVisibility()==View.VISIBLE){
+            textView.setVisibility(View.GONE);
+        }
+
+
 
         list.setVisibility(View.VISIBLE);
         adapter = new SerachAdapter(mContext, sList);
@@ -103,6 +108,10 @@ public class Search extends AsyncTask<String, String, String> {
             public void afterTextChanged(Editable s) {
                 String str = search.getText().toString().trim().toLowerCase(Locale.getDefault());
                 adapter.filter(str);
+                /*if(list.isOpaque()){
+                    textView.setVisibility(View.VISIBLE);
+                    list.setVisibility(View.GONE);
+                }*/
             }
         });
     }

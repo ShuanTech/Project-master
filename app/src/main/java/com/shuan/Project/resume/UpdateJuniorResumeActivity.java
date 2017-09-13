@@ -32,11 +32,11 @@ import android.widget.Toast;
 
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.Common;
+import com.shuan.Project.Utils.DateDialog;
 import com.shuan.Project.Utils.Helper;
 import com.shuan.Project.adapter.InstitutionAdapter;
 import com.shuan.Project.adapter.LocationAdapter;
 import com.shuan.Project.asyncTasks.GetSkillSet;
-import com.shuan.Project.fragment.DateDialog;
 import com.shuan.Project.list.Sample;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;

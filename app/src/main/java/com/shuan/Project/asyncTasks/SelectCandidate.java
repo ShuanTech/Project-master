@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
@@ -85,10 +86,13 @@ public class SelectCandidate extends AsyncTask<String, String, String> {
         pDialog.cancel();
         if (s.equalsIgnoreCase("true")) {
             Toast.makeText(mContext, "Interview Scheduled Successfully ", Toast.LENGTH_SHORT).show();
-            new GetInfo(mContext, mApp.getPreference().getString(Common.u_id, "")).execute();
-            AppCompatActivity activity = (AppCompatActivity) mContext;
             Intent in = new Intent(mContext, ShortListActivity.class);
-            in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            Bundle b = new Bundle();
+            b.putInt("page",1);
+            in.putExtras(b);
+            AppCompatActivity activity = (AppCompatActivity) mContext;
+            new GetInfo(mContext, mApp.getPreference().getString(Common.u_id, "")).execute();
             mContext.startActivity(in);
             activity.finish();
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.shuan.Project.R;
 import com.shuan.Project.Utils.Common;
@@ -21,6 +22,7 @@ public class RejectedListFragment extends Fragment {
     private Common mApp;
     private ListView list;
     private ProgressBar progressBar;
+    private TextView textView;
 
     public RejectedListFragment() {
         // Required empty public constructor
@@ -37,8 +39,9 @@ public class RejectedListFragment extends Fragment {
 
         progressBar = (ProgressBar) v.findViewById(R.id.progress_bar);
         list = (ListView) v.findViewById(R.id.rjct_list);
+        textView = (TextView) v.findViewById(R.id.no_data);
 
-        new GetRejectedList(getActivity(),mApp.getPreference().getString("jId",""),list,progressBar).execute();
+        new GetRejectedList(getActivity(),mApp.getPreference().getString("jId",""),list,progressBar,textView).execute();
         return v;
     }
 

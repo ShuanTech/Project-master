@@ -35,7 +35,6 @@ public class GetPost extends AsyncTask<String, String, String> {
     private String u_id,type,s;
 
 
-
     public GetPost(Context mContext, ListView listView, ProgressBar progressBar,TextView textView, String u_id, String type, SwipeRefreshLayout swipe) {
         this.mContext = mContext;
         this.listView = listView;
