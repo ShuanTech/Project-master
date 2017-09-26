@@ -76,9 +76,10 @@
             android:name=".launcher.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Profile"
-            android:windowSoftInputMode="stateAlwaysHidden" >
+            android:windowSoftInputMode="stateAlwaysHidden">
 
-           <!-- <intent-filter>
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -88,7 +89,8 @@
                     android:host="www.udyomitra.com"
                     android:pathPrefix="/newconfirmation"
                     android:scheme="http" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
 
         </activity>
 
@@ -251,6 +253,7 @@
         <activity
             android:name=".employer.AddCompanyInfoActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.Profile"
             android:windowSoftInputMode="stateAlwaysHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -342,9 +345,26 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".setting.ChangeEmail" />
-        <activity android:name=".setting.ChangePhone" />
-        <activity android:name=".setting.DeactivateAccount"></activity>
+        <activity
+            android:name=".setting.ChangeEmail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".setting.ChangePhone"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".setting.DeactivateAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".employer.EditCompanyInfo"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseInfoEdit" />
+        <activity
+            android:name=".employer.EditContactDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme" />
+        <activity android:name=".employer.EditCompanyDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme"></activity>
     </application>
 
 </manifest>

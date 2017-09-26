@@ -21,16 +21,17 @@ public class AboutCompany extends AsyncTask<String, String, String> {
 
     private Common mApp;
     private Context mContext;
-    private String uId,yrSt, noWk, cDes, s="";
+    private String uId,yrSt, noWk, cDes,website, s="";
     private HashMap<String, String> aData;
     private Button but;
 
-    public AboutCompany(Context mContext, String u_id,String yrSt, String noWk, String cDes,Button but) {
+    public AboutCompany(Context mContext, String u_id,String yrSt, String noWk, String cDes,String website,Button but) {
         this.mContext = mContext;
         this.uId=u_id;
         this.yrSt = yrSt;
         this.noWk = noWk;
         this.cDes = cDes;
+        this.website = website;
         this.but=but;
         mApp = (Common) mContext.getApplicationContext();
     }
@@ -43,6 +44,7 @@ public class AboutCompany extends AsyncTask<String, String, String> {
         aData.put("yearstrt",yrSt);
         aData.put("workers",noWk);
         aData.put("descrp",cDes);
+        aData.put("website",website);
 
         try {
 
@@ -65,8 +67,13 @@ public class AboutCompany extends AsyncTask<String, String, String> {
 
     private void save(String s) {
         if(s.equalsIgnoreCase("true")){
-            Toast.makeText(mContext,"Successfully Completed Your Signup Process. Let's begin",Toast.LENGTH_SHORT).show();
-            mApp.getPreference().edit().putBoolean("start",false).commit();
+            if(but.getText().toString().equalsIgnoreCase("SUBMIT")){
+                Toast.makeText(mContext,"Successfully Updated",Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(mContext,"Successfully Completed Your Signup Process. Let's begin",Toast.LENGTH_SHORT).show();
+                mApp.getPreference().edit().putBoolean("start",false).commit();
+            }
+
             new GetInfo(mContext,mApp.getPreference().getString(Common.u_id,"")).execute();
             Intent in=new Intent(mContext, EmployerActivity.class);
             in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

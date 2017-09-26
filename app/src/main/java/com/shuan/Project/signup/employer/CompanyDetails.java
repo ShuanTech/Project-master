@@ -29,7 +29,7 @@ public class CompanyDetails extends AppCompatActivity implements View.OnClickLis
     private Helper helper = new Helper();
     private Common mApp;
     private AutoCompleteTextView city;
-    private EditText cmpname, district, state, country;
+    private EditText cmpname, district, state, country,website;
     private Button next;
     private ProgressBar progressBar;
     private ScrollView scroll;
@@ -60,6 +60,7 @@ public class CompanyDetails extends AppCompatActivity implements View.OnClickLis
         district = (EditText) findViewById(R.id.district);
         state = (EditText) findViewById(R.id.state);
         country = (EditText) findViewById(R.id.count);
+        website = (EditText) findViewById(R.id.website);
         next = (Button) findViewById(R.id.next);
 
         cType = getResources().getStringArray(R.array.cmpny_type);
@@ -124,6 +125,9 @@ public class CompanyDetails extends AppCompatActivity implements View.OnClickLis
             case R.id.next:
                 if (cmpname.getText().toString().length() == 0) {
                     cmpname.setError("Company Name Mandatory");
+                }else if (website.getText().toString().length() == 0) {
+                    website.setError("Website Mandatory");
+                    website.requestFocus();
                 } else if (c.equalsIgnoreCase("Select Company Type")) {
                     cmpnyType.requestFocus();
                     Toast.makeText(getApplicationContext(), "Select Company Type", Toast.LENGTH_SHORT).show();
@@ -142,9 +146,9 @@ public class CompanyDetails extends AppCompatActivity implements View.OnClickLis
                 } else if (country.getText().toString().length() == 0) {
                     country.setError("Country Mandatory");
                     country.requestFocus();
-                } else {
+                }else {
                     next.setEnabled(false);
-                    new CompanyDetail(CompanyDetails.this, mApp.getPreference().getString(Common.u_id, ""), cmpname.getText().toString(),
+                    new CompanyDetail(CompanyDetails.this, mApp.getPreference().getString(Common.u_id, ""), cmpname.getText().toString(),website.getText().toString(),
                             c, i, city.getText().toString(), district.getText().toString(), state.getText().toString(),
                             country.getText().toString(), ins, next).execute();
 

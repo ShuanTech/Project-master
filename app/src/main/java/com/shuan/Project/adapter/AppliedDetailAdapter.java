@@ -65,6 +65,15 @@ public class AppliedDetailAdapter extends BaseAdapter  {
         ImageButton select = (ImageButton) convertView.findViewById(R.id.select);
         ImageButton reject = (ImageButton) convertView.findViewById(R.id.reject);
 
+
+        int shtr = curr.getShrt();
+
+        if(shtr==1){
+            select.setVisibility(View.GONE);
+        }else if(shtr==2){
+            reject.setVisibility(View.GONE);
+        }
+
         applied.setText(curr.getDis());
         refer.setText(curr.getCty());
 

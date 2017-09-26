@@ -2,6 +2,7 @@ package com.shuan.Project.asyncTasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -48,6 +49,8 @@ public class GetAppliedDetail extends AsyncTask<String, String, String> {
         try {
             JSONObject json = Connection.UrlConnection(php.shrt_list, aData);
 
+            Log.d("GetApplied:",json.toString());
+
             int succ = json.getInt("success");
 
             if (succ == 0) {
@@ -62,8 +65,9 @@ public class GetAppliedDetail extends AsyncTask<String, String, String> {
                     String a_id = child.optString("applied_usr");
                     String r_id = child.optString("refer_id");
                     String resume = child.optString("resume");
+                    int shrt = child.optInt("shrt");
 
-                    list.add(new Sample(applied, refer, a_id, r_id, resume));
+                    list.add(new Sample(applied, refer, a_id, r_id, resume,shrt));
                 }
                 s = "true";
 

@@ -31,10 +31,10 @@ public class AboutCompanyActivity extends AppCompatActivity implements View.OnCl
     private Helper helper = new Helper();
     private Common mApp;
 
-    private EditText yr_st, no_wrkr, c_des;
+    private EditText yr_st, no_wrkr, c_des,website;
     private Button ft_skip, ft_next;
     private boolean exit = false;
-    private TextInputLayout layout_yr_st,layout_no_wrkr,layout_c_des;
+    private TextInputLayout layout_yr_st,layout_no_wrkr,layout_c_des,layout_website;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +46,12 @@ public class AboutCompanyActivity extends AppCompatActivity implements View.OnCl
         layout_yr_st = (TextInputLayout) findViewById(R.id.layout_yr_st);
         layout_no_wrkr = (TextInputLayout) findViewById(R.id.layout_no_wrkr);
         layout_c_des = (TextInputLayout) findViewById(R.id.layout_c_des);
+        layout_c_des = (TextInputLayout) findViewById(R.id.layout_website);
 
         yr_st = (EditText) findViewById(R.id.yr_st);
         no_wrkr = (EditText) findViewById(R.id.no_wrkr);
         c_des = (EditText) findViewById(R.id.c_des);
+        website = (EditText) findViewById(R.id.website);
         ft_next = (Button) findViewById(R.id.ft_next);
         ft_skip = (Button) findViewById(R.id.ft_skip);
 
@@ -105,10 +107,13 @@ public class AboutCompanyActivity extends AppCompatActivity implements View.OnCl
                 } else if (no_wrkr.getText().toString().length() == 0) {
                     no_wrkr.setError("Field Mandatory");
                     no_wrkr.requestFocus();
-                }  else {
+                } else if(website.getText().toString().trim().length()==0){
+                    website.setError("Field Mandatory");
+                    website.requestFocus();
+                }else {
                     ft_next.setEnabled(false);
                     new AboutCompany(AboutCompanyActivity.this, mApp.getPreference().getString(Common.u_id, ""),
-                            yr_st.getText().toString(), no_wrkr.getText().toString(), c_des.getText().toString(),ft_next).execute();
+                            yr_st.getText().toString(), no_wrkr.getText().toString(), c_des.getText().toString(),website.getText().toString().trim(),ft_next).execute();
                 }
                 break;
             case R.id.ft_skip:
@@ -121,7 +126,7 @@ public class AboutCompanyActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onBackPressed() {
         if (exit) {
-            mApp.getPreference().edit().putBoolean(Common.COMPANY, false).commit();
+//            mApp.getPreference().edit().putBoolean(Common.COMPANY, false).commit();
             super.onBackPressed();
             return;
         } else {

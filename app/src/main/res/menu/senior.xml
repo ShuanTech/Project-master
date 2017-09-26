@@ -17,11 +17,11 @@
             android:title="Profile Strength"
             app:actionViewClass="android.widget.TextView" />
 
-        <item
+       <!-- <item
             android:id="@+id/connect"
             android:icon="@drawable/ic_connection"
             android:title="Connections"
-            app:actionViewClass="android.widget.TextView" />
+            app:actionViewClass="android.widget.TextView" />-->
 
         <item
             android:id="@+id/following"
@@ -42,7 +42,7 @@
         <item
             android:id="@+id/sugg"
             android:icon="@drawable/ic_suggest"
-            android:title="Suggestions" />
+            android:title="People You May Know" />
 
         <item android:title="Labels">
             <menu>
@@ -111,6 +111,7 @@
             android:id="@+id/term"
             android:icon="@drawable/ic_terms"
             android:title="Terms and Conditions"/>
+
         <!--<item
             android:id="@+id/help"
             android:icon="@drawable/ic_help"

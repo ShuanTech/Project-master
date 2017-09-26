@@ -20,18 +20,19 @@ import java.util.HashMap;
 public class CompanyDetail extends AsyncTask<String, String, String> {
 
     private Context mContext;
-    private String uId, orgName, cType, iType, city, dis, ste, cntry;
+    private String uId, orgName,website, cType, iType, city, dis, ste, cntry;
     private boolean ins;
     private HashMap<String, String> cData;
     private String s = "";
     private Common mApp;
     private Button but;
 
-    public CompanyDetail(Context mContext, String u_id, String orgName, String cType, String iType, String city, String dis, String ste,
+    public CompanyDetail(Context mContext, String u_id, String orgName,String website, String cType, String iType, String city, String dis, String ste,
                          String cntry, boolean ins, Button but) {
         this.mContext = mContext;
         this.uId = u_id;
         this.orgName = orgName;
+        this.website = website;
         this.cType = cType;
         this.iType = iType;
         this.city = city;
@@ -49,6 +50,7 @@ public class CompanyDetail extends AsyncTask<String, String, String> {
         cData = new HashMap<String, String>();
         cData.put("u_id", uId);
         cData.put("compname", orgName);
+        cData.put("website", website);
         cData.put("compnytype", cType);
         cData.put("indusType", iType);
         cData.put("country", cntry);

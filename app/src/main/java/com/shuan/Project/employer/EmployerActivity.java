@@ -320,7 +320,7 @@ public class EmployerActivity extends AppCompatActivity {
                 .setPositiveButton("Build", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(getApplicationContext(), AddCompanyInfoActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         dialog.cancel();
                     }
                 }).setNegativeButton("Not Now", new DialogInterface.OnClickListener() {

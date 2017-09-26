@@ -8,6 +8,7 @@ public class Sample {
     String orgName, type, addr, land, pin;
     String jId, jTitle, jSkill, jLevel, jLoc, jCreate, jView, jApply, jShare, jFrmId, jImp,fp,fs,fl,sharedDate;
     String id,frmId,toId,postId,content,vwed;
+    int shrt;
 
     public Sample(String pro_pic, String name, String venue, String intervew_date, String intervew_time, String type, String uid) {
     }
@@ -52,6 +53,16 @@ public class Sample {
         this.state = state;
         this.contry = contry;
     }
+    public Sample(String dis, String cty, String distrct, String state, String contry,int shrt) {
+        this.dis = dis;
+        this.cty = cty;
+        this.distrct = distrct;
+        this.state = state;
+        this.contry = contry;
+        this.shrt = shrt;
+    }
+
+
 
 
     public Sample(String dis, String orgName, String type, String addr, String land, String contry, String state, String cty, String pin, String distrct) {
@@ -117,6 +128,13 @@ public class Sample {
     }
 
 
+    public int getShrt() {
+        return shrt;
+    }
+
+    public void setShrt(int shrt) {
+        this.shrt = shrt;
+    }
 
     public String getU_id() {
         return u_id;

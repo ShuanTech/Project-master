@@ -44,6 +44,7 @@ import com.shuan.Project.Utils.CircleImageView;
 import com.shuan.Project.Utils.Common;
 import com.shuan.Project.asyncTasks.RemoveProfilePic;
 import com.shuan.Project.asyncTasks.UploadPicture;
+import com.shuan.Project.employer.EditCompanyInfo;
 import com.shuan.Project.list.Sample;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;
@@ -67,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private Toolbar toolbar;
     private Common mApp;
     private String u_id, level;
-    private ImageView cover,verifyImg;
+    private ImageView cover, verifyImg;
     private CircleImageView proPic;
     private TextView name, position, org, intro;
     private TextView abt;
@@ -220,7 +221,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     private void loadImg() {
 
-        final String[] action = {"From Camera", "From Gallery","Remove"};
+        final String[] action = {"From Camera", "From Gallery", "Remove"};
         AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
         builder.setTitle("Select Picture Using");
         builder.setItems(action, new DialogInterface.OnClickListener() {
@@ -241,14 +242,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     startActivityForResult(cameraIntent, PHOTO);
 
 
-                }
-                else if(action[itm].equalsIgnoreCase("Remove")){
-                    new RemoveProfilePic(getApplicationContext(),mApp.getPreference().getString(Common.u_id,"")).execute();
+                } else if (action[itm].equalsIgnoreCase("Remove")) {
+                    new RemoveProfilePic(getApplicationContext(), mApp.getPreference().getString(Common.u_id, "")).execute();
 
 
-                }
-
-                else {
+                } else {
 
                     Intent photoPickerIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     photoPickerIntent.setType("image/*");
@@ -270,7 +268,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         String a = data.toString();
 
-        Log.d("CODESProfileActivity:",a);
+        Log.d("CODESProfileActivity:", a);
 
         if (requestCode == PHOTO && resultCode == RESULT_OK) {
             CropImage();
@@ -766,13 +764,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         }
                     } else {
 
-
                         JSONArray jsonArray = json.getJSONArray("profile");
                         JSONObject child = jsonArray.getJSONObject(0);
 
                         JSONObject info = child.getJSONObject("info");
                         JSONArray infoArray = info.getJSONArray("info");
-                        JSONObject data = infoArray.getJSONObject(0);
+                        final JSONObject data = infoArray.getJSONObject(0);
                         pro_pic = data.optString("pro_pic");
                         cover_pic = data.optString("cover_pic");
 
@@ -780,6 +777,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         JSONArray cntArray = cnt.getJSONArray("cnt");
                         final JSONObject data1 = cntArray.getJSONObject(0);
                         final int verify = data1.optInt("verify");
+
+
+
+                        Log.d("profile",jsonArray.toString());
 
 
                         runOnUiThread(new Runnable() {
@@ -790,14 +791,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                 setCover(cover_pic, cover);
                                 name.setText(data1.optString("cmpny_name"));
                                 position.setText(data1.optString("i_type"));
+
+
                                 org.setText(data1.optString("city") + "," + data1.optString("country"));
 
 
                                 if (data1.optString("c_desc") != null && !data1.optString("c_desc").trim().isEmpty()) {
                                     about.setVisibility(View.VISIBLE);
                                     abt.setText(data1.optString("c_desc"));
+                                } else {
+                                    /*Intent i = new Intent(ProfileActivity.this, AboutCompanyActivity.class);
+
+                                    startActivity(i);*/
                                 }
-                                if(verify==1){
+
+                                if (verify == 1) {
                                     verifyImg.setVisibility(View.VISIBLE);
                                 }
 
@@ -854,6 +862,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                                         cnt_tm.setVisibility(View.VISIBLE);
                                         cnt_tme.setText(data1.optString("contact_time"));
                                     }
+
 
                                 }
 
@@ -1043,9 +1052,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.profile, menu);
         MenuItem item = menu.findItem(R.id.edit);
-        if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
+       /* if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
             item.setVisible(false);
-        }
+        }*/
         return true;
     }
 
@@ -1053,13 +1062,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.edit:
-               /* if (mApp.getPreference().getString(Common.LEVEL,"").equalsIgnoreCase("3")){
-                    startActivity(new Intent(getApplicationContext(), CompanyContactInfoActivity.class));
-                }else {*/
-                mApp.getPreference().edit().putBoolean(Common.PAGE1, true).commit();
-                mApp.getPreference().edit().putBoolean(Common.PAGE2, true).commit();
-                startActivity(new Intent(getApplicationContext(), ResumeEditActivity.class));
-                //}
+                if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
+                    startActivity(new Intent(getApplicationContext(), EditCompanyInfo.class));
+                } else {
+                    mApp.getPreference().edit().putBoolean(Common.PAGE1, true).commit();
+                    mApp.getPreference().edit().putBoolean(Common.PAGE2, true).commit();
+                    startActivity(new Intent(getApplicationContext(), ResumeEditActivity.class));
+                }
                 break;
             case R.id.search:
                 startActivity(new Intent(getApplicationContext(), SearchActivity.class));

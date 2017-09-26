@@ -89,7 +89,7 @@ public class JuniorActivity extends AppCompatActivity {
     private boolean mFromSavedInstanceState;
     private int mCurrentSelectedPosition;
 
-    private TextView connect;
+//    private TextView connect;
     private RelativeLayout lay1;
     private HashMap<String, String> junData;
     private TextView usrName;
@@ -181,7 +181,7 @@ public class JuniorActivity extends AppCompatActivity {
             }
         });
 
-        connect = (TextView) MenuItemCompat.getActionView(mNavigationView.getMenu().findItem(R.id.connect));
+//        connect = (TextView) MenuItemCompat.getActionView(mNavigationView.getMenu().findItem(R.id.connect));
         profileStrength = (TextView) MenuItemCompat.getActionView(mNavigationView.getMenu().findItem(R.id.strength));
         following = (TextView) MenuItemCompat.getActionView(mNavigationView.getMenu().findItem(R.id.following));
         follower = (TextView) MenuItemCompat.getActionView(mNavigationView.getMenu().findItem(R.id.follower));
@@ -207,13 +207,13 @@ public class JuniorActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ResumeEditActivity.class));
                         mDrawerLayout.closeDrawers();
                         return true;
-                    case R.id.connect:
+                    /*case R.id.connect:
                         toolbar.setTitle("Connections");
                         mDrawerLayout.closeDrawers();
                         count = 2;
                         display(2);
                         selected = 2;
-                        return true;
+                        return true;*/
                     case R.id.following:
                         toolbar.setTitle("Following");
                         mDrawerLayout.closeDrawers();
@@ -229,7 +229,7 @@ public class JuniorActivity extends AppCompatActivity {
                         selected = 4;
                         return true;
                     case R.id.sugg:
-                        toolbar.setTitle("Suggestions");
+                        toolbar.setTitle("People You May Know");
                         mDrawerLayout.closeDrawers();
                         display(5);
                         count = 2;
@@ -441,9 +441,9 @@ public class JuniorActivity extends AppCompatActivity {
     }
 
     private void initializeCount() {
-        connect.setGravity(Gravity.CENTER_VERTICAL);
+        /*connect.setGravity(Gravity.CENTER_VERTICAL);
         connect.setTextColor(getResources().getColor(R.color.junAccent));
-        connect.setText(mApp.getPreference().getString(Common.CONNECTION, ""));
+        connect.setText(mApp.getPreference().getString(Common.CONNECTION, ""));*/
 
         following.setGravity(Gravity.CENTER_VERTICAL);
         following.setTextColor(getResources().getColor(R.color.junAccent));

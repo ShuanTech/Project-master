@@ -1,7 +1,7 @@
 package com.shuan.Project.employer;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,7 +21,7 @@ import com.shuan.Project.Utils.Common;
 import com.shuan.Project.Utils.Helper;
 import com.shuan.Project.asyncTasks.GetLocation;
 
-public class AddCompanyInfoActivity extends AppCompatActivity {
+public class AddCompanyInfoActivity extends Activity {
     private Helper helper = new Helper();
     private Common mApp;
     private AutoCompleteTextView city;

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.shuan.Project.Utils.Common;
 import com.shuan.Project.parser.Connection;
 import com.shuan.Project.parser.php;
+import com.shuan.Project.profile.ProfileActivity;
 import com.shuan.Project.signup.employer.AboutCompanyActivity;
 
 import org.json.JSONObject;
@@ -64,8 +65,17 @@ public class CompanyContactInfo extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         if (s.equalsIgnoreCase("true")) {
-            Toast.makeText(mContext, "Contact Details! Saved Successfully...", Toast.LENGTH_SHORT).show();
-            Intent in = new Intent(mContext, AboutCompanyActivity.class);
+//            Toast.makeText(mContext,"Button:"+but.getText().toString(),Toast.LENGTH_SHORT).show();
+
+            Intent in=null;
+            if(but.getText().toString().equalsIgnoreCase("SUBMIT")){
+                Toast.makeText(mContext, "Contact Details Successfully Updated...", Toast.LENGTH_SHORT).show();
+                in = new Intent(mContext, ProfileActivity.class);
+            }
+            else{
+                Toast.makeText(mContext, "Contact Details! Saved Successfully...", Toast.LENGTH_SHORT).show();
+                in = new Intent(mContext, AboutCompanyActivity.class);
+            }
             in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(in);
             ((AppCompatActivity)mContext).finish();
