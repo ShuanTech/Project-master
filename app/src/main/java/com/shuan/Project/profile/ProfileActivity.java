@@ -268,7 +268,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         String a = data.toString();
 
-        Log.d("CODESProfileActivity:", a);
+//        Log.d("CODESProfileActivity:", a);
 
         if (requestCode == PHOTO && resultCode == RESULT_OK) {
             CropImage();
@@ -293,6 +293,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     }
                 }
             } catch (Exception e) {
+                Log.d("Exception :",e.toString());
             }
 
         } else if (requestCode == COVER) {
@@ -316,6 +317,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 }
             } catch (Exception e) {
             }
+
         }
     }
 
@@ -780,7 +782,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
-                        Log.d("profile",jsonArray.toString());
+//                        Log.d("profile",jsonArray.toString());
 
 
                         runOnUiThread(new Runnable() {

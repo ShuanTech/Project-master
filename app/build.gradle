@@ -8,8 +8,8 @@ android {
         applicationId "com.shuan.Project"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 69
-        versionName "2.2.6.34"
+        versionCode 72
+        versionName "3.0"
         multiDexEnabled true
     }
     buildTypes {

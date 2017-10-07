@@ -2,7 +2,6 @@ package com.shuan.Project.Utils;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.util.Log;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -41,7 +40,7 @@ public class Helper implements Methods {
         Calendar cal = Calendar.getInstance();
         TimeZone tz = cal.getTimeZone();
 
-        Log.d("Time zone: ", tz.getDisplayName());
+//        Log.d("Time zone: ", tz.getDisplayName());
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         sdf.setTimeZone(tz);
         try {

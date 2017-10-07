@@ -315,7 +315,7 @@ public class UpdateJuniorResumeActivity extends AppCompatActivity implements Vie
             p_update = (Button) findViewById(R.id.p_update);
 
             p_update.setOnClickListener(this);
-            acd.setOnClickListener(this);
+//            acd.setOnClickListener(this);
         } else if (mApp.getPreference().getBoolean(Common.PERSONALINFO, false) == false) {
 
             lay1.setVisibility(View.GONE);

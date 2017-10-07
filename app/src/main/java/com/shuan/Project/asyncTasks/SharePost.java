@@ -50,7 +50,7 @@ public class SharePost extends AsyncTask<String, String, String> {
         try {
             JSONObject json = Connection.UrlConnection(php.share_post, sData);
 
-            Log.d("Share Response: ",json.toString());
+//            Log.d("Share Response: ",json.toString());
             int succ = json.getInt("success");
 
             if (succ == 0) {
@@ -64,6 +64,8 @@ public class SharePost extends AsyncTask<String, String, String> {
             }
 
         } catch (Exception e) {
+
+            Log.e("Share Exception",e.toString());
         }
 
         return s;

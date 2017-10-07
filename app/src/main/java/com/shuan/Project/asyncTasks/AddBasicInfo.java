@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.shuan.Project.Utils.Common;
@@ -88,7 +87,7 @@ public class AddBasicInfo extends AsyncTask<String, String, String> {
         super.onPostExecute(s);
         pDialog.cancel();
 //        Toast.makeText(mContext,seniorData.toString(),Toast.LENGTH_LONG).show();
-        Log.d("AddBasicInfo:",seniorData.toString());
+//        Log.d("AddBasicInfo:",seniorData.toString());
         if (s.equalsIgnoreCase("true")) {
             int val = mApp.getPreference().getInt(Common.PROFILESTRENGTH, 0);
             mApp.getPreference().edit().putInt(Common.PROFILESTRENGTH, val + 1).commit();

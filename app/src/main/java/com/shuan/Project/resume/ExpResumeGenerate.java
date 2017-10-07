@@ -132,7 +132,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
         int permissionCheck = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
-        Log.d("Permission : ", String.valueOf(permissionCheck));
+//        Log.d("Permission : ", String.valueOf(permissionCheck));
 
         if (permissionCheck == 0) {
 
@@ -208,7 +208,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
 
     public void genrateResume(String format, String path) {
         if (format.equalsIgnoreCase("1")) {
-            Log.d("Path : ", path);
+//            Log.d("Path : ", path);
             sFormatOne(path);
         }
     }
@@ -463,6 +463,8 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
             try {
 
                 JSONObject json = Connection.UrlConnection(php.getWork_info, resumeData);
+                Log.d("Resume",json.toString());
+
                 int succ = json.getInt("success");
 
                 if (succ == 0) {
@@ -497,20 +499,25 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 for (int i = 0; i < list.size(); i++) {
                                     ResumeList curr = list.get(i);
                                     String toDat1 = null, toDat2 = null;
+
                                     String[] frmDate = curr.getFrm_dat().toString().split(",", 2);
                                     String frmDate1 = frmDate[0];
                                     String frmDate2 = frmDate[1];
 
+                                    Log.d("Frmdate1",frmDate1+"-"+frmDate2);
+
+
+
 
                                     if (curr.getTo_dat().toString().equalsIgnoreCase("present")) {
-                                        Paragraph p25 = new Paragraph("Since " + " " + frmDate1 + "' " + frmDate2.substring(3) + " with " + curr.getOrgName() + ", " + curr.getLoc() + " as " + curr.getPos(), content);
+                                        Paragraph p25 = new Paragraph("Since " + " " + frmDate1 + "' " + frmDate2 + " with " + curr.getOrgName() + ", " + curr.getLoc() + " as " + curr.getPos(), content);
                                         p25.setAlignment(Paragraph.ALIGN_CENTER);
                                         doc.add(p25);
                                     } else {
                                         String[] toDate = curr.getTo_dat().toString().split(",", 2);
                                         toDat1 = toDate[0];
                                         toDat2 = toDate[1];
-                                        Paragraph p26 = new Paragraph(frmDate1 + "' " + frmDate2.substring(3) + " - " + toDat1 + "' " + toDat2.substring(3) + " with " + curr.getOrgName() + ", " + curr.getLoc() + " as " + curr.getPos(), content);
+                                        Paragraph p26 = new Paragraph(frmDate1 + "' " + frmDate2 + " - " + toDat1 + "' " + toDat2 + " with " + curr.getOrgName() + ", " + curr.getLoc() + " as " + curr.getPos(), content);
                                         p26.setAlignment(Paragraph.ALIGN_CENTER);
                                         doc.add(p26);
                                         doc.add(Chunk.NEWLINE);
@@ -522,7 +529,7 @@ public class ExpResumeGenerate extends AppCompatActivity implements View.OnClick
                                 new getWrkExp().execute();
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Log.e("Exception doInB", e.toString());
+                                Log.e("Exception", e.toString());
                             }
                         }
                     });

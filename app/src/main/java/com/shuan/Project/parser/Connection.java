@@ -69,7 +69,7 @@ public class Connection {
             }
             is.close();
             json = sb.toString();
-            Log.d("Buffer json : ", json);
+//            Log.d("Buffer json : ", json);
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }

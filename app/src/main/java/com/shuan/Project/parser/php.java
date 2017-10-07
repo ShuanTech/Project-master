@@ -160,6 +160,8 @@ public class php {
     public static final String getProjectDetail = url+"getProjectDetails";
     public static final String getProfileSummary = url+"get_profile_summary";
     public static final String getWork_info = url+"get_wrk_details";
+
+
     public static final String getWorkExp = url+"get_wrk_exp";
     public static final String login = url+"login";
     public static final String getSchool = url+"get_school";

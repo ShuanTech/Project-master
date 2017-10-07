@@ -3,7 +3,6 @@ package com.shuan.Project.asyncTasks;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -65,7 +64,7 @@ public class GetHome extends AsyncTask<String, String, String> {
                 JSONArray jsonArray = json.getJSONArray("post");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject child = jsonArray.getJSONObject(i);
-                    Log.d("Home : ",child.toString());
+//                    Log.d("Home : ",child.toString());
                     String cName = child.optString("cmpny_name");
                     String pPic = child.optString("pro_pic");
                     String jId = child.optString("job_id");

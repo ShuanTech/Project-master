@@ -2,6 +2,7 @@ package com.shuan.Project.asyncTasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -50,6 +51,7 @@ public class GetSuggest extends AsyncTask<String, String, String> {
 
         try {
             JSONObject json = Connection.UrlConnection(php.suggest, cData);
+            Log.e("Json",json.toString());
             int succ = json.getInt("success");
 
             if (succ == 0) {
@@ -71,6 +73,8 @@ public class GetSuggest extends AsyncTask<String, String, String> {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("Exception",e.toString());
         }
 
         return s;

@@ -75,7 +75,7 @@ public class ProfileViewActivity extends AppCompatActivity {
     private LinearLayout c_type, i_type, c_sze, c_fnd, c_mail, c_ph, cntDet, cntt, cnt_mail, cnt_ph, cnt_tm;
     private TextView url, cate, indus_type, sze, found, cmail, cph, cnt_per, cnt_mail_id, cnt_ph_no, cnt_tme;
     private TextView mail, phNo, obj;
-    private RelativeLayout msg, call;
+    private RelativeLayout msg, call,follow;
     private Button inivite, resume;
     private RelativeLayout followLay;
     private LinearLayout extrabut;
@@ -112,7 +112,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         if(appLinkData!=null){
             u_id = appLinkData.getQueryParameter("us_id");
             level = mApp.getPreference().getString(Common.LEVEL,"");
-            Log.d("Uid :",u_id);
+//            Log.d("Uid :",u_id);
         }
         else {
             u_id = getIntent().getStringExtra("u_id");
@@ -217,6 +217,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         flow = (RelativeLayout) findViewById(R.id.folw);
         unflow = (RelativeLayout) findViewById(R.id.unflow);
         flows = (RelativeLayout) findViewById(R.id.flows);
+        follow = (RelativeLayout) findViewById(R.id.follow);
         fms = (LinearLayout) findViewById(R.id.fmc);
 
         new Profile().execute();
@@ -230,6 +231,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         if (mApp.getPreference().getString(Common.LEVEL, "").equalsIgnoreCase("3")) {
             if (level.equalsIgnoreCase("1") || level.equalsIgnoreCase("2")) {
                 extrabut.setVisibility(View.VISIBLE);
+                follow.setVisibility(View.GONE);
             } else {
                 extrabut.setVisibility(View.GONE);
             }
@@ -752,7 +754,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                         JSONArray cntArray = cnt.getJSONArray("cnt");
                         final JSONObject data1 = cntArray.getJSONObject(0);
                         final int verify = data1.optInt("verify");
-                        Log.d("Verify : ", String.valueOf(verify));
+//                        Log.d("Verify : ", String.valueOf(verify));
 
                         runOnUiThread(new Runnable() {
                             @Override

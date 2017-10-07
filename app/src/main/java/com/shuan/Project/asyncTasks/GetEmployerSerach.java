@@ -2,7 +2,6 @@ package com.shuan.Project.asyncTasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.ProgressBar;
@@ -95,7 +94,7 @@ public class GetEmployerSerach extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Log.d("ActivityInfo","GetEmpSearch");
+//        Log.d("ActivityInfo","GetEmpSearch");
         progressBar.setVisibility(View.GONE);
         if (s.equalsIgnoreCase("true")) {
             adapter = new SearchAdapter(mContext, R.layout.custom_auto_complete_item, R.id.display, list);

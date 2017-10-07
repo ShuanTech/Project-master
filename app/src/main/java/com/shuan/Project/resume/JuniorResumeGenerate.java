@@ -105,11 +105,11 @@ public class JuniorResumeGenerate extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateJuniorResumeActivity.class));
             finish();
-        } else if (mApp.getPreference().getBoolean(Common.SKILL, false) == false) {
+        } /*else if (mApp.getPreference().getBoolean(Common.SKILL, false) == false) {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateJuniorResumeActivity.class));
             finish();
-        } else if (mApp.getPreference().getBoolean(Common.HOBBIES, false) == false) {
+        }*/ else if (mApp.getPreference().getBoolean(Common.HOBBIES, false) == false) {
             Toast.makeText(getApplicationContext(), "We Need Some Details to Complete your Resume", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), UpdateJuniorResumeActivity.class));
             finish();

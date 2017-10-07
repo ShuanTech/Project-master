@@ -2,6 +2,7 @@ package com.shuan.Project.asyncTasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -69,7 +70,11 @@ public class EmployerSerchResult extends AsyncTask<String,String,String> {
                 }
                 s="true";
             }
-        }catch (Exception e){}
+        }catch (Exception e){
+            e.printStackTrace();
+            Log.e("Exception",e.toString());
+
+        }
 
         return s;
     }

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.shuan.Project.Utils.Common;
@@ -74,6 +75,7 @@ public class AddSchool extends AsyncTask<String, String, String> {
         try {
             JSONObject json = Connection.UrlConnection(php.schooling, seniorData);
 
+            Log.d("Json",json.toString());
             int succ = json.getInt("success");
             if (succ == 0) {
                 s = "false";
@@ -81,6 +83,7 @@ public class AddSchool extends AsyncTask<String, String, String> {
                 s = "true";
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return s;
     }

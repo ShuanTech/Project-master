@@ -64,11 +64,14 @@ import com.shuan.Project.asyncTasks.GetSkillSet;
 import com.shuan.Project.asyncTasks.UpdateStatus;
 import com.shuan.Project.asyncTasks.profileSummaryUpdate;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class UpdateResumeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -196,7 +199,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
 //        org = getIntent().getStringExtra("org");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_resume);
-        Log.d("UpResAct:", "ok");
+//        Log.d("UpResAct:", "ok");
 
         psEdt = (LinearLayout) findViewById(R.id.ps_edit);
         wrkDet = (LinearLayout) findViewById(R.id.wrk_det_edit);
@@ -388,7 +391,6 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             frm_yr = (EditText) findViewById(R.id.frm_yr);
             to_yr = (EditText) findViewById(R.id.to_yr);
             agrt = (EditText) findViewById(R.id.agrt);
-
 
 
             yp = new YearPicker(this);
@@ -607,9 +609,6 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     return false;
                 }
             });
-
-
-
 
 
             h_update = (Button) findViewById(R.id.h_update);
@@ -952,11 +951,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     if (psEdtTxt.getText().toString().length() == 0) {
                         psEdtTxt.setError("Enter summary of your profile");
                         psEdtTxt.requestFocus();
-                    } else if (!alphabetValidator.validate(psEdtTxt.getText().toString())) {
+                    } /*else if (!alphabetValidator.validate(psEdtTxt.getText().toString())) {
                         psEdtTxt.setError("Invalid Entry");
                         psEdtTxt.setText("");
                         psEdtTxt.requestFocus();
-                    } else {
+                    } */ else {
                         new profileSummaryUpdate(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
                                 psEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "proSum").execute();
                     }
@@ -1058,11 +1057,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     if (weEdtTxt.getText().toString().length() == 0) {
                         weEdtTxt.setError("Work Experience cannot be empty");
                         weEdtTxt.requestFocus();
-                    } else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
+                    }/* else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
                         weEdtTxt.setError("Invalid Entry");
                         weEdtTxt.setText("");
                         weEdtTxt.requestFocus();
-                    } else {
+                    }*/ else {
                         new profileSummaryUpdate(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
                                 weEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "wrkExp").execute();
                     }
@@ -1070,11 +1069,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                     if (weEdtTxt.getText().toString().length() == 0) {
                         weEdtTxt.setError("Work Experience cannot be empty");
                         weEdtTxt.requestFocus();
-                    } else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
+                    } /*else if (!alphabetValidator.validate(weEdtTxt.getText().toString())) {
                         weEdtTxt.setError("Invalid Entry");
                         weEdtTxt.setText("");
                         weEdtTxt.requestFocus();
-                    } else {
+                    }*/ else {
                         new EditDetail(UpdateResumeActivity.this, mApp.getPreference().getString("eId", ""),
                                 weEdtTxt.getText().toString().trim().replaceAll("\\s+", " "), "wrkExp").execute();
                     }
@@ -1180,7 +1179,7 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 } else if (role.getText().toString().length() == 0) {
                     role.setError("Specify your role");
                     role.requestFocus();
-                }else if (team_sze.getText().toString().length() == 0) {
+                } else if (team_sze.getText().toString().length() == 0) {
                     team_sze.setError("Team Size Cannot Be empty");
                     team_sze.requestFocus();
                 } else if (duration.getText().toString().length() == 0) {
@@ -1231,11 +1230,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             case R.id.ach_add:
                 if (acheieve.getText().toString().length() == 0) {
                     acheieve.setError("Achievement Cannot be empty");
-                } else if (!alphabetValidator.validate(acheieve.getText().toString())) {
+                } /*else if (!alphabetValidator.validate(acheieve.getText().toString())) {
                     acheieve.setError("Invalid Achievement");
                     acheieve.setText("");
                     acheieve.requestFocus();
-                } else {
+                }*/ else {
                     new AddAchieve(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""),
                             acheieve.getText().toString().trim().replaceAll("\\s+", " ")).execute();
                 }
@@ -1322,11 +1321,11 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
                 if (obj.getText().toString().length() == 0) {
                     obj.setError("Objective Field Cannot Be empty");
                     obj.requestFocus();
-                } else if (!alphabetValidator.validate(obj.getText().toString())) {
+                } /*else if (!alphabetValidator.validate(obj.getText().toString())) {
                     obj.setError("Enter your objective");
                     obj.setText("");
                     obj.requestFocus();
-                } else {
+                }*/ else {
                     new UpdateStatus(UpdateResumeActivity.this, mApp.getPreference().getString(Common.u_id, ""), obj.getText().toString().trim().replaceAll("\\s+", " ")).execute();
                 }
                 break;
@@ -1345,11 +1344,27 @@ public class UpdateResumeActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onDateSet(DatePicker datepicker, int year, int month, int day) {
 
+//                DateFormat originalFormat = new SimpleDateFormat("m/yyyy", Locale.ENGLISH);
+                DateFormat targetFormat = new SimpleDateFormat("MMM,yyyy");
+                Date date = null;
 
+
+                String pickDate= String.valueOf(month + 1) + "-" + String.valueOf(year);
+                Log.d("pickdate",pickDate);
+                try {
+
+                    date = new SimpleDateFormat("MM-yyyy", Locale.ENGLISH).parse(pickDate);
+                    Log.d("date",date.toString());
+                    String formattedDate = targetFormat.format(date);
+                    ed.setText(formattedDate);
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 //                SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss Z");
 //                format = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
 
-                ed.setText(String.valueOf(month + 1) + "/" + String.valueOf(year));
+//                ed.setText(String.valueOf(month + 1) + "/" + String.valueOf(year));
 //                yr.setText(String.valueOf(year));
 //                mnt.setText(String.valueOf(month + 1));
 //                dat.setText(String.valueOf(day));

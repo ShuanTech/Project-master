@@ -9,7 +9,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -321,7 +320,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Log.d("uId", u_id);
+//                            Log.d("uId", u_id);
                             mApp.getPreference().edit().putString(Common.u_id, u_id).commit();
                             mApp.getPreference().edit().putString(Common.LEVEL, type).commit();
                             mApp.getPreference().edit().putBoolean(Common.Login, true).commit();

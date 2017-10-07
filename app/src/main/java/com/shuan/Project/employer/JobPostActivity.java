@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -170,7 +171,11 @@ public class JobPostActivity extends AppCompatActivity implements View.OnClickLi
                     location.requestFocus();
                 } else if (j.equalsIgnoreCase("Job level")) {
                     Toast.makeText(getApplicationContext(), "Select a Job level", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if(job_level.getSelectedItem().equals("Select a Job level")){
+                    Toast.makeText(getApplicationContext(), "Select a Job level", Toast.LENGTH_SHORT).show();
+                    job_level.requestFocus();
+                }
+                else {
                     jobLay.setVisibility(View.GONE);
                     descLay.setVisibility(View.VISIBLE);
                 }
@@ -209,7 +214,10 @@ public class JobPostActivity extends AppCompatActivity implements View.OnClickLi
             try {
 
                 JSONObject json = Connection.UrlConnection(php.getJob, jData);
+
+                Log.d("json",json.toString());
                 int succ = json.getInt("success");
+
 
                 if (succ == 0) {
                     Toast.makeText(getApplicationContext(), "Something Went Wrong! Try Again", Toast.LENGTH_SHORT).show();

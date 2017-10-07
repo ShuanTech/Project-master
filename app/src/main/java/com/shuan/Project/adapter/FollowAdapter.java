@@ -3,7 +3,6 @@ package com.shuan.Project.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,7 +122,7 @@ public class FollowAdapter extends BaseAdapter {
                 in.putExtra("level", curr.getState());
                 in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(in);
-                Log.d("mContext",mContext.toString());
+//                Log.d("mContext",mContext.toString());
 
             }
         });

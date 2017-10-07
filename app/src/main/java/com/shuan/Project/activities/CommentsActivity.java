@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -165,7 +164,7 @@ public class CommentsActivity extends AppCompatActivity implements View.OnClickL
                 if (succ == 0) {
                 } else {
                     JSONArray jsonArray = json.getJSONArray("comments");
-                    Log.d("Json array : ",json.getJSONArray("comments").toString());
+//                    Log.d("Json array : ",json.getJSONArray("comments").toString());
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject child = jsonArray.getJSONObject(i);
                         final String cmt_id = child.optString("id");

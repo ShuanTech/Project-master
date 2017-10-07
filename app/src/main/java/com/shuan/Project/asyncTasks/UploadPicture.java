@@ -3,17 +3,13 @@ package com.shuan.Project.asyncTasks;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.AsyncTask;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.shuan.Project.Utils.Common;
 import com.shuan.Project.employee.JuniorActivity;
 import com.shuan.Project.employee.SeniorActivity;
-import com.shuan.Project.profile.ProfileActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,6 +40,8 @@ public class UploadPicture extends AsyncTask<String, String, String> {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
+
+
 
     /**
      * Checks if the app has permission to write to device storage
@@ -96,7 +94,7 @@ public class UploadPicture extends AsyncTask<String, String, String> {
 
 
             if (!sourceFile.isFile()) {
-                Log.e("uploadFile", "Source File not exist :" + fileName);
+//                Log.e("uploadFile", "Source File not exist :" + fileName);
                 Toast.makeText(mContext, "File Not Found", Toast.LENGTH_SHORT).show();
             } else {
 
@@ -104,6 +102,7 @@ public class UploadPicture extends AsyncTask<String, String, String> {
 
                     FileInputStream fileInputStream = new FileInputStream(sourceFile);
                     URL url = new URL(urlPath);
+//                    Log.d("uRl",urlPath);
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setDoInput(true); // Allow Inputs
                     conn.setDoOutput(true); // Allow Outputs
@@ -140,7 +139,7 @@ public class UploadPicture extends AsyncTask<String, String, String> {
                     int serverResponseCode = conn.getResponseCode();
                     String serverResponseMessage = conn.getResponseMessage();
 
-                    Log.i("uploadFile", "HTTP Response is : " + serverResponseMessage + ": " + serverResponseCode);
+//                    Log.i("uploadFile", "HTTP Response is : " + serverResponseMessage + ": " + serverResponseCode);
 
                     if (serverResponseCode == 200) {
                         BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -149,9 +148,10 @@ public class UploadPicture extends AsyncTask<String, String, String> {
                         while ((line = br.readLine()) != null) {
                             sb.append(line + "\n");
                         }
+//                        Log.d("sb",sb.toString());
                         jsonObj = new JSONObject(sb.toString());
                         s = "succ";
-                        Log.i("res", sb.toString());
+//                        Log.i("res", sb.toString());
                     } else {
                         s = "fail";
                     }
@@ -165,7 +165,7 @@ public class UploadPicture extends AsyncTask<String, String, String> {
                     ex.printStackTrace();
                     Toast.makeText(mContext, "MalformedURLException", Toast.LENGTH_SHORT).show();
 
-                    Log.e("Upload file to server", "error: " + ex.getMessage(), ex);
+//                    Log.e("Upload file to server", "error: " + ex.getMessage(), ex);
                 } catch (final Exception e) {
                     e.printStackTrace();
                     Toast.makeText(mContext, "Got Exception : see logcat ", Toast.LENGTH_SHORT).show();
@@ -173,7 +173,7 @@ public class UploadPicture extends AsyncTask<String, String, String> {
             }
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return s;
     }

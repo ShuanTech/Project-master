@@ -2,7 +2,6 @@ package com.shuan.Project.asyncTasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.shuan.Project.Utils.Common;
@@ -39,7 +38,7 @@ public class RemoveProfilePic extends AsyncTask<String, String, String> {
         //uData.put("stus",stus);
         try {
             JSONObject json = Connection.UrlConnection(php.removeProPic, uData);
-            Log.d("RemoveProfilePic", json.toString());
+//            Log.d("RemoveProfilePic", json.toString());
             int succ = json.getInt("success");
             if (succ == 0) {
                 s = "false";

@@ -59,9 +59,7 @@ public class GetSelectedCandidate extends AsyncTask<String, String, String> {
                     String intervew_date = child.optString("intervew_date");
                     String intervew_time = child.optString("intervew_time");
                     String type = child.optString("type");
-
                     list.add(new Sample(pro_pic, name, venue, intervew_date, intervew_time, type));
-
                 }
 
             }

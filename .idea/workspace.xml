@@ -13,6 +13,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="json" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -22,9 +23,42 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/Helper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/Helper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/activities/CommentsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/activities/CommentsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/FollowAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/FollowAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddBasicInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddBasicInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddCert.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddCert.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddSchool.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddSchool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddWrkDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddWrkDetail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/EmployerSerchResult.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/EmployerSerchResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetAppliedDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetAppliedDetail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetEmployerSerach.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetEmployerSerach.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetHome.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetHome.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetNotifyDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetNotifyDetail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSelectedCandidate.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSelectedCandidate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSuggest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSuggest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/RemoveProfilePic.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/RemoveProfilePic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/SharePost.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/SharePost.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/UploadPicture.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/UploadPicture.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditContactDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditContactDetails.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/JobPostActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/JobPostActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/EmployerHome.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/EmployerHome.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/Connection.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/php.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/php.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/ExpResumeGenerate.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/ExpResumeGenerate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/JuniorResumeGenerate.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/JuniorResumeGenerate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateJuniorResumeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateJuniorResumeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/SignupActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/SignupActivity.java" />
     </list>
     <ignored path="Project-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +81,15 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state />
+        </projects_view>
       </state>
     </system>
   </component>
@@ -56,113 +98,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CompanyContactInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CompanyContactInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AboutCompanyActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java">
+      <file leaf-file-name="ActionFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/ActionFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="php.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/php.java">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
-              <folding>
-                <element signature="e#140#228#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpdateResumeActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="754" column="75" selection-start-line="754" selection-start-column="75" selection-end-line="754" selection-end-column="75" />
+            <state relative-caret-position="133">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyContactInfoActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/CompanyContactInfoActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AboutCompany.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AboutCompany.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditContactDetails.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditContactDetails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="147" column="38" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#8670#8671#0" expanded="false" />
-                <element signature="e#8722#8723#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditCompanyInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditCompanyInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4354#4355#0" expanded="false" />
-                <element signature="e#4391#4392#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_edit_company_info.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_company_info.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-              <folding>
-                <marker date="1506435760413" expanded="false" signature="18281:18305" ph="&quot;8dp&quot;" />
-                <marker date="1506435760413" expanded="false" signature="18805:18829" ph="&quot;8dp&quot;" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="list_heder.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_heder.xml">
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateJob.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/UpdateJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="php.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/php.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-480">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JobPostActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/JobPostActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3145">
+              <caret line="221" column="6" selection-start-line="221" selection-start-column="6" selection-end-line="221" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_job_post.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_job_post.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2686">
+              <caret line="158" column="49" selection-start-line="158" selection-start-column="41" selection-end-line="158" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_action.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_action.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -176,14 +221,19 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="D:\Narayan\mykey.jks" />
+    <option name="KEY_ALIAS" value="myname" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="narayanancr007@gmail.com" />
         <option value="Narayan Cr" />
         <option value="narayancr" />
         <option value="narayanancr" />
         <option value="Narayanan Cr" />
-        <option value="narayanancr007@gmail.com" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2226,7 +2276,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="D:\Narayan\Udyomitra\Project-master" value="4493906692520" />
+        <entry key="$PROJECT_DIR$" value="4499617241345" />
+        <entry key="D:\Narayan\Udyomitra\Project-master" value="4499695838953" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2580,48 +2631,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_change_email.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/setting/ChangePasswrd.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/setting/ChangeEmail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/setting/ChangePhone.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/setting/DeactivateAccount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddCollegedetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/EditWrkDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/JobPostActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-v21/year_picker_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/YearPicker.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/YearPicker1.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_update_resume.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/Search.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_exp_resume_generate.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/Common.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/ShortListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/SelectCandidate.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetAppliedDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/list/Sample.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/AppliedDetailAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/junior.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/senior.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employee/JuniorActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employee/SeniorActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetCourse.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_resume_edit.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditContactDetails.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/AddCompanyInfoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_about_company.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CompanyDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/CompanyDetails.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EmployerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_company_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_company_contact.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_company_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditCompanyDetails.java" />
@@ -2630,7 +2642,46 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AboutCompany.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CompanyContactInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_update_junior_resume_data.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateJuniorResumeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/activities/CommentsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/FollowAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddBasicInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetAppliedDetail.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetEmployerSerach.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetHome.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetNotifyDetail.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSchool.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/RemoveProfilePic.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/SharePost.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/UpdateNotify.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/UploadPicture.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/launcher/Launcher.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/Connection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/SignupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/Helper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/YearPicker.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditContactDetails.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/EmployerHome.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/EmployerSerchResult.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSelectedCandidate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddCert.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddWrkDetail.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddSchool.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_employer_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/JuniorResumeGenerate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/ExpResumeGenerate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSuggest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CheckEligible.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/JobPostActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/php.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       </list>
     </option>
   </component>
@@ -2681,7 +2732,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2699,6 +2754,60 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2712,24 +2821,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project-master" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2752,26 +2843,28 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../References/SamplePlayStore" />
-    <property name="SearchEverywhereHistoryKey" value="php&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/parser/php.java&#10;About&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java&#10;Abou&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/AboutCompany.java&#10;Pro&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java&#10;Sig&#9;PSI&#9;JAVA://com.shuan.Project.signup.SignupActivity.Signup&#10;CompanyDeta&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/CompanyDetail.java&#10;Company&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/employer/CompanyContactInfoActivity.java&#10;AboutCompan&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java&#10;Sign&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/SignupActivity.java&#10;Resu&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java&#10;AddCOm&#9;PSI&#9;JAVA://com.shuan.Project.employer.AddCompanyInfoActivity&#10;Profile&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java&#10;Re&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java&#10;Exper&#9;PSI&#9;JAVA://com.shuan.Project.parser.php#work_experience&#10;work&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/res/layout/activity_work.xml&#10;wrk&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.AddWrkDetail&#10;Wrk&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/res/layout/wrk_lay.xml&#10;profil&#9;PSI&#9;JAVA://com.shuan.Project.profile.ProfileActivity&#10;Action&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/fragment/ActionFragment.java&#10;Se&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/SelectCandidate.java&#10;Sele&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/SelectCandidate.java&#10;Inter&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/employer/InterviewPanelActivity.java&#10;Sho&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/employer/ShortListActivity.java&#10;forgot&#9;PSI&#9;JAVA://com.shuan.Project.launcher.ForgotPassword&#10;Resume&#9;PSI&#9;JAVA://com.shuan.Project.resume.ExpResumeGenerate&#10;search&#9;PSI&#9;JAVA://com.shuan.Project.search.SearchActivity&#10;JobPo&#9;PSI&#9;JAVA://com.shuan.Project.employer.JobPostActivity&#10;jobs&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/fragment/JobsFragment.java&#10;job&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/GetJobDetail.java&#10;jo&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.GetJobDetail&#10;po&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/GetPost.java&#10;Upda&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java&#10;ResumeE&#9;PSI&#9;JAVA://com.shuan.Project.resume.ResumeEditActivity&#10;dele&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.DeleteDetail&#10;Exp&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ExpResumeGenerate.java&#10;RejectLi&#9;PSI&#9;JAVA://com.shuan.Project.fragment.RejectedListFragment&#10;Reje&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.RejectCandidate&#10;Selected&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/fragment/SelectedListFragment.java&#10;SignUp&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/SignupActivity.java&#10;cData&#9;PSI&#9;JAVA://com.shuan.Project.activities.CommentsActivity#cData&#10;Common&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/Utils/Common.java&#10;Chang&#9;PSI&#9;JAVA://com.shuan.Project.setting.ChangePasswrd&#10;Sett&#9;PSI&#9;JAVA://com.shuan.Project.setting.SettingActivity&#10;Logi&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/launcher/LoginActivity.java&#10;Senio&#9;PSI&#9;JAVA://com.shuan.Project.employee.SeniorActivity&#10;GetRea&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.GetReadyList&#10;Applied&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/adapter/AppliedDetailAdapter.java&#10;applied&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/GetAppliedDetail.java&#10;SelectedList&#9;PSI&#9;JAVA://com.shuan.Project.adapter.SelectedListAdapter&#10;Selection&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/SelectionActivity.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mykey.jks" />
+    <property name="SearchEverywhereHistoryKey" value="php&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/parser/php.java&#10;UpdateJob&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.UpdateJob&#10;Action&#9;PSI&#9;JAVA://com.shuan.Project.fragment.ActionFragment&#10;Upd&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java&#10;Impo&#9;PSI&#9;JAVA://com.shuan.Project.fragment.ImportanceFragment&#10;Update&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java&#10;AddW&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.AddWrkDetail&#10;ResumeE&#9;PSI&#9;JAVA://com.shuan.Project.resume.ResumeEditActivity&#10;Profile&#9;PSI&#9;JAVA://com.shuan.Project.profile.ProfileViewActivity&#10;Login&#9;PSI&#9;JAVA://com.shuan.Project.launcher.LoginActivity&#10;Share&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.SharePost&#10;Sele&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.SelectCandidate&#10;Inter&#9;PSI&#9;JAVA://com.shuan.Project.employee.InterViewActivity&#10;Resume&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java&#10;Pro&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java&#10;Resum&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java&#10;Empl&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/employer/EmployerActivity.java&#10;PRofile&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java&#10;profile&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java&#10;About&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java&#10;Abou&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/AboutCompany.java&#10;Sig&#9;PSI&#9;JAVA://com.shuan.Project.signup.SignupActivity.Signup&#10;CompanyDeta&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/CompanyDetail.java&#10;Company&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/employer/CompanyContactInfoActivity.java&#10;AboutCompan&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java&#10;Sign&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/SignupActivity.java&#10;Resu&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java&#10;AddCOm&#9;PSI&#9;JAVA://com.shuan.Project.employer.AddCompanyInfoActivity&#10;Re&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java&#10;Exper&#9;PSI&#9;JAVA://com.shuan.Project.parser.php#work_experience&#10;work&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/res/layout/activity_work.xml&#10;wrk&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.AddWrkDetail&#10;Wrk&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/res/layout/wrk_lay.xml&#10;profil&#9;PSI&#9;JAVA://com.shuan.Project.profile.ProfileActivity&#10;Se&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/SelectCandidate.java&#10;Sho&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/employer/ShortListActivity.java&#10;forgot&#9;PSI&#9;JAVA://com.shuan.Project.launcher.ForgotPassword&#10;search&#9;PSI&#9;JAVA://com.shuan.Project.search.SearchActivity&#10;JobPo&#9;PSI&#9;JAVA://com.shuan.Project.employer.JobPostActivity&#10;jobs&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/fragment/JobsFragment.java&#10;job&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/GetJobDetail.java&#10;jo&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.GetJobDetail&#10;po&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/asyncTasks/GetPost.java&#10;Upda&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java&#10;dele&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.DeleteDetail&#10;Exp&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/resume/ExpResumeGenerate.java&#10;RejectLi&#9;PSI&#9;JAVA://com.shuan.Project.fragment.RejectedListFragment&#10;Reje&#9;PSI&#9;JAVA://com.shuan.Project.asyncTasks.RejectCandidate&#10;Selected&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/fragment/SelectedListFragment.java&#10;SignUp&#9;FILE&#9;file://D:/Narayan/Udyomitra/Project-master/app/src/main/java/com/shuan/Project/signup/SignupActivity.java" />
     <property name="device.picker.selection" value="Nexus_5X_API_24" />
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment" />
-    <property name="DEBUGGABLE_DEVICE" value="Nexus_5X_API_25 [emulator-5554]" />
+    <property name="DEBUGGABLE_DEVICE" value="motorola-moto_g__4_-ZY2239MVR3" />
     <property name="DEBUGGABLE_PROCESS" value="com.shuan.Project" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="VectorAssetImportPath" value="D:\" />
+    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="ExportApk.ApkPath" value="D:\Narayan\Udyomitra\Project-master\app" />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2793,6 +2886,42 @@
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
+    <configuration default="false" name="Project-master [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="Project-master:app [lintRelease]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="lintRelease" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -3177,11 +3306,19 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Android App.app" />
       <item index="1" class="java.lang.String" itemvalue="Android App.URL http://www.udyomitra.com/jobsview?jb_id=J091107792721" />
       <item index="2" class="java.lang.String" itemvalue="Android App.URL http://www.udyomitra.com/employeeView?us_id=U055342439409" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.Project-master [build]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.Project-master:app [lintRelease]" />
     </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Gradle.Project-master:app [lintRelease]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.Project-master [build]" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -3285,7 +3422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506436408651</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Profile page for employeer">
+      <created>1506529697546</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1506529697546</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3299,24 +3443,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33560476" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72572404" sideWeight="0.49394855" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26096824" sideWeight="0.5093697" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8415673" sideWeight="0.5499244" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9608177" sideWeight="0.45007566" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879046" sideWeight="0.5620272" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.43797275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6354344" sideWeight="0.48033282" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.92844975" sideWeight="0.49016643" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7666099" sideWeight="0.5045386" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2549168" sideWeight="0.49403748" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72572404" sideWeight="0.5060514" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.49063033" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39863715" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -3404,7 +3549,8 @@
     <MESSAGE value="Commit date 13/sep/2017&#10;" />
     <MESSAGE value="Set to selected list after scheduling interview" />
     <MESSAGE value="Profile page for employeer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profile page for employeer" />
+    <MESSAGE value="App after updation.... Resume corrected, some major bugs cleared" />
+    <option name="LAST_COMMIT_MESSAGE" value="App after updation.... Resume corrected, some major bugs cleared" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3448,31 +3594,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java</url>
-          <line>73</line>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java</url>
-          <line>74</line>
+          <line>73</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java</url>
-          <line>75</line>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java</url>
-          <line>76</line>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/InviteAdapter.java</url>
-          <line>77</line>
+          <line>76</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
@@ -3484,516 +3630,485 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/activities/CommentsActivity.java</url>
-          <line>209</line>
+          <line>208</line>
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/activities/CommentsActivity.java</url>
-          <line>208</line>
+          <line>207</line>
           <properties />
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/activities/CommentsActivity.java</url>
-          <line>176</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java</url>
+          <line>287</line>
           <properties />
-          <option name="timeStamp" value="82" />
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java</url>
+          <line>283</line>
+          <properties />
+          <option name="timeStamp" value="154" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="149" />
+      <option name="time" value="155" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/ActionFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/PasswordValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="90">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employee/ServiceViewActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/PhoneNumberValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="107">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/junior.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="22" column="63" selection-start-line="18" selection-start-column="7" selection-end-line="22" selection-end-column="63" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/senior.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="63" selection-start-line="19" selection-start-column="7" selection-end-line="23" selection-end-column="63" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employee/JuniorActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="231" column="42" selection-start-line="231" selection-start-column="42" selection-end-line="231" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_heder.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetCourse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_resume_edit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="1212" column="27" selection-start-line="577" selection-start-column="10" selection-end-line="1212" selection-end-column="27" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/ShortListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employee/SeniorActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2278">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/wrk_lay.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddWrkDetail.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/Resume.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_work.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/TextfieldValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="107">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/UsernameValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-782">
-          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+        <state relative-caret-position="107">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/Utils/YearPicker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="107">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_employer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/resendotp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employee/CSLActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/MailVerify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="109" column="30" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/mail_verify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="92" column="45" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_company_info.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/SignupActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4675">
-          <caret line="312" column="9" selection-start-line="312" selection-start-column="9" selection-end-line="312" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/AddCompanyInfoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1258">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EmployerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="362" column="44" selection-start-line="362" selection-start-column="44" selection-end-line="362" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_company_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/CompanyDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_company_contact_info.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="157" column="27" selection-start-line="157" selection-start-column="27" selection-end-line="157" selection-end-column="27" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6137">
-          <caret line="361" column="55" selection-start-line="361" selection-start-column="55" selection-end-line="361" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item.xml">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="102" column="49" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CompanyDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_about_company.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="71" column="60" selection-start-line="59" selection-start-column="11" selection-end-line="71" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="864" column="0" selection-start-line="864" selection-start-column="0" selection-end-line="864" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_company_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="27" selection-start-line="121" selection-start-column="27" selection-end-line="121" selection-end-column="27" />
-          <folding>
-            <element signature="e#1285#1309#0" expanded="false" />
-            <element signature="e#1637#1661#0" expanded="false" />
-            <element signature="e#2488#2503#0" expanded="false" />
-            <element signature="e#4356#4373#0" expanded="false" />
-            <element signature="e#5479#5514#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_company_contact.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2720">
-          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditCompanyDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_company_info.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <marker date="1506435760413" expanded="false" signature="18281:18305" ph="&quot;8dp&quot;" />
-            <marker date="1506435760413" expanded="false" signature="18805:18829" ph="&quot;8dp&quot;" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditCompanyInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4354#4355#0" expanded="false" />
-            <element signature="e#4391#4392#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EditContactDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="147" column="38" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#8670#8671#0" expanded="false" />
-            <element signature="e#8722#8723#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="1207">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CompanyContactInfo.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/launcher/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="2295">
+          <caret line="166" column="85" selection-start-line="166" selection-start-column="85" selection-end-line="166" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="112" column="11" selection-start-line="112" selection-start-column="11" selection-end-line="112" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#31377#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4519#4520#0" expanded="false" />
-            <element signature="e#4552#4553#0" expanded="false" />
-            <element signature="e#5003#5004#0" expanded="false" />
-            <element signature="e#5040#5041#0" expanded="false" />
-            <element signature="e#5218#5219#0" expanded="false" />
-            <element signature="e#5259#5260#0" expanded="false" />
-            <element signature="e#5605#5606#0" expanded="false" />
-            <element signature="e#5650#5651#0" expanded="false" />
-            <element signature="e#6442#6443#0" expanded="false" />
-            <element signature="e#6475#6476#0" expanded="false" />
-            <element signature="e#10258#10259#0" expanded="false" />
-            <element signature="e#10301#10302#0" expanded="false" />
-            <element signature="e#10614#10615#0" expanded="false" />
-            <element signature="e#10663#10664#0" expanded="false" />
-            <element signature="e#12859#12860#0" expanded="false" />
-            <element signature="e#12922#12923#0" expanded="false" />
-            <element signature="e#20193#20194#0" expanded="false" />
-            <element signature="e#20245#20246#0" expanded="false" />
-            <element signature="e#21088#21089#0" expanded="false" />
-            <element signature="e#21137#21138#0" expanded="false" />
-            <element signature="e#21494#21495#0" expanded="false" />
-            <element signature="e#21549#21550#0" expanded="false" />
-            <element signature="e#26650#26651#0" expanded="false" />
-            <element signature="e#26705#26706#0" expanded="false" />
-            <element signature="e#27541#27542#0" expanded="false" />
-            <element signature="e#27600#27601#0" expanded="false" />
-            <element signature="e#28061#28062#0" expanded="false" />
-            <element signature="e#28117#28118#0" expanded="false" />
-            <element signature="e#28298#28299#0" expanded="false" />
-            <element signature="e#28328#28329#0" expanded="false" />
-            <element signature="e#29660#29661#0" expanded="false" />
-            <element signature="e#29698#29699#0" expanded="false" />
-            <element signature="e#30036#30037#0" expanded="false" />
-            <element signature="e#30072#30073#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_employer.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AboutCompany.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/AboutCompanyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        <state relative-caret-position="782">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/signup/employer/CompanyContactInfoActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/EmployerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
+        <state relative-caret-position="1224">
+          <caret line="132" column="64" selection-start-line="132" selection-start-column="64" selection-end-line="132" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/EmployerHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/EmployerSerchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="125" column="53" selection-start-line="125" selection-start-column="53" selection-end-line="125" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/profile/ProfileViewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="236" column="13" selection-start-line="236" selection-start-column="13" selection-end-line="236" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#9830#9831#0" expanded="false" />
+            <element signature="e#9877#9878#0" expanded="false" />
+            <element signature="e#14271#14272#0" expanded="false" />
+            <element signature="e#14308#14309#0" expanded="false" />
+            <element signature="e#14987#14988#0" expanded="false" />
+            <element signature="e#15077#15078#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/SelectCandidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSelectedCandidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddCert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="55" column="86" selection-start-line="55" selection-start-column="86" selection-end-line="55" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddWrkDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/AddSchool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/ResumeEditActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="1045" column="45" selection-start-line="1045" selection-start-column="44" selection-end-line="1045" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_employer_home.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/job_post_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="373" column="44" selection-start-line="373" selection-start-column="37" selection-end-line="373" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/ImportanceFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-980">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/adapter/PostAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="53" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/SavePost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="80" column="63" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/JuniorResumeGenerate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="337" column="130" selection-start-line="337" selection-start-column="128" selection-end-line="337" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/list/ResumeList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="203" column="18" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
+          <folding>
+            <element signature="e#4243#4244#0" expanded="false" />
+            <element signature="e#4273#4274#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/ExpResumeGenerate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="519" column="129" selection-start-line="519" selection-start-column="129" selection-end-line="519" selection-end-column="129" />
+          <folding>
+            <element signature="e#20512#22884#0" expanded="false" />
+            <element signature="e#22883#22884#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/resume/UpdateResumeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="754" column="75" selection-start-line="754" selection-start-column="75" selection-end-line="754" selection-end-column="75" />
+        <state relative-caret-position="134">
+          <caret line="1062" column="48" selection-start-line="1062" selection-start-column="48" selection-end-line="1062" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#62402#64054#0" expanded="false" />
+            <element signature="e#64053#64054#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/GetSuggest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="54" column="43" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/CheckEligible.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/WelcomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="122" column="58" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/privacy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/PrefManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#823#824#0" expanded="false" />
+            <element signature="e#889#890#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_action.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_heder.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/asyncTasks/UpdateJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_job_post.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2686">
+          <caret line="158" column="49" selection-start-line="158" selection-start-column="41" selection-end-line="158" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/employer/JobPostActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3145">
+          <caret line="221" column="6" selection-start-line="221" selection-start-column="6" selection-end-line="221" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/fragment/ActionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shuan/Project/parser/php.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
-          <folding>
-            <element signature="e#140#228#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="gradleExecuteTaskHistory">
+    <option value="" />
   </component>
 </project>

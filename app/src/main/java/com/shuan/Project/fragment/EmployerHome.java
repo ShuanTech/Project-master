@@ -64,6 +64,7 @@ public class EmployerHome extends Fragment implements AbsListView.OnScrollListen
         textView = (TextView) view.findViewById(R.id.no_data);
         swipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe);
         list = new ArrayList<Sample>();
+        textView.setText("No Data to Show");
 
         new GetHome(getActivity(), listView, progressBar,textView, mApp.getPreference().getString(Common.u_id, ""), "all", swipe).execute();
 

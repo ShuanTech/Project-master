@@ -86,11 +86,14 @@ public class EditContactDetails extends AppCompatActivity implements View.OnClic
         cnt_mail.setText(getIntent().getStringExtra("contact_mail"));
         cnt_phn.setText(getIntent().getStringExtra("contact_ph"));
         String time = getIntent().getStringExtra("contact_time");
-        String[] parts = time.split("-");
-        String part1 = parts[0]; // from time
-        String part2 = parts[1]; // to time
-        frm_time.setText(part1);
-        to_time.setText(part2);
+        if(time!=null){
+            String[] parts = time.split("-");
+            String part1 = parts[0]; // from time
+            String part2 = parts[1]; // to time
+            frm_time.setText(part1);
+            to_time.setText(part2);
+        }
+
 
 //        cp_skip.setOnClickListener(this);
         cp_next.setOnClickListener(this);

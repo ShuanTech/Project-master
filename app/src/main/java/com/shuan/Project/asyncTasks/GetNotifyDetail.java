@@ -71,6 +71,7 @@ public class GetNotifyDetail extends AsyncTask<String, String, String> {
 
 
         } catch (Exception e) {
+//            Log.e("Exception",e.toString());
         }
         return s;
     }

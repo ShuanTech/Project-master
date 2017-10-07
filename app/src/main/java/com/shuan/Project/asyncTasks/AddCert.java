@@ -77,7 +77,7 @@ public class AddCert extends AsyncTask<String, String, String> {
                 mApp.getPreference().edit().putInt(Common.PROFILESTRENGTH, val + 1).commit();
             }
 
-            Toast.makeText(mContext, "Successfully Certification Details Added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Certification Details Added Successfully", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(mContext, ResumeEditActivity.class);
             in.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             mContext.startActivity(in);
